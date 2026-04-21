@@ -1,0 +1,41 @@
+# deps
+node_modules/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# production
+build/
+dist/
+
+# misc
+.DS_Store
+*.pem
+.vscode/
+.idea/
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# typescript
+*.tsbuildinfo
+
+# local reference repo (separate project cloned for reference only)
+avatar-atlas/
+
+# claude code harness
+.claude/
+
+# crawl artifact
+scripts/.crawl-raw.json
