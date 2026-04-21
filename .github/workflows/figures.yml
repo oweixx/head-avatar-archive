@@ -1,0 +1,42 @@
+name: Monthly figure scrape (project-page og:image)
+
+on:
+  schedule:
+    # 1st of every month 05:00 UTC (after enrich + venues).
+    - cron: '0 5 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  figures:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Extract figure URLs from project pages
+        run: npm run figures
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/figures
+          commit-message: 'chore(data): refresh thumbnail figureUrls'
+          title: 'Figures: refresh project-page thumbnail URLs'
+          body: |
+            Automated monthly figure scrape by `.github/workflows/figures.yml`.
+
+            For every paper with a `project` URL but no `figureUrl`, fetches
+            the project page and extracts `<meta property="og:image">` (the
+            author-curated link-preview image). Falls back to the first
+            teaser/overview-named `<img>` when the meta tag is missing.
+          add-paths: src/data/papers.json

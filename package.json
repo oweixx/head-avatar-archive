@@ -13,7 +13,9 @@
     "enrich": "tsx scripts/enrich.ts",
     "enrich:dry": "tsx scripts/enrich.ts --dry",
     "venues": "tsx scripts/venues.ts",
-    "venues:dry": "tsx scripts/venues.ts --dry"
+    "venues:dry": "tsx scripts/venues.ts --dry",
+    "figures": "tsx scripts/figures.ts",
+    "figures:dry": "tsx scripts/figures.ts --dry"
   },
   "dependencies": {
     "next": "^14.2.35",
