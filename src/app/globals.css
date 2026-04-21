@@ -320,6 +320,18 @@ body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.25; }
   flex-direction: column;
   gap: 3px;
   flex: 1;
+  min-height: 0;         /* allow child to shrink below content height */
+  overflow-y: auto;      /* vertical scroll when many papers in one year */
+  overflow-x: visible;
+  padding-right: 4px;    /* room for scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: var(--ink-soft) transparent;
+}
+.stack::-webkit-scrollbar { width: 6px; }
+.stack::-webkit-scrollbar-track { background: transparent; }
+.stack::-webkit-scrollbar-thumb {
+  background: var(--ink-soft);
+  border-radius: 0;
 }
 
 .card {
@@ -645,6 +657,20 @@ body[data-density="compact"] .body { grid-template-columns: 44px 1fr auto; }
 .detail .links a:hover { background: var(--ink); color: var(--paper); }
 .detail .links a.off { opacity: 0.35; pointer-events: none; }
 .detail .links a .arr { opacity: 0.7; }
+.detail .links .link-off {
+  font-family: var(--ff-mono);
+  font-size: 11px;
+  color: var(--ink-soft);
+  padding: 6px 10px;
+  background: transparent;
+  border: 1px dashed var(--ink-soft);
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.04em;
+  opacity: 0.55;
+  user-select: none;
+}
+.detail .links .link-off .arr { opacity: 0.6; }
 
 .detail.empty .tag { background: var(--ink-soft); }
 .detail.empty .empty-msg {

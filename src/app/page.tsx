@@ -63,6 +63,15 @@ export default function HomePage() {
     const el = scrollerRef.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
+      // If the cursor is over a year stack that has vertical overflow,
+      // let native vertical scroll happen (don't hijack).
+      const tgt = e.target as HTMLElement | null;
+      const stack = tgt?.closest?.('.stack') as HTMLElement | null;
+      if (stack && stack.scrollHeight > stack.clientHeight + 1) {
+        // shift = force horizontal across years
+        if (!e.shiftKey) return;
+      }
+      // Otherwise redirect wheel to horizontal timeline scroll.
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         el.scrollLeft += e.deltaY;
         e.preventDefault();
@@ -118,7 +127,7 @@ export default function HomePage() {
       </div>
       <div className="plinth" />
       <div className="hint">
-        Scroll ← → · Hover to preview · Click to pin · <b>⚙</b> Tweaks
+        Wheel ← → · ↓ inside a year · Hover/Click · <b>⚙</b> Tweaks
       </div>
       <Tweaks
         open={tweakOpen}

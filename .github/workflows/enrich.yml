@@ -1,0 +1,46 @@
+name: Monthly metadata enrichment
+
+on:
+  schedule:
+    # 1st of every month, 04:00 UTC (one hour after the weekly crawl)
+    - cron: '0 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  enrich:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Enrich venues, project pages, code URLs
+        env:
+          # Optional: set this repo secret to raise Semantic Scholar rate limits.
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: npm run enrich
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/enrich-metadata
+          commit-message: 'chore(data): enrich venue / project / code links'
+          title: 'Metadata refresh: venues + project pages + code URLs'
+          body: |
+            Automated monthly enrichment by `.github/workflows/enrich.yml`.
+
+            - Venues: Semantic Scholar (maps preprints to CVPR/ECCV/etc. after acceptance)
+            - Project pages: arXiv `comment` field + abstract URL extraction
+            - Code URLs: Papers with Code (prefers `is_official` repo, else most-starred)
+
+            Review the diff in `src/data/papers.json` and merge if the updates look right.
+          add-paths: src/data/papers.json

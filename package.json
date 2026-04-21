@@ -11,7 +11,9 @@
     "crawl": "tsx scripts/run.ts",
     "crawl:dry": "tsx scripts/run.ts --dry",
     "import:atlas": "tsx scripts/import-atlas.ts",
-    "import:atlas:dry": "tsx scripts/import-atlas.ts --dry"
+    "import:atlas:dry": "tsx scripts/import-atlas.ts --dry",
+    "enrich": "tsx scripts/enrich.ts",
+    "enrich:dry": "tsx scripts/enrich.ts --dry"
   },
   "dependencies": {
     "next": "^14.2.35",

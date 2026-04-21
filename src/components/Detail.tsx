@@ -142,20 +142,37 @@ export function Detail({ paper, pinned, onUnpin }: Props) {
           ))}
         </div>
         <div className="links">
-          <a href={paper.arxiv} target="_blank" rel="noreferrer">
-            arXiv <span className="arr">↗</span>
-          </a>
-          <a href={paper.project} target="_blank" rel="noreferrer">
-            Project page <span className="arr">↗</span>
-          </a>
-          <a
-            className={paper.code ? '' : 'off'}
-            href={paper.code ? (paper.codeUrl ?? paper.project) : '#'}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Code <span className="arr">{paper.code ? '↗' : '—'}</span>
-          </a>
+          {paper.arxiv ? (
+            <a href={paper.arxiv} target="_blank" rel="noreferrer">
+              arXiv <span className="arr">↗</span>
+            </a>
+          ) : (
+            <span className="link-off">
+              arXiv <span className="arr">—</span>
+            </span>
+          )}
+          {paper.project ? (
+            <a href={paper.project} target="_blank" rel="noreferrer">
+              Project page <span className="arr">↗</span>
+            </a>
+          ) : (
+            <span className="link-off">
+              Project page <span className="arr">—</span>
+            </span>
+          )}
+          {paper.codeUrl || (paper.code && paper.project) ? (
+            <a
+              href={paper.codeUrl ?? paper.project}
+              target="_blank"
+              rel="noreferrer"
+            >
+              Code <span className="arr">↗</span>
+            </a>
+          ) : (
+            <span className="link-off">
+              Code <span className="arr">—</span>
+            </span>
+          )}
           <a
             href="#"
             onClick={(e) => {
