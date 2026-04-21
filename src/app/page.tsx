@@ -82,9 +82,23 @@ export default function HomePage() {
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
+  // Hover alone is enough to reveal the panel — you don't have to click
+  // first. Click still pins the paper so you can move the cursor away
+  // without losing it.
+  const onCardHover = useCallback((p: Paper) => {
+    setHover(p);
+    setDetailOpen(true);
+  }, []);
+
   const onCardClick = useCallback((p: Paper) => {
     setPinned((cur) => (cur?.id === p.id ? null : p));
-    setDetailOpen(true); // clicking a card always reveals the detail panel
+    setDetailOpen(true);
+  }, []);
+
+  const onClosePanel = useCallback(() => {
+    setDetailOpen(false);
+    setHover(null);
+    setPinned(null);
   }, []);
 
   const displayPaper = hover ?? pinned;
@@ -110,7 +124,7 @@ export default function HomePage() {
                 key={y}
                 year={y}
                 papers={yearsMap.get(y) ?? []}
-                onHover={setHover}
+                onHover={onCardHover}
                 onClick={onCardClick}
                 highlightId={displayPaper?.id}
                 pinnedId={pinnedId}
@@ -125,7 +139,7 @@ export default function HomePage() {
           open={detailOpen}
           pinned={!!pinned && (hover?.id ?? pinned.id) === pinned.id}
           onUnpin={() => setPinned(null)}
-          onClose={() => setDetailOpen(false)}
+          onClose={onClosePanel}
         />
         <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>
