@@ -9,7 +9,7 @@ export function Ledger({ total, shown }: Props) {
       <div className="ch">
         <b>Ch. 3 /</b>
       </div>
-      <h1>3D Head Avatar — Correspondence</h1>
+      <h1>3D Head Archive</h1>
       <div className="count">
         {String(shown).padStart(2, '0')} / {String(total).padStart(2, '0')} filed
       </div>

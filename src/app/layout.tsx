@@ -3,9 +3,9 @@ import type { ReactNode } from 'react';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Ch. 3 — 3D Head Avatar Papers · Correspondence Storage',
+  title: '3D Head Archive',
   description:
-    'An interactive, horizontally-scrolling archive of 3D Head Avatar research papers, presented as a vintage file-index.',
+    'An interactive, horizontally-scrolling archive of 3D head-avatar research papers, presented as a vintage file-index.',
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

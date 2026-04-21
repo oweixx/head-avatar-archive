@@ -123,7 +123,7 @@ export default function HomePage() {
           pinned={!!pinned && (hover?.id ?? pinned.id) === pinned.id}
           onUnpin={() => setPinned(null)}
         />
-        <div className="caption">Figure 3-1.  Speed Index — 3D Head Avatars</div>
+        <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>
       <div className="plinth" />
       <div className="hint">
