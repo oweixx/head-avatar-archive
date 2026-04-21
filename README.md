@@ -1,64 +1,38 @@
-# 3D Head Archive
+# 🧑‍🦲 3D Head Archive
 
-Interactive, horizontally-scrolling archive of 3D head-avatar research papers, styled as a mid-century file-index ("Speed Index"). Papers are grouped by arXiv-post year, venue-tagged with colored tabs, and filter-toggleable by conference. Hover a card to preview; click to pin.
+A hand-curated, self-updating field guide to research on **3D head avatars** — reconstructing, animating, re-lighting, and generating digital heads. One horizontally-scrolling page, one file per paper.
 
-**Live:** `https://<your-gh-username>.github.io/<repo-name>/`
+The site is styled as a mid-century archival index. Years are vertical columns arranged left-to-right along a timeline; every paper is a filed card with a conference-colored tab. Hover a card to peek at its abstract, authors, teaser image, and links; click to pin it while you keep browsing. The chip row up top toggles venues on and off. The Tweaks panel (bottom-left ⚙) swaps the palette, background, font, or density — default is cream paper, pastel tabs, comfortable density.
 
-## Stack
+## What's here
 
-- **Next.js 14** (App Router) + **TypeScript**, statically exported (`output: 'export'`) for GitHub Pages
-- Single source of truth: `src/data/papers.json`
-- No runtime server — `npm run build` produces an `out/` directory that Pages serves as-is
+- **Only head / face / portrait avatars.** Full-body, hand-only, and generic scene 3DGS papers are filtered out at tagging time, so the signal stays dense.
+- **Every card links out.** arXiv page, project website, code repo, and a one-click BibTeX copy.
+- **Data lives in one file**, `src/data/papers.json`. Everything else on screen — the colors, the filters, the counts — is derived from it.
 
-## Local development
+## How it stays alive
+
+The archive doesn't age. A small set of schedulers keeps it current without anyone merging to `main` directly:
+
+- **Weekly** — a crawler pulls new arXiv submissions matching the head-avatar query set, lets Claude Haiku tag the ones that actually belong, and opens a PR with the candidates.
+- **Monthly** — three scrapers re-check venues (scanning CVF / NeurIPS / ICLR / SIGGRAPH virtual sites for title matches), walk each paper's project page for its stated conference + code repo, and refresh the author-curated teaser images.
+
+New preprint goes up on a Tuesday → it shows up in the archive the following Monday. Gets accepted to CVPR → the venue tag turns CVPR-red within a month of the list being public.
+
+## Running locally
 
 ```bash
 npm install
 npm run dev        # localhost:3000
-npm run build      # next build → out/
+npm run build      # static export → out/
 ```
 
-## Data pipeline
+## Deploy
 
-Every script writes back to `src/data/papers.json` and has a matching GitHub Actions workflow under `.github/workflows/` that opens a PR on schedule, so the curated dataset grows without anyone touching `main` directly. All scripts accept `-- --dry` for preview.
+Push to `main`. The included GitHub Actions workflow builds the static bundle and publishes to GitHub Pages. In repo settings: **Pages → Source: "GitHub Actions"**. Add `ANTHROPIC_API_KEY` to repo Secrets to enable the weekly crawl.
 
-| Script | Source | Cadence | Role |
-|---|---|---|---|
-| `npm run crawl` | arXiv API → Claude Haiku tagger | weekly (Mon 03:00 UTC) | Fetches new head-avatar preprints, LLM-tags them, writes `src/data/candidates.json`. Requires `ANTHROPIC_API_KEY`. |
-| `npm run venues` | CVF / NeurIPS / ICLR / SIGGRAPH virtual sites | monthly (1st 04:30 UTC) | Title-matches arXiv-tagged papers against accepted-paper lists to resolve venue + year. |
-| `npm run project-meta` | Paper's own project page | monthly (1st 05:30 UTC) | Extracts venue string + canonical `github.com/<owner>/<repo>` from project-page HTML. Most reliable source. |
-| `npm run enrich` | Semantic Scholar + arXiv `comment` field | monthly (1st 04:00 UTC) | Fallback venue lookup; regex-extracts project / code URLs from abstracts. |
-| `npm run figures` | Project-page `og:image` | monthly (1st 05:00 UTC) | Pulls the author-curated teaser thumbnail URL. |
+## More
 
-Precedence when multiple scripts provide the same field: `project-meta` > `venues` > `enrich`. Already-tagged venues are preserved — enrichment only fills gaps.
-
-## Adding a paper manually
-
-Append an entry to `src/data/papers.json` matching the `Paper` type in `src/types/paper.ts`. Only `id`, `title`, `short`, `authors`, `year`, `month`, `venue`, `venueYear`, `tags`, `citations`, `code`, `arxiv`, `project`, `figure`, `abstract` are required; `figureUrl`, `codeUrl` get filled in on the next monthly run.
-
-## Deployment
-
-Wired for GitHub Pages via `.github/workflows/deploy.yml`.
-
-1. push to `main`
-2. repo → **Settings → Pages → Source: "GitHub Actions"**
-3. (optional) repo → **Settings → Secrets and variables → Actions → `ANTHROPIC_API_KEY`** to enable the weekly arXiv crawl
-4. (optional) `SEMANTIC_SCHOLAR_API_KEY` to raise the enrich workflow's rate limit
-
-`basePath` is derived from the repo name automatically — works for both project pages (`user.github.io/repo`) and user pages (`<user>.github.io`).
-
-## Project layout
-
-```
-src/
-  app/               layout.tsx, page.tsx, globals.css
-  components/        Ledger, Toggles, YearColumn, Card, Detail, Tweaks
-  data/              papers.json (curated) + candidates.json (crawl output)
-  types/             Paper, VenueKey, TweakState, conferences, helpers
-scripts/             crawl / enrich / venues / project-meta / figures
-.github/workflows/   deploy + one workflow per pipeline script
-```
-
-## Design reference
-
-The original design handoff document lives at [`DESIGN.md`](./DESIGN.md) — full color palette, typography, spacing, animation timings, interaction states, and data-schema spec. The files `index.html`, `app.jsx`, `styles/archive.css`, `data/papers.js` at the repo root are the hand-authored React prototype that accompanied it. Kept for reference; the production implementation lives under `src/`.
+- [`DESIGN.md`](./DESIGN.md) — original design spec: colors, typography, interaction timings, the full data schema.
+- [`scripts/`](./scripts) — each pipeline stage (crawl / enrich / venues / project-meta / figures) is a single TS file, run independently.
+- [`.github/workflows/`](./.github/workflows) — one workflow per pipeline stage, plus `deploy.yml`.

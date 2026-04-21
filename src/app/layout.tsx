@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: '3D Head Archive',
   description:
     'An interactive, horizontally-scrolling archive of 3D head-avatar research papers, presented as a vintage file-index.',
+  icons: {
+    icon: [
+      { url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/favicon.svg`, type: 'image/svg+xml' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
