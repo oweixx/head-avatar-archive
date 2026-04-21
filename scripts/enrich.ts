@@ -88,27 +88,17 @@ async function fetchSemanticScholar(arxivId: string): Promise<S2Info | null> {
   };
 }
 
-async function fetchPapersWithCode(arxivId: string): Promise<string | null> {
-  const url = `https://paperswithcode.com/api/v1/papers/?arxiv_id=${arxivId}`;
-  const resp = await fetchRetry(url);
-  if (!resp || !resp.ok) return null;
-  const data = await safeJson<{ results?: Array<{ id: string }> }>(resp);
-  const first = data?.results?.[0];
-  if (!first) return null;
-
-  const repoResp = await fetchRetry(
-    `https://paperswithcode.com/api/v1/papers/${first.id}/repositories/`,
-  );
-  if (!repoResp || !repoResp.ok) return null;
-  const repoData = await safeJson<{
-    results?: Array<{ url?: string; is_official?: boolean; stars?: number }>;
-  }>(repoResp);
-  const repos = repoData?.results ?? [];
-  if (!repos.length) return null;
-  const official = repos.find((r) => r.is_official && r.url);
-  if (official?.url) return official.url;
-  repos.sort((a, b) => (b.stars ?? 0) - (a.stars ?? 0));
-  return repos[0]?.url ?? null;
+/** Extract a canonical GitHub repo URL ("https://github.com/owner/repo") from
+ *  free-text. Strips URL-like tails (queries, trailing punctuation, anchor links,
+ *  file paths — we want the root repo). */
+function extractGithubUrl(text: string | null | undefined): string | null {
+  if (!text) return null;
+  const m = text.match(/https?:\/\/github\.com\/([A-Za-z0-9_.-]+)\/([A-Za-z0-9_.-]+)/);
+  if (!m) return null;
+  const [, owner, repo] = m;
+  // trim common repo-name trailers
+  const cleanRepo = repo.replace(/[).,;:'"]+$/, '').replace(/\.git$/, '');
+  return `https://github.com/${owner}/${cleanRepo}`;
 }
 
 /** Parse the arxiv API entry for this ID and return the `arxiv:comment` field.
@@ -222,28 +212,32 @@ async function main() {
       // 3.5s interval keeps us comfortably below the rate limiter.
     }
 
-    // ── Papers with Code: code URL ────────────────────────────
+    // ── arXiv `comment` + abstract → project page & code URL ─
+    // (Papers with Code API was shut down and redirects to HF;
+    //  we extract github.com URLs directly from arXiv metadata instead.)
+    let comment: string | null = null;
+    if (needsCode || needsProject) {
+      comment = await fetchArxivComment(arxivId);
+      await sleep(600);
+    }
+
     if (needsCode) {
-      const codeUrl = await fetchPapersWithCode(arxivId);
+      const codeUrl = extractGithubUrl(comment) ?? extractGithubUrl(p.abstract);
       if (codeUrl) {
         p.codeUrl = codeUrl;
         p.code = true;
         codeUpdates++;
         console.log(`    code → ${codeUrl}`);
       }
-      await sleep(400);
     }
 
-    // ── arXiv `comment` → project page ────────────────────────
     if (needsProject) {
-      const comment = await fetchArxivComment(arxivId);
       const proj = extractProjectUrl(comment) ?? extractProjectUrl(p.abstract);
       if (proj) {
         p.project = proj;
         projectUpdates++;
         console.log(`    project → ${proj}`);
       }
-      await sleep(600);
     }
 
     // write intermediate progress every 10 updates
