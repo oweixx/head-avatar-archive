@@ -31,9 +31,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 
-# local reference repo (separate project cloned for reference only)
-avatar-atlas/
-
 # claude code harness
 .claude/
 

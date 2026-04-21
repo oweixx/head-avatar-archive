@@ -3,10 +3,7 @@ import type { ArxivCandidate } from './schema';
 
 const API = 'http://export.arxiv.org/api/query';
 
-/**
- * Query families narrowed to **3D Head Avatar** research.
- * (Adapted from avatar-atlas/scripts/arxiv.ts; body/hand/scene queries removed.)
- */
+/** Query families narrowed to **3D Head Avatar** research. */
 export const QUERY_FAMILIES: string[] = [
   // -- core head / face avatar terms --
   'ti:"head avatar" AND cat:cs.CV',
