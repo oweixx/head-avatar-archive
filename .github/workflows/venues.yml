@@ -1,0 +1,46 @@
+name: Monthly venue resolution (conference scraping)
+
+on:
+  schedule:
+    # 1st of every month 04:30 UTC (30 minutes after enrich runs).
+    - cron: '30 4 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  venues:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Resolve venues from conference paper lists
+        run: npm run venues
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/venues
+          commit-message: 'chore(data): resolve venues from conference sites'
+          title: 'Venue refresh from CVF / NeurIPS / ICLR / SIGGRAPH pages'
+          body: |
+            Automated monthly venue scrape by `.github/workflows/venues.yml`.
+
+            Scrapes accepted-paper lists from:
+            - CVPR / ICCV / ECCV (`thecvf.com/ecva.net/virtual`)
+            - NeurIPS / ICLR (`neurips.cc/iclr.cc/virtual`)
+            - SIGGRAPH / SIGGRAPH Asia (Ke-Sen Huang's mirror)
+
+            Any paper whose normalised title matches an accepted-paper title
+            gets re-tagged from `arXiv` → its real conference. Review the diff
+            in `src/data/papers.json`.
+          add-paths: src/data/papers.json
