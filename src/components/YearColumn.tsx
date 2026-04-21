@@ -13,6 +13,7 @@ type Props = {
   year: number;
   papers: Paper[];
   onHover: (p: Paper) => void;
+  onLeave: () => void;
   onClick: (p: Paper) => void;
   highlightId: string | undefined;
   pinnedId: string | undefined;
@@ -21,7 +22,7 @@ type Props = {
 };
 
 export function YearColumn({
-  year, papers, onHover, onClick, highlightId, pinnedId, anyHover, enabled,
+  year, papers, onHover, onLeave, onClick, highlightId, pinnedId, anyHover, enabled,
 }: Props) {
   const visible = useMemo(() => {
     const sorted = [...papers].sort((a, b) => {
@@ -55,6 +56,7 @@ export function YearColumn({
             paper={p}
             idx={i + 1}
             onHover={onHover}
+            onLeave={onLeave}
             onClick={onClick}
             highlight={highlightId === p.id}
             dim={anyHover && highlightId !== p.id}

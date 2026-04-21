@@ -7,18 +7,20 @@ type Props = {
   paper: Paper;
   idx: number;
   onHover: (p: Paper) => void;
+  onLeave: () => void;
   onClick: (p: Paper) => void;
   highlight: boolean;
   dim: boolean;
   pinned: boolean;
 };
 
-export function Card({ paper, idx, onHover, onClick, highlight, dim, pinned }: Props) {
+export function Card({ paper, idx, onHover, onLeave, onClick, highlight, dim, pinned }: Props) {
   const style = { ['--tone' as any]: `var(${venueVar(paper.venue)})` } as CSSProperties;
   return (
     <div
       className={`card ${highlight ? 'hl' : ''} ${dim ? 'dim' : ''} ${pinned ? 'pinned' : ''}`}
       onMouseEnter={() => onHover(paper)}
+      onMouseLeave={onLeave}
       onClick={() => onClick(paper)}
       style={style}
     >

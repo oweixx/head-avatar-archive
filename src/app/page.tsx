@@ -24,7 +24,11 @@ export default function HomePage() {
   );
   const [tweakOpen, setTweakOpen] = useState(false);
   const [tweakState, setTweakState] = useState<TweakState>(DEFAULT_TWEAKS);
-  const [detailOpen, setDetailOpen] = useState(false);
+  // `manualOpen` is only set when the user clicks the 📄 File button with
+  // nothing hovered/pinned — forces an empty panel for inspection. Otherwise
+  // the panel's visibility is derived from `hover || pinned`, so moving the
+  // cursor off a card closes it naturally.
+  const [manualOpen, setManualOpen] = useState(false);
 
   useEffect(() => {
     Object.entries(tweakState).forEach(([k, v]) => {
@@ -82,27 +86,28 @@ export default function HomePage() {
     return () => el.removeEventListener('wheel', onWheel);
   }, []);
 
-  // Hover alone is enough to reveal the panel — you don't have to click
-  // first. Click still pins the paper so you can move the cursor away
-  // without losing it.
+  // Hover = transient preview. Leaving the card clears it so the panel
+  // closes (unless something is pinned).
   const onCardHover = useCallback((p: Paper) => {
     setHover(p);
-    setDetailOpen(true);
+  }, []);
+  const onCardLeave = useCallback(() => {
+    setHover(null);
   }, []);
 
   const onCardClick = useCallback((p: Paper) => {
     setPinned((cur) => (cur?.id === p.id ? null : p));
-    setDetailOpen(true);
   }, []);
 
   const onClosePanel = useCallback(() => {
-    setDetailOpen(false);
     setHover(null);
     setPinned(null);
+    setManualOpen(false);
   }, []);
 
   const displayPaper = hover ?? pinned;
   const pinnedId = pinned?.id;
+  const detailOpen = !!displayPaper || manualOpen;
 
   return (
     <div className="app">
@@ -125,6 +130,7 @@ export default function HomePage() {
                 year={y}
                 papers={yearsMap.get(y) ?? []}
                 onHover={onCardHover}
+                onLeave={onCardLeave}
                 onClick={onCardClick}
                 highlightId={displayPaper?.id}
                 pinnedId={pinnedId}
@@ -147,8 +153,8 @@ export default function HomePage() {
       {!detailOpen && (
         <button
           className="detail-btn"
-          onClick={() => setDetailOpen(true)}
-          title={pinned ? `Show ${pinned.short}` : 'Open file panel'}
+          onClick={() => setManualOpen(true)}
+          title="Open file panel"
         >
           📄 File
         </button>
