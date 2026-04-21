@@ -9,7 +9,9 @@
     "lint": "next lint",
     "export": "next build",
     "crawl": "tsx scripts/run.ts",
-    "crawl:dry": "tsx scripts/run.ts --dry"
+    "crawl:dry": "tsx scripts/run.ts --dry",
+    "import:atlas": "tsx scripts/import-atlas.ts",
+    "import:atlas:dry": "tsx scripts/import-atlas.ts --dry"
   },
   "dependencies": {
     "next": "^14.2.35",
