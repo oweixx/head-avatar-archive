@@ -1,0 +1,46 @@
+name: Monthly project-page metadata scrape
+
+on:
+  schedule:
+    # 1st of every month 05:30 UTC (after figures at 05:00).
+    - cron: '30 5 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  project-meta:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Scrape venue + code URL from project pages
+        run: npm run project-meta
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/project-meta
+          commit-message: 'chore(data): scrape venue + code from project pages'
+          title: 'Project-page scrape: venue + code URL refresh'
+          body: |
+            Automated monthly scrape by `.github/workflows/project-meta.yml`.
+
+            For every paper with a `project` URL, fetches the page and extracts:
+            - **Venue** — plain-text like "CVPR 2026" from the header, only applied
+              to papers currently tagged `arXiv` (existing conference tags are
+              preserved).
+            - **Code URL** — the canonical `github.com/<owner>/<repo>` with
+              strict scoring: owner must match the project subdomain, or repo
+              name must overlap the paper's short name. Website templates
+              (nerfies, Academic-project-page-template) are blacklisted.
+          add-paths: src/data/papers.json
