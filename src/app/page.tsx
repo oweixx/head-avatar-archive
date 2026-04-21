@@ -13,7 +13,7 @@ const DEFAULT_TWEAKS: TweakState = {
   palette: 'pastel',
   bg: 'cream',
   font: 'sans',
-  density: 'comfortable',
+  density: 'compact',
 };
 
 export default function HomePage() {
@@ -24,6 +24,7 @@ export default function HomePage() {
   );
   const [tweakOpen, setTweakOpen] = useState(false);
   const [tweakState, setTweakState] = useState<TweakState>(DEFAULT_TWEAKS);
+  const [detailOpen, setDetailOpen] = useState(false);
 
   useEffect(() => {
     Object.entries(tweakState).forEach(([k, v]) => {
@@ -83,6 +84,7 @@ export default function HomePage() {
 
   const onCardClick = useCallback((p: Paper) => {
     setPinned((cur) => (cur?.id === p.id ? null : p));
+    setDetailOpen(true); // clicking a card always reveals the detail panel
   }, []);
 
   const displayPaper = hover ?? pinned;
@@ -119,16 +121,24 @@ export default function HomePage() {
           </div>
         </div>
         <Detail
-          paper={displayPaper}
+          paper={detailOpen ? displayPaper : null}
+          open={detailOpen}
           pinned={!!pinned && (hover?.id ?? pinned.id) === pinned.id}
           onUnpin={() => setPinned(null)}
+          onClose={() => setDetailOpen(false)}
         />
         <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>
       <div className="plinth" />
-      <div className="hint">
-        Wheel ← → · ↓ inside a year · Hover/Click · <b>⚙</b> Tweaks
-      </div>
+      {!detailOpen && (
+        <button
+          className="detail-btn"
+          onClick={() => setDetailOpen(true)}
+          title={pinned ? `Show ${pinned.short}` : 'Open file panel'}
+        >
+          📄 File
+        </button>
+      )}
       <Tweaks
         open={tweakOpen}
         onToggle={() => setTweakOpen((o) => !o)}

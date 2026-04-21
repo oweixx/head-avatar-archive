@@ -26,11 +26,14 @@ function copyBibtex(p: Paper) {
 
 type Props = {
   paper: Paper | null;
+  open: boolean;
   pinned: boolean;
   onUnpin: () => void;
+  onClose: () => void;
 };
 
-export function Detail({ paper, pinned, onUnpin }: Props) {
+export function Detail({ paper, open, pinned, onUnpin, onClose }: Props) {
+  if (!open) return null;
   // drag state
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
   const dragRef = useRef<{ startX: number; startY: number; baseX: number; baseY: number } | null>(null);
@@ -71,7 +74,21 @@ export function Detail({ paper, pinned, onUnpin }: Props) {
       <aside className="detail empty" style={baseStyle}>
         <div className="tag drag-handle" onMouseDown={onHandleDown}>
           <span>Index</span>
-          <span>Hover a file</span>
+          <span className="tag-right">
+            Hover a file
+            <button
+              type="button"
+              className="pin-close"
+              onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+              }}
+              title="Close file panel"
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </span>
         </div>
         <div className="empty-msg">
           Hover a<br />filed card<br />to inspect
@@ -99,12 +116,24 @@ export function Detail({ paper, pinned, onUnpin }: Props) {
                 e.stopPropagation();
                 onUnpin();
               }}
-              title="Unpin"
+              title="Unpin paper"
               aria-label="Unpin"
             >
-              ×
+              ⊖
             </button>
           )}
+          <button
+            type="button"
+            className="pin-close"
+            onClick={(e) => {
+              e.stopPropagation();
+              onClose();
+            }}
+            title="Close file panel"
+            aria-label="Close"
+          >
+            ×
+          </button>
         </span>
       </div>
 

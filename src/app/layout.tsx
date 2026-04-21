@@ -24,7 +24,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           rel="stylesheet"
         />
       </head>
-      <body data-bg="cream" data-font="sans" data-palette="pastel" data-density="comfortable">
+      <body data-bg="cream" data-font="sans" data-palette="pastel" data-density="compact">
         {children}
       </body>
     </html>
