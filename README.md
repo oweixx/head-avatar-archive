@@ -61,4 +61,4 @@ scripts/             crawl / enrich / venues / project-meta / figures
 
 ## Design reference
 
-The files `index.html`, `app.jsx`, `styles/archive.css`, `data/papers.js` at the repo root are the original design handoff — the hand-authored React prototype that defined colors, typography, layout, and interaction timings. Kept for reference; the production implementation lives under `src/`.
+The original design handoff document lives at [`DESIGN.md`](./DESIGN.md) — full color palette, typography, spacing, animation timings, interaction states, and data-schema spec. The files `index.html`, `app.jsx`, `styles/archive.css`, `data/papers.js` at the repo root are the hand-authored React prototype that accompanied it. Kept for reference; the production implementation lives under `src/`.
