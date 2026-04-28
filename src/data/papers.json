@@ -1665,6 +1665,34 @@
     "figureUrl": "https://headgap.github.io/static/images/teaser.jpg"
   },
   {
+    "id": "gphm-2024",
+    "title": "3D Gaussian Parametric Head Model",
+    "short": "GPHM",
+    "authors": [
+      "Xu",
+      "Wang",
+      "Zheng",
+      "Su",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 7,
+    "venue": "ECCV",
+    "venueYear": 2024,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2407.15070",
+    "project": "https://yuelangx.github.io/gphm/",
+    "figure": "Parametric 3DGS head model with decoupled identity and expression controls.",
+    "abstract": "Builds a Gaussian-based parametric head model that captures detailed hair, accessories, identity, and expression variation, enabling real-time high-quality rendering and single-image reconstruction.",
+    "codeUrl": "https://github.com/YuelangX/GPHM"
+  },
+  {
     "id": "gghead-2024",
     "title": "GGHead: Fast and Generalizable 3D Gaussian Heads",
     "short": "GGHead",
@@ -2134,6 +2162,35 @@
     "codeUrl": "https://github.com/SimonGiebenhain/MonoNPHM"
   },
   {
+    "id": "voodoo3d-2024",
+    "title": "VOODOO 3D: Volumetric Portrait Disentanglement for One-Shot 3D Head Reenactment",
+    "short": "VOODOO 3D",
+    "authors": [
+      "Tran",
+      "Zakharov",
+      "Ho",
+      "Tran",
+      "Hu",
+      "Li"
+    ],
+    "year": 2023,
+    "month": 12,
+    "venue": "CVPR",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2312.04651",
+    "project": "https://p0lyfish.github.io/voodoo3d/",
+    "figure": "One-shot 3D-aware head reenactment via volumetric appearance/expression disentanglement.",
+    "abstract": "Lifts source and driver portraits into tri-plane radiance fields, disentangles source appearance from driver expression, and renders high-fidelity view-consistent reenactments for arbitrary views.",
+    "codeUrl": "https://github.com/MBZUAI-Metaverse/VOODOO3D-official"
+  },
+  {
     "id": "diffusionavatars-2024",
     "title": "DiffusionAvatars: Deferred Diffusion for High-fidelity 3D Head Avatars",
     "short": "DiffusionAvatars",
@@ -2473,6 +2530,34 @@
     "project": "",
     "figure": "Linear-blended neural voxel grids for fast, controllable head avatars.",
     "abstract": "Decomposes a head avatar into motion-aware neural voxels: a canonical appearance grid plus motion grids that are linearly combined by expression coefficients."
+  },
+  {
+    "id": "megaportraits-2022",
+    "title": "MegaPortraits: One-shot Megapixel Neural Head Avatars",
+    "short": "MegaPortraits",
+    "authors": [
+      "Drobyshev",
+      "Chelishev",
+      "Khakhulin",
+      "Ivakhnenko",
+      "Lempitsky",
+      "Zakharov"
+    ],
+    "year": 2022,
+    "month": 7,
+    "venue": "ACM MM",
+    "venueYear": 2022,
+    "tags": [
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2207.07621",
+    "project": "https://neeek2303.github.io/MegaPortraits/",
+    "figure": "One-shot neural head avatars at megapixel resolution with stronger cross-driving quality.",
+    "abstract": "Combines medium-resolution video data with high-resolution still images to train one-shot neural head avatars that preserve high-resolution identity appearance under novel driving motion."
   },
   {
     "id": "neural-strands-2022",
