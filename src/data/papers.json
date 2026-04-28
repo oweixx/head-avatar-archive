@@ -1665,6 +1665,34 @@
     "codeUrl": "https://github.com/tobias-kirschstein/gghead"
   },
   {
+    "id": "npga-2024",
+    "title": "NPGA: Neural Parametric Gaussian Avatars",
+    "short": "NPGA",
+    "authors": [
+      "Giebenhain",
+      "Kirschstein",
+      "Rünz",
+      "Agapito",
+      "Nießner"
+    ],
+    "year": 2024,
+    "month": 5,
+    "venue": "SIGGRAPH Asia",
+    "venueYear": 2024,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Multiview"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2405.19331",
+    "project": "https://simongiebenhain.github.io/NPGA/",
+    "figure": "NPHM-conditioned 3DGS avatars with per-Gaussian latent features for fine-grained expression dynamics.",
+    "abstract": "Creates high-fidelity controllable avatars from multi-view video by distilling NPHM deformations into rasterization-friendly forward warps and learning expression-dependent Gaussian dynamics.",
+    "figureUrl": "https://simongiebenhain.github.io/NPGA/static/teaser/teaser_npga.jpg"
+  },
+  {
     "id": "gene-avatar-2024",
     "title": "GeneAvatar: Generic Expression-Aware Volumetric Head Avatar Editing from a Single Image",
     "short": "GeneAvatar",
