@@ -141,64 +141,59 @@ html, body {
   overflow: hidden;
 }
 
-/* ---------- glitchy graph-paper backdrop ----------
-   ::before lays down the static layers (grid + scan lines + grain).
-   ::after  is the animated horizontal data-smear that briefly jitters every
-            ~9s, giving the page that "transmission glitch" feel without ever
-            stepping on top of the content. */
+/* ---------- glass-glitch + pixel-art backdrop ----------
+   Three stacked layers behind .app:
+     ::before — frosted-glass noise (SVG fractalNoise) + a 10px pixel grid
+                + a coarser 40px mosaic grid. Static.
+     ::after  — uneven horizontal data-smear bands; idles, then jitters for
+                a few step-frames every ~11s.
+     html background — already provides the venue-tinted page color.
+   All layers sit at z-index 1, behind .app (z-index 2), pointer-events:none. */
 body::before {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 1;
   background-image:
-    /* horizontal scan lines (the most visible layer) */
-    repeating-linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.05) 0 1px,
-      transparent 1px 3px
-    ),
-    /* vertical grid */
-    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    /* horizontal grid */
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
-    /* fine grain */
-    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    /* frosted-glass noise — fractalNoise turbulence baked into a tileable SVG */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>"),
+    /* fine pixel grid (10px cells) */
+    linear-gradient(to right,  rgba(0,0,0,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.07) 1px, transparent 1px),
+    /* coarser mosaic grid (40px cells) — heavier rule */
+    linear-gradient(to right,  rgba(0,0,0,0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.10) 1px, transparent 1px);
   background-size:
-    100% 4px,
+    240px 240px,
+    10px 10px,
+    10px 10px,
     40px 40px,
-    40px 40px,
-    3px 3px,
-    5px 5px;
-  background-position:
-    0 0,
-    0 0,
-    0 0,
-    0 0,
-    1px 2px;
+    40px 40px;
   mix-blend-mode: multiply;
-  opacity: 0.7;
+  opacity: 0.65;
 }
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 1;
-  /* uneven horizontal slabs — looks like banded compression artifacts */
-  background:
+  background-image:
+    /* uneven horizontal data-smear bands */
     repeating-linear-gradient(
       to bottom,
       transparent 0 11px,
-      rgba(0, 0, 0, 0.04) 11px 12px,
+      rgba(0,0,0,0.05) 11px 12px,
       transparent 12px 27px,
-      rgba(255, 255, 255, 0.06) 27px 28px,
+      rgba(255,255,255,0.07) 27px 28px,
       transparent 28px 50px,
-      rgba(0, 0, 0, 0.05) 50px 51px,
+      rgba(0,0,0,0.04) 50px 51px,
       transparent 51px 80px
-    );
+    ),
+    /* faint chromatic blobs — give the noise a slightly RGB-split feel */
+    radial-gradient(circle at 22% 38%, rgba(0,170,220,0.05), transparent 45%),
+    radial-gradient(circle at 78% 62%, rgba(220,40,80,0.04), transparent 45%);
   mix-blend-mode: overlay;
-  animation: bg-glitch 9s steps(1) infinite;
+  animation: bg-glitch 11s steps(1) infinite;
 }
 @keyframes bg-glitch {
   /* idle for most of the cycle, then a 4-frame jitter near the end */
@@ -211,7 +206,7 @@ body::after {
 @media (prefers-reduced-motion: reduce) {
   body::after { animation: none; }
 }
-body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.3; }
+body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.4; }
 body[data-bg="dark"]::after  { opacity: 0.5; }
 
 .app {
