@@ -36,14 +36,23 @@ export default function HomePage() {
     });
   }, [tweakState]);
 
+  // Bucket by conference year when the paper has been accepted somewhere
+  // (so a CVPR'26 preprint posted in Nov 2025 sits in the 2026 column),
+  // and fall back to the arXiv-post year for venue==arXiv preprints.
+  const bucketYear = useCallback(
+    (p: Paper) => (p.venue === 'arXiv' ? p.year : p.venueYear),
+    [],
+  );
+
   const yearsMap = useMemo(() => {
     const m = new Map<number, Paper[]>();
     PAPERS.forEach((p) => {
-      if (!m.has(p.year)) m.set(p.year, []);
-      m.get(p.year)!.push(p);
+      const y = bucketYear(p);
+      if (!m.has(y)) m.set(y, []);
+      m.get(y)!.push(p);
     });
     return m;
-  }, []);
+  }, [bucketYear]);
 
   const years = useMemo(
     () => [...yearsMap.keys()].sort((a, b) => a - b),
