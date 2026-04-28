@@ -141,73 +141,76 @@ html, body {
   overflow: hidden;
 }
 
-/* ---------- glass-glitch + pixel-art backdrop ----------
-   Three stacked layers behind .app:
-     ::before — frosted-glass noise (SVG fractalNoise) + a 10px pixel grid
-                + a coarser 40px mosaic grid. Static.
-     ::after  — uneven horizontal data-smear bands; idles, then jitters for
-                a few step-frames every ~11s.
-     html background — already provides the venue-tinted page color.
-   All layers sit at z-index 1, behind .app (z-index 2), pointer-events:none. */
-body::before {
-  content: '';
-  position: fixed; inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  background-image:
-    /* frosted-glass noise — fractalNoise turbulence baked into a tileable SVG */
-    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='4' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>"),
-    /* fine pixel grid (10px cells) */
-    linear-gradient(to right,  rgba(0,0,0,0.07) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.07) 1px, transparent 1px),
-    /* coarser mosaic grid (40px cells) — heavier rule */
-    linear-gradient(to right,  rgba(0,0,0,0.10) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0,0,0,0.10) 1px, transparent 1px);
-  background-size:
-    240px 240px,
-    10px 10px,
-    10px 10px,
-    40px 40px,
-    40px 40px;
-  mix-blend-mode: multiply;
-  opacity: 0.65;
-}
+/* ---------- interactive pixel-mosaic backdrop ----------
+   Two stacked layers behind .app, both sharing the same pixel-block pattern
+   (chunky frosted-glass noise quantised into discrete tonal steps + visible
+   32px / 96px grids):
+     ::before — always-on, low contrast (faint mosaic everywhere).
+     ::after  — full contrast, masked to a soft circle around the cursor
+                via radial-gradient that reads --mx/--my from the body. As
+                the cursor moves, the mosaic "lights up" around it.
+   Both layers sit at z-index 1, behind .app (z-index 2), pointer-events:none. */
+
+body { --mx: -9999px; --my: -9999px; }
+
+body::before,
 body::after {
   content: '';
   position: fixed; inset: 0;
   pointer-events: none;
   z-index: 1;
   background-image:
-    /* uneven horizontal data-smear bands */
-    repeating-linear-gradient(
-      to bottom,
-      transparent 0 11px,
-      rgba(0,0,0,0.05) 11px 12px,
-      transparent 12px 27px,
-      rgba(255,255,255,0.07) 27px 28px,
-      transparent 28px 50px,
-      rgba(0,0,0,0.04) 50px 51px,
-      transparent 51px 80px
-    ),
-    /* faint chromatic blobs — give the noise a slightly RGB-split feel */
-    radial-gradient(circle at 22% 38%, rgba(0,170,220,0.05), transparent 45%),
-    radial-gradient(circle at 78% 62%, rgba(220,40,80,0.04), transparent 45%);
-  mix-blend-mode: overlay;
-  animation: bg-glitch 11s steps(1) infinite;
+    /* chunky pixel mosaic — fractalNoise turbulence quantised into 8
+       discrete alpha levels via feComponentTransfer.discrete, so the noise
+       reads as blocks of varying gray instead of smooth gradient. */
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320'><filter id='p'><feTurbulence type='fractalNoise' baseFrequency='0.06' numOctaves='1' seed='5' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  1 0 0 0 0'/><feComponentTransfer><feFuncA type='discrete' tableValues='0 0 0.06 0.12 0.18 0.24 0.3 0.36'/></feComponentTransfer></filter><rect width='100%25' height='100%25' filter='url(%23p)'/></svg>"),
+    /* 32px pixel-block grid */
+    linear-gradient(to right,  rgba(0,0,0,0.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.10) 1px, transparent 1px),
+    /* coarser 96px mosaic grid for visual structure */
+    linear-gradient(to right,  rgba(0,0,0,0.14) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,0,0,0.14) 1px, transparent 1px);
+  background-size:
+    320px 320px,
+    32px 32px,
+    32px 32px,
+    96px 96px,
+    96px 96px;
+  mix-blend-mode: multiply;
 }
-@keyframes bg-glitch {
-  /* idle for most of the cycle, then a 4-frame jitter near the end */
-  0%, 90%, 100% { transform: translate(0, 0); }
-  91%           { transform: translate(2px, 1px); }
-  93%           { transform: translate(-3px, 0); }
-  95%           { transform: translate(1px, -2px); }
-  97%           { transform: translate(0, 1px); }
+
+/* Always-visible base layer — kept faint so most of the page still reads
+   as paper. The eye picks up the structure, not the texture. */
+body::before {
+  opacity: 0.30;
 }
-@media (prefers-reduced-motion: reduce) {
-  body::after { animation: none; }
+
+/* Cursor-reveal layer — masked to a soft circle around (--mx, --my). The
+   mask black region (full opacity) shows the layer; transparent hides it.
+   Default --mx/--my are off-screen so nothing is revealed before the user
+   moves the mouse into the page. */
+body::after {
+  opacity: 0.95;
+  -webkit-mask:
+    radial-gradient(
+      circle 240px at var(--mx) var(--my),
+      rgba(0,0,0,1)   0%,
+      rgba(0,0,0,0.7) 40%,
+      rgba(0,0,0,0)   100%
+    );
+  mask:
+    radial-gradient(
+      circle 240px at var(--mx) var(--my),
+      rgba(0,0,0,1)   0%,
+      rgba(0,0,0,0.7) 40%,
+      rgba(0,0,0,0)   100%
+    );
 }
-body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.4; }
-body[data-bg="dark"]::after  { opacity: 0.5; }
+
+body[data-bg="dark"]::before,
+body[data-bg="dark"]::after { mix-blend-mode: screen; }
+body[data-bg="dark"]::before { opacity: 0.18; }
+body[data-bg="dark"]::after  { opacity: 0.55; }
 
 .app {
   position: relative;

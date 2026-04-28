@@ -36,6 +36,33 @@ export default function HomePage() {
     });
   }, [tweakState]);
 
+  // Track pointer position into CSS variables on the body, so the backdrop's
+  // ::after mask (radial gradient centred at --mx/--my) follows the cursor
+  // and "lights up" that area of the pixel mosaic. requestAnimationFrame-
+  // throttled so we set the var at most once per frame.
+  useEffect(() => {
+    let raf = 0;
+    const onMove = (e: PointerEvent) => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        document.body.style.setProperty('--mx', `${e.clientX}px`);
+        document.body.style.setProperty('--my', `${e.clientY}px`);
+      });
+    };
+    const onLeave = () => {
+      document.body.style.setProperty('--mx', '-9999px');
+      document.body.style.setProperty('--my', '-9999px');
+    };
+    window.addEventListener('pointermove', onMove);
+    window.addEventListener('pointerleave', onLeave);
+    return () => {
+      window.removeEventListener('pointermove', onMove);
+      window.removeEventListener('pointerleave', onLeave);
+      cancelAnimationFrame(raf);
+    };
+  }, []);
+
   // Bucket by conference year when the paper has been accepted somewhere
   // (so a CVPR'26 preprint posted in Nov 2025 sits in the 2026 column),
   // and fall back to the arXiv-post year for venue==arXiv preprints.
