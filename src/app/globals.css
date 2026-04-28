@@ -157,6 +157,40 @@ body::before {
 }
 body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.25; }
 
+/* ---------- interactive pixel-mosaic backdrop ----------
+   Canvas fills the viewport behind .app (z-index 0 vs 2). It's pointer-
+   events: none so it never intercepts clicks; multiply-blended so the
+   colored cells modulate the page bg without obscuring card text. */
+.bg-mosaic {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+  mix-blend-mode: multiply;
+}
+
+/* FX cycle button — stacks above the Tweaks button on the right edge,
+   matches its visual style (paper card, ink border, mono uppercase). */
+.bg-fx-btn {
+  position: fixed;
+  right: 16px; bottom: 70px;
+  z-index: 49;
+  background: var(--paper);
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--ff-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  cursor: pointer;
+  box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+}
+.bg-fx-btn:hover { background: var(--ink); color: var(--paper); }
+
 .app {
   position: relative;
   width: 100vw; height: 100vh;
