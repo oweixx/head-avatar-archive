@@ -1665,6 +1665,34 @@
     "figureUrl": "https://headgap.github.io/static/images/teaser.jpg"
   },
   {
+    "id": "gphm-2024",
+    "title": "3D Gaussian Parametric Head Model",
+    "short": "GPHM",
+    "authors": [
+      "Xu",
+      "Wang",
+      "Zheng",
+      "Su",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 7,
+    "venue": "ECCV",
+    "venueYear": 2024,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2407.15070",
+    "project": "https://yuelangx.github.io/gphm/",
+    "figure": "Parametric 3DGS head model with decoupled identity and expression controls.",
+    "abstract": "Builds a Gaussian-based parametric head model that captures detailed hair, accessories, identity, and expression variation, enabling real-time high-quality rendering and single-image reconstruction.",
+    "codeUrl": "https://github.com/YuelangX/GPHM"
+  },
+  {
     "id": "gghead-2024",
     "title": "GGHead: Fast and Generalizable 3D Gaussian Heads",
     "short": "GGHead",
