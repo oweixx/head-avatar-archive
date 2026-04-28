@@ -141,21 +141,78 @@ html, body {
   overflow: hidden;
 }
 
+/* ---------- glitchy graph-paper backdrop ----------
+   ::before lays down the static layers (grid + scan lines + grain).
+   ::after  is the animated horizontal data-smear that briefly jitters every
+            ~9s, giving the page that "transmission glitch" feel without ever
+            stepping on top of the content. */
 body::before {
-  /* subtle grain */
   content: '';
   position: fixed; inset: 0;
   pointer-events: none;
-  background-image:
-    radial-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
-  background-size: 3px 3px, 5px 5px;
-  background-position: 0 0, 1px 2px;
-  mix-blend-mode: multiply;
-  opacity: 0.6;
   z-index: 1;
+  background-image:
+    /* horizontal scan lines (the most visible layer) */
+    repeating-linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.05) 0 1px,
+      transparent 1px 3px
+    ),
+    /* vertical grid */
+    linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    /* horizontal grid */
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    /* fine grain */
+    radial-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size:
+    100% 4px,
+    40px 40px,
+    40px 40px,
+    3px 3px,
+    5px 5px;
+  background-position:
+    0 0,
+    0 0,
+    0 0,
+    0 0,
+    1px 2px;
+  mix-blend-mode: multiply;
+  opacity: 0.7;
 }
-body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.25; }
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  /* uneven horizontal slabs — looks like banded compression artifacts */
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0 11px,
+      rgba(0, 0, 0, 0.04) 11px 12px,
+      transparent 12px 27px,
+      rgba(255, 255, 255, 0.06) 27px 28px,
+      transparent 28px 50px,
+      rgba(0, 0, 0, 0.05) 50px 51px,
+      transparent 51px 80px
+    );
+  mix-blend-mode: overlay;
+  animation: bg-glitch 9s steps(1) infinite;
+}
+@keyframes bg-glitch {
+  /* idle for most of the cycle, then a 4-frame jitter near the end */
+  0%, 90%, 100% { transform: translate(0, 0); }
+  91%           { transform: translate(2px, 1px); }
+  93%           { transform: translate(-3px, 0); }
+  95%           { transform: translate(1px, -2px); }
+  97%           { transform: translate(0, 1px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  body::after { animation: none; }
+}
+body[data-bg="dark"]::before { mix-blend-mode: screen; opacity: 0.3; }
+body[data-bg="dark"]::after  { opacity: 0.5; }
 
 .app {
   position: relative;
@@ -689,37 +746,6 @@ body[data-density="compact"] .body { grid-template-columns: 44px 1fr auto; }
   line-height: 1.8;
 }
 .detail.empty .fig, .detail.empty .content { display: none; }
-
-/* ---------- ambient cats walking along the plinth ---------- */
-.cats { pointer-events: none; }
-.cat {
-  position: fixed;
-  z-index: 8;
-  pointer-events: none;
-  user-select: none;
-  display: inline-block;
-  line-height: 1;
-  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.15));
-  /* `cat-walk` slides left-to-right (or reverse via --cat-from/to);
-     `cat-bob`  rocks up and down a couple px while preserving the cat's
-                 facing direction via scaleX(--cat-dir). Two independent
-                 properties (`left` vs `transform`) so they don't fight. */
-  animation:
-    cat-walk var(--cat-dur, 40s) linear infinite,
-    cat-bob 0.5s ease-in-out infinite;
-  animation-delay: var(--cat-delay, 0s), 0s;
-}
-@keyframes cat-walk {
-  from { left: var(--cat-from, -8%); }
-  to   { left: var(--cat-to, 110%); }
-}
-@keyframes cat-bob {
-  0%, 100% { transform: scaleX(var(--cat-dir, 1)) translateY(0); }
-  50%      { transform: scaleX(var(--cat-dir, 1)) translateY(-2px); }
-}
-@media (prefers-reduced-motion: reduce) {
-  .cat { animation: none; left: 50%; }
-}
 
 /* ---------- bottom plinth (like the index base) ---------- */
 .plinth {
