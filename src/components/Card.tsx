@@ -33,9 +33,11 @@ export function Card({
   ]
     .filter(Boolean)
     .join(' ');
+  const lineageGlyph = linkBuilds ? '↑' : linkCited ? '↓' : null;
   return (
     <div
       className={cls}
+      data-paper-id={paper.id}
       onMouseEnter={() => onHover(paper)}
       onMouseLeave={onLeave}
       onClick={() => onClick(paper)}
@@ -46,7 +48,22 @@ export function Card({
         <div className="vy">&apos;{String(paper.venueYear).slice(-2)}</div>
       </div>
       <div className="body">
-        <div className="idx">{String(idx).padStart(3, '0')}</div>
+        <div className="idx">
+          {lineageGlyph ? (
+            <span
+              className="lineage-arrow"
+              title={
+                linkBuilds
+                  ? 'Cited by the active paper (ancestor)'
+                  : 'Cites the active paper (descendant)'
+              }
+            >
+              {lineageGlyph}
+            </span>
+          ) : (
+            String(idx).padStart(3, '0')
+          )}
+        </div>
         <div className="title">
           <span className="short">{paper.short}</span>
           {paper.title}

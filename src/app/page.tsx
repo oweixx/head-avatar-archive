@@ -10,7 +10,7 @@ import { Detail } from '@/components/Detail';
 import { Tweaks } from '@/components/Tweaks';
 
 const DEFAULT_TWEAKS: TweakState = {
-  palette: 'pastel',
+  palette: 'vivid',
   bg: 'cream',
   font: 'sans',
   density: 'compact',
@@ -53,6 +53,11 @@ export default function HomePage() {
     });
     return m;
   }, [bucketYear]);
+
+  const papersById = useMemo(
+    () => new Map(PAPERS.map((p) => [p.id, p])),
+    [],
+  );
 
   const years = useMemo(
     () => [...yearsMap.keys()].sort((a, b) => a - b),
@@ -114,6 +119,25 @@ export default function HomePage() {
     setManualOpen(false);
   }, []);
 
+  // Jump from a lineage chip in the Detail panel to the actual card on the
+  // timeline: pin it, then horizontally scroll the card into view.
+  const onJumpTo = useCallback(
+    (id: string) => {
+      const target = papersById.get(id);
+      if (!target) return;
+      setHover(null);
+      setPinned(target);
+      setManualOpen(true);
+      requestAnimationFrame(() => {
+        const el = scrollerRef.current?.querySelector(
+          `[data-paper-id="${id}"]`,
+        ) as HTMLElement | null;
+        el?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    },
+    [papersById],
+  );
+
   const displayPaper = hover ?? pinned;
   const pinnedId = pinned?.id;
   const detailOpen = !!displayPaper || manualOpen;
@@ -168,6 +192,8 @@ export default function HomePage() {
           pinned={!!pinned && (hover?.id ?? pinned.id) === pinned.id}
           onUnpin={() => setPinned(null)}
           onClose={onClosePanel}
+          papersById={papersById}
+          onJumpTo={onJumpTo}
         />
         <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>
