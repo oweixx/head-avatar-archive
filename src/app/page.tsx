@@ -8,6 +8,7 @@ import { Toggles } from '@/components/Toggles';
 import { YearColumn } from '@/components/YearColumn';
 import { Detail } from '@/components/Detail';
 import { Tweaks } from '@/components/Tweaks';
+import { Cats } from '@/components/Cats';
 
 const DEFAULT_TWEAKS: TweakState = {
   palette: 'vivid',
@@ -197,6 +198,7 @@ export default function HomePage() {
         />
         <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>
+      <Cats />
       <div className="plinth" />
       {!detailOpen && (
         <button

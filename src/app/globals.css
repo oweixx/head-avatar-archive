@@ -690,6 +690,37 @@ body[data-density="compact"] .body { grid-template-columns: 44px 1fr auto; }
 }
 .detail.empty .fig, .detail.empty .content { display: none; }
 
+/* ---------- ambient cats walking along the plinth ---------- */
+.cats { pointer-events: none; }
+.cat {
+  position: fixed;
+  z-index: 8;
+  pointer-events: none;
+  user-select: none;
+  display: inline-block;
+  line-height: 1;
+  filter: drop-shadow(0 1px 0 rgba(0,0,0,0.15));
+  /* `cat-walk` slides left-to-right (or reverse via --cat-from/to);
+     `cat-bob`  rocks up and down a couple px while preserving the cat's
+                 facing direction via scaleX(--cat-dir). Two independent
+                 properties (`left` vs `transform`) so they don't fight. */
+  animation:
+    cat-walk var(--cat-dur, 40s) linear infinite,
+    cat-bob 0.5s ease-in-out infinite;
+  animation-delay: var(--cat-delay, 0s), 0s;
+}
+@keyframes cat-walk {
+  from { left: var(--cat-from, -8%); }
+  to   { left: var(--cat-to, 110%); }
+}
+@keyframes cat-bob {
+  0%, 100% { transform: scaleX(var(--cat-dir, 1)) translateY(0); }
+  50%      { transform: scaleX(var(--cat-dir, 1)) translateY(-2px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cat { animation: none; left: 50%; }
+}
+
 /* ---------- bottom plinth (like the index base) ---------- */
 .plinth {
   height: 22px;
