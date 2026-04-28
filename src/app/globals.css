@@ -617,6 +617,8 @@ body[data-density="compact"] .body { grid-template-columns: 44px 1fr auto; }
 }
 .detail .facts dt { color: var(--ink-soft); letter-spacing: 0.08em; text-transform: uppercase; font-size: 9.5px; }
 .detail .facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+.detail .lineage-builds { color: #b07020; font-weight: 600; }
+.detail .lineage-cited  { color: #1f7a8c; font-weight: 600; }
 .detail .abs {
   font-family: var(--ff-body);
   font-size: 12px;
@@ -819,6 +821,30 @@ body[data-density="compact"] .body { grid-template-columns: 44px 1fr auto; }
   outline: 1.5px solid var(--tone);
   outline-offset: -1px;
 }
+
+/* ---------- citation lineage (visible while hovering) ----------
+   `link-builds` = an ancestor of the active card (warm rule on left).
+   `link-cited`  = a descendant of the active card (cool rule on left). */
+.card.link-builds .body,
+.card.link-cited  .body {
+  position: relative;
+}
+.card.link-builds .body::before,
+.card.link-cited  .body::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 3px;
+  pointer-events: none;
+}
+.card.link-builds .body::before { background: #d4842a; }
+.card.link-cited  .body::before { background: #2a8aa6; }
+.card.link-builds .body { box-shadow: inset 0 0 0 1px rgba(212,132,42,0.55), inset 0 -1px 0 rgba(0,0,0,0.06); }
+.card.link-cited  .body { box-shadow: inset 0 0 0 1px rgba(42,138,166,0.55), inset 0 -1px 0 rgba(0,0,0,0.06); }
+/* keep linked cards readable even while .anyHover dim is in effect (it's not
+   set on them anyway, but make it explicit so future logic doesn't dim them). */
+.card.link-builds.dim,
+.card.link-cited.dim { opacity: 1; filter: none; }
 
 /* ---------- empty year column placeholder ---------- */
 .year .stack .empty-col {

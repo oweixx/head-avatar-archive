@@ -19,10 +19,13 @@ type Props = {
   pinnedId: string | undefined;
   anyHover: boolean;
   enabled: Record<VenueKey, boolean>;
+  linkedBuilds: Set<string>;
+  linkedCited: Set<string>;
 };
 
 export function YearColumn({
   year, papers, onHover, onLeave, onClick, highlightId, pinnedId, anyHover, enabled,
+  linkedBuilds, linkedCited,
 }: Props) {
   const visible = useMemo(() => {
     const sorted = [...papers].sort((a, b) => {
@@ -59,8 +62,15 @@ export function YearColumn({
             onLeave={onLeave}
             onClick={onClick}
             highlight={highlightId === p.id}
-            dim={anyHover && highlightId !== p.id}
+            dim={
+              anyHover &&
+              highlightId !== p.id &&
+              !linkedBuilds.has(p.id) &&
+              !linkedCited.has(p.id)
+            }
             pinned={pinnedId === p.id}
+            linkBuilds={linkedBuilds.has(p.id)}
+            linkCited={linkedCited.has(p.id)}
           />
         ))}
         {!visible.length && <div className="empty-col">— no papers in view —</div>}

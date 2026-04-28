@@ -12,13 +12,30 @@ type Props = {
   highlight: boolean;
   dim: boolean;
   pinned: boolean;
+  /** This card's paper is in the active card's `builds_on` (an ancestor). */
+  linkBuilds: boolean;
+  /** This card's paper is in the active card's `cited_by` (a descendant). */
+  linkCited: boolean;
 };
 
-export function Card({ paper, idx, onHover, onLeave, onClick, highlight, dim, pinned }: Props) {
+export function Card({
+  paper, idx, onHover, onLeave, onClick,
+  highlight, dim, pinned, linkBuilds, linkCited,
+}: Props) {
   const style = { ['--tone' as any]: `var(${venueVar(paper.venue)})` } as CSSProperties;
+  const cls = [
+    'card',
+    highlight && 'hl',
+    dim && 'dim',
+    pinned && 'pinned',
+    linkBuilds && 'link-builds',
+    linkCited && 'link-cited',
+  ]
+    .filter(Boolean)
+    .join(' ');
   return (
     <div
-      className={`card ${highlight ? 'hl' : ''} ${dim ? 'dim' : ''} ${pinned ? 'pinned' : ''}`}
+      className={cls}
       onMouseEnter={() => onHover(paper)}
       onMouseLeave={onLeave}
       onClick={() => onClick(paper)}

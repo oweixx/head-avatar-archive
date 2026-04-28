@@ -118,6 +118,17 @@ export default function HomePage() {
   const pinnedId = pinned?.id;
   const detailOpen = !!displayPaper || manualOpen;
 
+  // Citation-graph highlights: when a card is active, light up its
+  // archive-internal references / citations so the lineage is visible.
+  const linkedBuilds = useMemo(
+    () => new Set(displayPaper?.builds_on ?? []),
+    [displayPaper],
+  );
+  const linkedCited = useMemo(
+    () => new Set(displayPaper?.cited_by ?? []),
+    [displayPaper],
+  );
+
   return (
     <div className="app">
       <div>
@@ -145,6 +156,8 @@ export default function HomePage() {
                 pinnedId={pinnedId}
                 anyHover={!!displayPaper}
                 enabled={enabled}
+                linkedBuilds={linkedBuilds}
+                linkedCited={linkedCited}
               />
             ))}
           </div>

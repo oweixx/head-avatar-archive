@@ -163,6 +163,20 @@ export function Detail({ paper, open, pinned, onUnpin, onClose }: Props) {
           <dd>
             {MONTHS[paper.month]} {paper.year}
           </dd>
+          {(paper.builds_on?.length || paper.cited_by?.length) ? (
+            <>
+              <dt>Lineage</dt>
+              <dd>
+                {paper.builds_on?.length ? (
+                  <span className="lineage-builds">↑ {paper.builds_on.length}</span>
+                ) : null}
+                {paper.builds_on?.length && paper.cited_by?.length ? '  ·  ' : null}
+                {paper.cited_by?.length ? (
+                  <span className="lineage-cited">↓ {paper.cited_by.length}</span>
+                ) : null}
+              </dd>
+            </>
+          ) : null}
         </dl>
         <div className="abs">{paper.abstract}</div>
         <div className="tags">

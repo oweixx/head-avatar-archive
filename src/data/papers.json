@@ -27,7 +27,24 @@
     "figure": "Autoregressive Transformer over Gaussian points — adaptive density, integrated animation binding.",
     "abstract": "Decoder-only transformer autoregressively emits a point cloud + per-point binding information, decoded into animatable 4D 3DGS — point density adapts to subject complexity.",
     "figureUrl": "https://kumapowerliu.github.io/AvatarPointillist/teaser/teaser_page-0001.jpg",
-    "codeUrl": "https://github.com/KumapowerLIU/AvatarPointillist"
+    "codeUrl": "https://github.com/KumapowerLIU/AvatarPointillist",
+    "builds_on": [
+      "avat3r-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "one-shot-compositional-hair-2026",
@@ -56,7 +73,21 @@
     "project": "https://yuansun-xjtu.github.io/CompHairHead.io",
     "figure": "Compositional hair/face one-shot head avatar with physics-based hair dynamics.",
     "abstract": "Decouples hair from face: bald 3DGS rigged to FLAME for expressions, hair Gaussians driven by Position-Based Dynamics under head motion and gravity.",
-    "codeUrl": "https://github.com/YuanSun-XJTU/CompHairHead"
+    "codeUrl": "https://github.com/YuanSun-XJTU/CompHairHead",
+    "builds_on": [
+      "uika-2026",
+      "agora-2025",
+      "mvp4d-2025",
+      "avat3r-2025",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "haar-2024",
+      "voodoo3d-2024",
+      "gaussian-avatars-2024",
+      "pixel-codec-2021",
+      "nerface-2021"
+    ]
   },
   {
     "id": "partnerface-2026",
@@ -85,7 +116,12 @@
     "arxiv": "https://arxiv.org/abs/2604.13918",
     "project": "",
     "figure": "Part-aware local MLPs inside a NeRF facial avatar for better unseen-expression generalization.",
-    "abstract": "Part-based NeRF with multiple local MLPs softly partitioning canonical face space, enabling fine-grained part-specific deformation modeling."
+    "abstract": "Part-based NeRF with multiple local MLPs softly partitioning canonical face space, enabling fine-grained part-specific deformation modeling.",
+    "builds_on": [
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "autoregressive-appearance-2026",
@@ -114,7 +150,11 @@
     "project": "https://steimich96.github.io/AAP-3DGA/",
     "figure": "Autoregressive appearance latent resolves pose-appearance ambiguity and instability in data-driven avatars.",
     "abstract": "3DGS avatar with a learned pose+appearance latent, where the latent is predicted autoregressively at driving time for temporally smooth novel-pose appearance.",
-    "figureUrl": "https://steimich96.github.io/AAP-3DGA/images/teaser.png"
+    "figureUrl": "https://steimich96.github.io/AAP-3DGA/images/teaser.png",
+    "builds_on": [
+      "d3ga-2023",
+      "pixel-codec-2021"
+    ]
   },
   {
     "id": "fhavatar-2026",
@@ -143,7 +183,24 @@
     "arxiv": "https://arxiv.org/abs/2603.23345",
     "project": "",
     "figure": "Composable face (planar GS) + hair (strand GS) head avatar from few-shot input.",
-    "abstract": "Decouples face (planar Gaussians in texture space) and hair (strand-based Gaussians), reconstructing a composable head avatar from a few casual captures via an aggregated transformer."
+    "abstract": "Decouples face (planar Gaussians in texture space) and hair (strand-based Gaussians), reconstructing a composable head avatar from a few casual captures via an aggregated transformer.",
+    "builds_on": [
+      "avat3r-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gghead-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-head-avatar-2024",
+      "flash-avatar-2024",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "insta-2023",
+      "neural-strands-2022",
+      "rignerf-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "omg-avatar-2026",
@@ -168,7 +225,22 @@
     "arxiv": "https://arxiv.org/abs/2603.01506",
     "project": "",
     "figure": "Multi-LOD one-shot 3DGS head — 0.2s inference, adaptable to device budget.",
-    "abstract": "Single-image animatable head in 0.2s with a multi-LOD Gaussian representation — one model serves different hardware / latency budgets via level-of-detail switching."
+    "abstract": "Single-image animatable head in 0.2s with a multi-LOD Gaussian representation — one model serves different hardware / latency budgets via level-of-detail switching.",
+    "builds_on": [
+      "avat3r-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "flash-avatar-2024",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "emotag-2026",
@@ -197,7 +269,12 @@
     "figure": "Few-shot 3DGS talking head with FLAME-space motion prediction and audio→emotion gating.",
     "abstract": "Pretrain-and-adapt 3DGS talking-head framework that reformulates motion in FLAME parameter space and introduces a gated residual motion network for expressive, emotion-aware audio-driven synthesis.",
     "figureUrl": "https://emotag26.github.io/static/images/teaser.png",
-    "codeUrl": "https://github.com/jamesdemon923/EmoTaG"
+    "codeUrl": "https://github.com/jamesdemon923/EmoTaG",
+    "builds_on": [
+      "talking-gaussian-2024",
+      "insta-2023",
+      "nerface-2021"
+    ]
   },
   {
     "id": "liftavatar-2026",
@@ -223,7 +300,16 @@
     "arxiv": "https://arxiv.org/abs/2603.02129",
     "project": "",
     "figure": "Plug-and-play kinematic-space completion that expands sparse cues into pose/expression diversity for stronger 3DGS avatar animation.",
-    "abstract": "Video-diffusion Transformer that lifts sparse monocular expression cues into rich pose+expression sequences used to drive downstream 3DGS head avatars under extreme expressions."
+    "abstract": "Video-diffusion Transformer that lifts sparse monocular expression cues into rich pose+expression sequences used to drive downstream 3DGS head avatars under extreme expressions.",
+    "builds_on": [
+      "avat3r-2025",
+      "gene-avatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "diffusionavatars-2024",
+      "rignerf-2022",
+      "pixel-codec-2021"
+    ]
   },
   {
     "id": "fg-portrait-2026",
@@ -250,7 +336,10 @@
     "arxiv": "https://arxiv.org/abs/2603.23381",
     "project": "",
     "figure": "3D-flow encoding that injects parametric-head motion priors into portrait video diffusion.",
-    "abstract": "Introduces 3D flow priors from parametric head models into a portrait-animation diffusion model, with depth-guided sampling to align 2D↔3D motion."
+    "abstract": "Introduces 3D flow priors from parametric head models into a portrait-animation diffusion model, with depth-guided sampling to align 2D↔3D motion.",
+    "builds_on": [
+      "megaportraits-2022"
+    ]
   },
   {
     "id": "embedtalk-2026",
@@ -276,7 +365,10 @@
     "arxiv": "https://arxiv.org/abs/2603.07604",
     "project": "",
     "figure": "Triplane-free embedding-driven 3DGS talking head that is compact and mobile-ready.",
-    "abstract": "Replaces triplane encoding with learnt embeddings driving deformable 3DGS, reaching 60 FPS on mobile GPUs while improving lip-sync and motion consistency."
+    "abstract": "Replaces triplane encoding with learnt embeddings driving deformable 3DGS, reaching 60 FPS on mobile GPUs while improving lip-sync and motion consistency.",
+    "builds_on": [
+      "talking-gaussian-2024"
+    ]
   },
   {
     "id": "promptavatar-2026",
@@ -303,7 +395,11 @@
     "arxiv": "https://arxiv.org/abs/2603.04307",
     "project": "",
     "figure": "Direct multi-modal prompt→3D mapping avoids iterative SDS and produces high-fidelity 3D faces fast.",
-    "abstract": "Dual-diffusion (texture + geometry) framework with a 100k-pair text/image/texture/geometry dataset, generating 3D face avatars in under 10 seconds without SDS."
+    "abstract": "Dual-diffusion (texture + geometry) framework with a 100k-pair text/image/texture/geometry dataset, generating 3D face avatars in under 10 seconds without SDS.",
+    "builds_on": [
+      "dreamface-2023",
+      "dam-2018"
+    ]
   },
   {
     "id": "omega-avatar-2026",
@@ -332,7 +428,13 @@
     "project": "https://omega-avatar.github.io/OMEGA-Avatar/",
     "figure": "One-shot, 360° complete, animatable 3DGS head avatar in a single forward pass.",
     "abstract": "First feed-forward method that simultaneously satisfies three desiderata — generalizable, 360°-complete, and animatable — for single-image head avatars, via a semantic-aware mesh deformation module.",
-    "figureUrl": "https://omega-avatar.github.io/OMEGA-Avatar/static/images/teaserv2.png"
+    "figureUrl": "https://omega-avatar.github.io/OMEGA-Avatar/static/images/teaserv2.png",
+    "builds_on": [
+      "gghead-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "rodin-2023"
+    ]
   },
   {
     "id": "geodiff4d-2026",
@@ -361,7 +463,21 @@
     "arxiv": "https://arxiv.org/abs/2602.24161",
     "project": "",
     "figure": "Geometry-aware diffusion prior (image+normal) injected into 3DGS for 4D head avatars.",
-    "abstract": "Joint portrait + surface-normal diffusion with a pose-free expression encoder, feeding a 3DGS-based avatar for photorealistic 4D head reconstruction from a single image."
+    "abstract": "Joint portrait + surface-normal diffusion with a pose-free expression encoder, feeding a 3DGS-based avatar for photorealistic 4D head reconstruction from a single image.",
+    "builds_on": [
+      "mvp4d-2025",
+      "hravatar-2025",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "mono-gaussian-avatar-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "fg-3dgs-2026",
@@ -390,7 +506,11 @@
     "arxiv": "https://arxiv.org/abs/2602.09736",
     "project": "",
     "figure": "Frequency-disentangled 3DGS talking head for high-fidelity lip-sync and reduced jitter.",
-    "abstract": "Frequency-aware 3DGS talking head separating low-frequency face regions (shared MLP) and high-frequency eye/mouth regions (dedicated network) with post-rendering alignment."
+    "abstract": "Frequency-aware 3DGS talking head separating low-frequency face regions (shared MLP) and high-frequency eye/mouth regions (dedicated network) with post-rendering alignment.",
+    "builds_on": [
+      "talking-gaussian-2024",
+      "gaussian-avatars-2024"
+    ]
   },
   {
     "id": "diff-pc-2026",
@@ -417,7 +537,10 @@
     "arxiv": "https://arxiv.org/abs/2602.00639",
     "project": "",
     "figure": "3D-face-guided controllable diffusion for zero-shot portrait ID preservation.",
-    "abstract": "Zero-shot identity-preserving portrait diffusion guided by reconstructed 3D face priors and an ID-Encoder fusing local+global facial features."
+    "abstract": "Zero-shot identity-preserving portrait diffusion guided by reconstructed 3D face priors and an ID-Encoder fusing local+global facial features.",
+    "builds_on": [
+      "hifi-portrait-2025"
+    ]
   },
   {
     "id": "relight-anyone-2026",
@@ -446,7 +569,16 @@
     "arxiv": "https://arxiv.org/abs/2601.03357",
     "project": "",
     "figure": "Generalizable flat-lit → relightable 3DGS head model — no OLAT needed at test time.",
-    "abstract": "Learns a generic mapping from flat-lit 3DGS head avatars to relightable parameters, so any new subject can be relit without per-subject OLAT capture."
+    "abstract": "Learns a generic mapping from flat-lit 3DGS head avatars to relightable parameters, so any new subject can be relit without per-subject OLAT capture.",
+    "builds_on": [
+      "becominglit-2025",
+      "hravatar-2025",
+      "gaussianheads-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "mvp-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "uika-2026",
@@ -476,7 +608,29 @@
     "figure": "Pose-free UV-correspondence head avatar reconstructor — handles mixed unposed inputs.",
     "abstract": "Feed-forward animatable 3DGS head from any number of unposed inputs (single image, casual multi-view, or phone video), using pixel-to-UV correspondence to remove dependence on camera pose.",
     "figureUrl": "https://zijian-wu.github.io/uika-page/static/images/uika_teaser.jpg",
-    "codeUrl": "https://github.com/Zijian-Wu/UIKA"
+    "codeUrl": "https://github.com/Zijian-Wu/UIKA",
+    "builds_on": [
+      "flexavatar-2025",
+      "mvp4d-2025",
+      "avat3r-2025",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026"
+    ]
   },
   {
     "id": "avatar-forcing-2026",
@@ -506,7 +660,10 @@
     "figure": "Real-time causal diffusion forcing for interactive (two-way) talking avatars.",
     "abstract": "Diffusion-forcing framework for real-time, causally-consistent interactive head avatars — models two-way user/avatar interaction without needing expensive interaction-labelled training data.",
     "figureUrl": "https://taekyungki.github.io/AvatarForcing/assets/images/vs_bidirectional.png",
-    "codeUrl": "https://github.com/TaekyungKi/AvatarForcing"
+    "codeUrl": "https://github.com/TaekyungKi/AvatarForcing",
+    "builds_on": [
+      "megaportraits-2022"
+    ]
   },
   {
     "id": "fullhead-gs-2026",
@@ -532,7 +689,16 @@
     "figure": "UV-embedded 3DGS on a parametric head → one-shot animatable 360° full-head reconstruction.",
     "abstract": "One-shot 3D full-head animatable avatar with Gaussians embedded in the UV space of a parametric face model, supporting simultaneous real-time animation and 360° rendering.",
     "figureUrl": "https://shaelynz.github.io/fhavatar/static/images/teaser.jpg",
-    "codeUrl": "https://github.com/ShaelynZ/fhavatar"
+    "codeUrl": "https://github.com/ShaelynZ/fhavatar",
+    "builds_on": [
+      "gagavatar-2024",
+      "gghead-2024",
+      "voodoo3d-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022"
+    ]
   },
   {
     "id": "lightweight-talkingface-compression-2026",
@@ -562,7 +728,12 @@
     "arxiv": "https://arxiv.org/abs/2601.21269",
     "project": "",
     "figure": "Compact FLAME+3DGS head for bandwidth-constrained telepresence.",
-    "abstract": "FLAME-parametric + 3DGS pipeline that transmits minimal facial metadata for low-bitrate real-time 3D video conferencing."
+    "abstract": "FLAME-parametric + 3DGS pipeline that transmits minimal facial metadata for low-bitrate real-time 3D video conferencing.",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "avatarmav-2023"
+    ]
   },
   {
     "id": "splat-portrait-2026",
@@ -589,7 +760,10 @@
     "arxiv": "https://arxiv.org/abs/2601.18633",
     "project": "",
     "figure": "Prior-free 3DGS talking-head generator trained only with 2D reconstruction + SDS losses.",
-    "abstract": "Learns a static 3DGS portrait + predicted 2D background from a single image and generates audio-conditioned lip motion without motion priors or 3D supervision."
+    "abstract": "Learns a static 3DGS portrait + predicted 2D background from a single image and generates audio-conditioned lip motion without motion priors or 3D supervision.",
+    "builds_on": [
+      "gagavatar-2024"
+    ]
   },
   {
     "id": "blink-hashgrid-nerf-2026",
@@ -642,7 +816,15 @@
     "arxiv": "https://arxiv.org/abs/2601.14875",
     "project": "",
     "figure": "Transformer-augmented NeRF that captures wrinkles and high-frequency face details.",
-    "abstract": "Hybrid NeRF with a Geometry-Aware Transformer fusing coordinates, 3DMM expression parameters, and latent codes for fine facial detail on monocular video."
+    "abstract": "Hybrid NeRF with a Geometry-Aware Transformer fusing coordinates, 3DMM expression parameters, and latent codes for fine facial detail on monocular video.",
+    "builds_on": [
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "rignerf-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "nerface-2021"
+    ]
   },
   {
     "id": "fastgha-2026",
@@ -671,7 +853,19 @@
     "arxiv": "https://arxiv.org/abs/2601.13837",
     "project": "",
     "figure": "Real-time feed-forward Gaussian head avatar with foundation-model image features and point-map geometry supervision.",
-    "abstract": "Feed-forward transformer encoder that fuses DINOv3 + SD-VAE features from a few images into per-pixel Gaussians, with a lightweight MLP for real-time expression animation."
+    "abstract": "Feed-forward transformer encoder that fuses DINOv3 + SD-VAE features from a few images into per-pixel Gaussians, with a lightweight MLP for real-time expression animation.",
+    "builds_on": [
+      "diffportrait360-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "npga-2024",
+      "gpavatar-2024",
+      "gaussian-avatars-2024",
+      "nerface-2021"
+    ]
   },
   {
     "id": "rsatalker-2026",
@@ -700,7 +894,10 @@
     "arxiv": "https://arxiv.org/abs/2601.10606",
     "project": "",
     "figure": "Socially-aware 3DGS talking head for dual-person conversation scenarios.",
-    "abstract": "Mesh-driven facial motion bound to 3DGS rendering, augmented with a socially-aware query module encoding interpersonal relations for multi-turn dialogue."
+    "abstract": "Mesh-driven facial motion bound to 3DGS rendering, augmented with a socially-aware query module encoding interpersonal relations for multi-turn dialogue.",
+    "builds_on": [
+      "talking-gaussian-2024"
+    ]
   },
   {
     "id": "elite-2026",
@@ -728,7 +925,23 @@
     "project": "https://kim-youwang.github.io/elite",
     "figure": "3D-prior + 2D-diffusion synergy with single-step test-time adaptation for monocular head avatars.",
     "abstract": "Combines a feed-forward Mesh2Gaussian prior with a single-step rendering-guided diffusion enhancer at test time, 60× faster than 2D-generative-prior baselines.",
-    "codeUrl": "https://github.com/kaist-ami/elite"
+    "codeUrl": "https://github.com/kaist-ami/elite",
+    "builds_on": [
+      "gaf-2024",
+      "uravatar-2024",
+      "headgap-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "mango-2026",
@@ -758,7 +971,10 @@
     "arxiv": "https://arxiv.org/abs/2601.01749",
     "project": "",
     "figure": "Dual-audio diffusion motion + 3DGS rendering for bidirectional listen-and-speak dialogue avatars.",
-    "abstract": "Two-stage multi-speaker talking-head generator: diffusion transformer for 3D motion from dual audio + 3DGS renderer with alternate 2D-level training on a 50-hour dataset."
+    "abstract": "Two-stage multi-speaker talking-head generator: diffusion transformer for 3D motion from dual audio + 3DGS renderer with alternate 2D-level training on a 50-hour dataset.",
+    "builds_on": [
+      "gaussian-avatars-2024"
+    ]
   },
   {
     "id": "gtavatar-2025",
@@ -787,7 +1003,21 @@
     "project": "https://kelianb.github.io/GTAvatar/",
     "figure": "UV-patch-embedded 2D Gaussians → editable PBR textures + relighting from monocular video.",
     "abstract": "Embeds each canonical 2D Gaussian in a UV texture patch of a template mesh, giving editable PBR material textures and a physically-based renderer on top of a monocular 3DGS head.",
-    "codeUrl": "https://github.com/KelianB/GTAvatar"
+    "codeUrl": "https://github.com/KelianB/GTAvatar",
+    "builds_on": [
+      "hravatar-2025",
+      "uravatar-2024",
+      "gghead-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "texavatars-2025",
@@ -816,7 +1046,27 @@
     "figure": "Hybrid texel-rigged + free-3DGS head avatars — stable under extreme reenactment.",
     "abstract": "Combines global-texel 3DMM rigging (for stability) with free 3D Gaussians (for fidelity) under a hybrid rig that generalizes to extreme unseen expressions where pure-deformation methods break.",
     "figureUrl": "https://summertight.github.io/TexAvatars/static/images/teaser.jpg",
-    "codeUrl": "https://github.com/summertight/TexAvatars_repo"
+    "codeUrl": "https://github.com/summertight/TexAvatars_repo",
+    "builds_on": [
+      "gaussianheads-2024",
+      "gghead-2024",
+      "npga-2024",
+      "mononphm-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "flexavatar-2025",
@@ -844,7 +1094,34 @@
     "project": "https://pengc02.github.io/flexavatar",
     "figure": "Input-number-agnostic LRM for pose-free head avatar reconstruction + real-time detail decoder.",
     "abstract": "Transformer LRM for head avatars that aggregates a flexible (1..N) number of pose-free, expression-free images into a canonical 3DGS, with a UV-position UNet decoder producing detailed expression-dependent deformations in real time.",
-    "figureUrl": "https://pengc02.github.io/assets_flexavatar/images/teaser-full.png"
+    "figureUrl": "https://pengc02.github.io/assets_flexavatar/images/teaser-full.png",
+    "builds_on": [
+      "mvp4d-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "flash-avatar-2024",
+      "d3ga-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "uika-2026"
+    ]
   },
   {
     "id": "gpica-2025",
@@ -872,7 +1149,19 @@
     "arxiv": "https://arxiv.org/abs/2512.15711",
     "project": "",
     "figure": "Mesh-for-skin + 3DGS-for-hair hybrid — extends Pixel Codec Avatars with splats.",
-    "abstract": "Hybrid triangle-mesh + anisotropic 3DGS head avatar — the mesh handles skin efficiently, the Gaussians handle hair/beard — yielding photoreal heads renderable on mobile."
+    "abstract": "Hybrid triangle-mesh + anisotropic 3DGS head avatar — the mesh handles skin efficiently, the Gaussians handle hair/beard — yielding photoreal heads renderable on mobile.",
+    "builds_on": [
+      "relightable-gs-codec-2024",
+      "flash-avatar-2024",
+      "gan-avatar-2024",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "dam-2018",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "vasa3d-2025",
@@ -899,7 +1188,20 @@
     "arxiv": "https://arxiv.org/abs/2512.14677",
     "project": "",
     "figure": "VASA-1 2D motion latent → 3DGS talking avatar from a single portrait.",
-    "abstract": "Lifts the 2D VASA-1 motion latent into 3D: a motion-latent–conditioned 3D head model yields audio-driven, single-shot 3DGS talking avatars with fine expression details."
+    "abstract": "Lifts the 2D VASA-1 motion latent into 3D: a motion-latent–conditioned 3D head model yields audio-driven, single-shot 3DGS talking avatars with fine expression details.",
+    "builds_on": [
+      "gagavatar-2024",
+      "talking-gaussian-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "gaussian-avatars-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "agora-2025",
@@ -922,7 +1224,26 @@
     "arxiv": "https://arxiv.org/abs/2512.06438",
     "project": "",
     "figure": "GAN loss on a feed-forward 3DGS head avatar generator for sharper novel-view synthesis.",
-    "abstract": "Adversarial training of a feed-forward 3DGS head reconstructor, sharpening appearance under novel views / expressions without per-subject optimization."
+    "abstract": "Adversarial training of a feed-forward 3DGS head reconstructor, sharpening appearance under novel views / expressions without per-subject optimization.",
+    "builds_on": [
+      "mvp4d-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "gghead-2024",
+      "npga-2024",
+      "headstudio-2024",
+      "voodoo3d-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026"
+    ]
   },
   {
     "id": "instant-expressive-gha-2025",
@@ -950,7 +1271,20 @@
     "arxiv": "https://arxiv.org/abs/2512.16893",
     "project": "",
     "figure": "Decouples animation representation from 3D head geometry and uses lightweight local fusion to reach diffusion-level expression quality at feed-forward speed.",
-    "abstract": "Distills a 2D video-diffusion portrait animator into a feed-forward 3DGS head encoder that turns a single image into an animatable 3D-consistent avatar at 107 FPS."
+    "abstract": "Distills a 2D video-diffusion portrait animator into a feed-forward 3DGS head encoder that turns a single image into an animatable 3D-consistent avatar at 107 FPS.",
+    "builds_on": [
+      "mvp4d-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "gghead-2024",
+      "npga-2024",
+      "gpavatar-2024",
+      "mononphm-2024",
+      "voodoo3d-2024",
+      "d3ga-2023",
+      "megaportraits-2022"
+    ]
   },
   {
     "id": "emodifftalk-2025",
@@ -980,7 +1314,11 @@
     "arxiv": "https://arxiv.org/abs/2512.05991",
     "project": "",
     "figure": "AU-based diffusion controller coupled to 3DGS talking head for multimodal emotion editing.",
-    "abstract": "Action-unit-prompted Gaussian diffusion that enables fine-grained, text-controllable emotional editing of 3DGS talking heads."
+    "abstract": "Action-unit-prompted Gaussian diffusion that enables fine-grained, text-controllable emotional editing of 3DGS talking heads.",
+    "builds_on": [
+      "gaussianheads-2024",
+      "talking-gaussian-2024"
+    ]
   },
   {
     "id": "hifi-portrait-2025",
@@ -1007,7 +1345,10 @@
     "arxiv": "https://arxiv.org/abs/2512.14542",
     "project": "",
     "figure": "HiFi-Net fusion + 3D landmark conditioning for ID-preserving portrait diffusion.",
-    "abstract": "Diffusion-based zero-shot portrait generator using 3D-aware landmarks and a fine-grained multi-face fusion network for ID-preserved outputs with attribute control."
+    "abstract": "Diffusion-based zero-shot portrait generator using 3D-aware landmarks and a fine-grained multi-face fusion network for ID-preserved outputs with attribute control.",
+    "cited_by": [
+      "diff-pc-2026"
+    ]
   },
   {
     "id": "factorportrait-2025",
@@ -1041,7 +1382,15 @@
     "project": "https://tangjiapeng.github.io/FactorPortrait/",
     "figure": "Expression/head-pose/viewpoint-disentangled video diffusion for portrait animation and novel views.",
     "abstract": "Video-diffusion portrait animator with disentangled expression latents + Plücker/normal-map camera & pose controls, trained on synthetic view/pose/expression data.",
-    "figureUrl": "https://tangjiapeng.github.io/FactorPortrait/static/images/overview.jpeg"
+    "figureUrl": "https://tangjiapeng.github.io/FactorPortrait/static/images/overview.jpeg",
+    "builds_on": [
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "diffusionavatars-2024",
+      "megaportraits-2022",
+      "mvp-2021"
+    ]
   },
   {
     "id": "personalive-2025",
@@ -1068,7 +1417,11 @@
     "arxiv": "https://arxiv.org/abs/2512.11253",
     "project": "",
     "figure": "Low-latency streaming portrait diffusion with 7-22× speedup for live scenarios.",
-    "abstract": "Streaming real-time portrait diffusion combining implicit facial features + 3D keypoints, few-step appearance distillation, and autoregressive micro-chunk generation."
+    "abstract": "Streaming real-time portrait diffusion combining implicit facial features + 3D keypoints, few-step appearance distillation, and autoregressive micro-chunk generation.",
+    "builds_on": [
+      "talking-gaussian-2024",
+      "pointavatar-2023"
+    ]
   },
   {
     "id": "mind-to-face-2025",
@@ -1098,7 +1451,14 @@
     "arxiv": "https://arxiv.org/abs/2512.04313",
     "project": "",
     "figure": "First EEG-to-photorealistic-face pipeline with 3DGS rendering for affect-driven avatars.",
-    "abstract": "CNN-Transformer that decodes non-invasive EEG into dense 3D position maps (65k+ vertices), rendered via 3DGS for subject-specific emotional facial expressions."
+    "abstract": "CNN-Transformer that decodes non-invasive EEG into dense 3D position maps (65k+ vertices), rendered via 3DGS for subject-specific emotional facial expressions.",
+    "builds_on": [
+      "gaf-2024",
+      "voodoo3d-2024",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "stavatar-2025",
@@ -1126,7 +1486,23 @@
     "figure": "UV-adaptive soft binding + temporal ADC — fixes mouth / eye artifacts on monocular 3DGS heads.",
     "abstract": "Replaces hard Gaussian-to-triangle binding with UV-adaptive soft binding and adds temporally aware density control, improving the mouth interior / eyelid region on monocular head avatars.",
     "figureUrl": "https://jiankuozhao.github.io/STAvatar/static/images/method.png",
-    "codeUrl": "https://github.com/LCFAW/STAvatar"
+    "codeUrl": "https://github.com/LCFAW/STAvatar",
+    "builds_on": [
+      "hravatar-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "npga-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "dimitraplus-2025",
@@ -1203,7 +1579,10 @@
     "arxiv": "https://arxiv.org/abs/2510.23929",
     "project": "",
     "figure": "Single-step diffusion refinement over feed-forward avatars for fast multi-view-consistent portraits.",
-    "abstract": "Enhances feed-forward image-to-avatar methods with a single-step diffusion refiner that operates on noisy 3D renders for low-latency novel-view portraits."
+    "abstract": "Enhances feed-forward image-to-avatar methods with a single-step diffusion refiner that operates on noisy 3D renders for low-latency novel-view portraits.",
+    "builds_on": [
+      "gpavatar-2024"
+    ]
   },
   {
     "id": "mvp4d-2025",
@@ -1230,7 +1609,23 @@
     "arxiv": "https://arxiv.org/abs/2510.12785",
     "project": "",
     "figure": "Multi-view video diffusion directly supervises a real-time 4D avatar instead of separate 3D fitting.",
-    "abstract": "Multi-view video diffusion generating hundreds of frames over 360° from a single reference image and target expressions, then distilled into a real-time 4D avatar."
+    "abstract": "Multi-view video diffusion generating hundreds of frames over 360° from a single reference image and target expressions, then distilled into a real-time 4D avatar.",
+    "builds_on": [
+      "gagavatar-2024",
+      "headgap-2024",
+      "voodoo3d-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "megaportraits-2022"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "geodiff4d-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "agora-2025"
+    ]
   },
   {
     "id": "architecthead-2025",
@@ -1256,7 +1651,20 @@
     "arxiv": "https://arxiv.org/abs/2510.05488",
     "project": "",
     "figure": "Continuous LOD for 3DGS head avatars via UV-space feature-map resampling.",
-    "abstract": "Parameterizes Gaussians in a 2D UV feature field of multi-level feature maps, enabling continuous LOD control by resampling without retraining."
+    "abstract": "Parameterizes Gaussians in a 2D UV feature field of multi-level feature maps, enabling continuous LOD control by resampling without retraining.",
+    "builds_on": [
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "headgap-2024",
+      "npga-2024",
+      "mono-gaussian-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "pixel-codec-2021",
+      "nerface-2021"
+    ]
   },
   {
     "id": "pgstalker-2025",
@@ -1313,7 +1721,14 @@
     "project": "https://heyy-sun.github.io/SVG-Head/",
     "figure": "Dual (surface + volumetric) Gaussians + disentangled texture → real-time head appearance editing.",
     "abstract": "Couples FLAME-bound surface Gaussians (for geometry) with disentangled texture images (for global appearance), enabling real-time appearance edits on a photoreal 3DGS head.",
-    "codeUrl": "https://github.com/heyy-sun/SVG-Head"
+    "codeUrl": "https://github.com/heyy-sun/SVG-Head",
+    "builds_on": [
+      "pointavatar-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021",
+      "dam-2018"
+    ]
   },
   {
     "id": "becominglit-2025",
@@ -1341,7 +1756,19 @@
     "figure": "Affordable light-stage + hybrid (neural diffuse × analytical specular) shading for 3DGS heads.",
     "abstract": "A low-cost light-stage capture plus a hybrid neural diffuse BRDF + analytical specular shader, applied to FLAME-rigged 3D Gaussians — relightable head avatars at interactive rates.",
     "figureUrl": "https://jonathsch.github.io/becominglit/method.jpg",
-    "codeUrl": "https://github.com/jonathsch/becominglit"
+    "codeUrl": "https://github.com/jonathsch/becominglit",
+    "builds_on": [
+      "npga-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "insta-2023",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "relight-anyone-2026"
+    ]
   },
   {
     "id": "im-portrait-2025",
@@ -1370,7 +1797,19 @@
     "project": "https://y-u-a-n-l-i.github.io/projects/IM-Portrait/",
     "figure": "Single-stage diffusion-to-MPI talking head that yields geometry-consistent binocular VR-ready output.",
     "abstract": "Directly generates Multiplane Images via a 3D-aware video diffusion model from a single identity image and expression controls, skipping explicit NeRF/3DGS reconstruction.",
-    "figureUrl": "https://y-u-a-n-l-i.github.io/projects/IM-Portrait/static/images/teaser.jpg"
+    "figureUrl": "https://y-u-a-n-l-i.github.io/projects/IM-Portrait/static/images/teaser.jpg",
+    "builds_on": [
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "monoavatar-2023",
+      "rodin-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "nha-2022",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "gsac-2025",
@@ -1395,7 +1834,11 @@
     "arxiv": "https://arxiv.org/abs/2504.12999",
     "project": "",
     "figure": "3DGS avatar + Unity engine editor targeted at application developers.",
-    "abstract": "End-to-end 3DGS avatar pipeline from monocular video, packaged as a Unity-integrated Gaussian splatting editor for VR/AR deployment."
+    "abstract": "End-to-end 3DGS avatar pipeline from monocular video, packaged as a Unity-integrated Gaussian splatting editor for VR/AR deployment.",
+    "builds_on": [
+      "d3ga-2023",
+      "rodin-2023"
+    ]
   },
   {
     "id": "hravatar-2025",
@@ -1428,7 +1871,31 @@
     "figure": "End-to-end tracked + BRDF-decomposed 3DGS head avatar from monocular video.",
     "abstract": "Monocular 3DGS head avatar with end-to-end tracking refinement, a richer learnable deformation model, and a PBR-style BRDF decomposition that yields realistic novel-light rendering.",
     "figureUrl": "https://eastbeanzhang.github.io/HRAvatar/static/images/teaser.png",
-    "codeUrl": "https://github.com/Pixel-Talk/HRAvatar"
+    "codeUrl": "https://github.com/Pixel-Talk/HRAvatar",
+    "builds_on": [
+      "gaussianheads-2024",
+      "gghead-2024",
+      "npga-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "geodiff4d-2026",
+      "relight-anyone-2026",
+      "flexavatar-2025",
+      "gtavatar-2025",
+      "stavatar-2025",
+      "architecthead-2025"
+    ]
   },
   {
     "id": "fym-2025",
@@ -1455,7 +1922,12 @@
     "arxiv": "https://arxiv.org/abs/2503.22225",
     "project": "https://anonymous-hub1127.github.io/FYM.github.io/",
     "figure": "Trajectory-guided diffusion editor that inherits 3DGS motion for consistent portrait/talking-head edits.",
-    "abstract": "Diffusion-based portrait editor conditioned on 3DGS-rendered talking heads; uses motion trajectories and re-weighted attention for temporally consistent edits."
+    "abstract": "Diffusion-based portrait editor conditioned on 3DGS-rendered talking heads; uses motion trajectories and re-weighted attention for temporally consistent edits.",
+    "builds_on": [
+      "gene-avatar-2024",
+      "insta-2023",
+      "imavatar-2022"
+    ]
   },
   {
     "id": "diffportrait360-2025",
@@ -1485,7 +1957,14 @@
     "figure": "Style-omniscient 360° head diffusion supporting anthropomorphic/stylized forms and NeRF distillation.",
     "abstract": "Extends DiffPortrait3D with a back-of-head ControlNet and dual appearance module to generate 360-degree consistent head views from a single image, lifting to NeRF.",
     "codeUrl": "https://github.com/FreedomGu/DiffPortrait360",
-    "figureUrl": "https://freedomgu.github.io/Diff360/pipeline.png"
+    "figureUrl": "https://freedomgu.github.io/Diff360/pipeline.png",
+    "builds_on": [
+      "voodoo3d-2024",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "fastgha-2026"
+    ]
   },
   {
     "id": "avat3r-2025",
@@ -1513,7 +1992,45 @@
     "project": "https://tobias-kirschstein.github.io/avat3r/",
     "figure": "LRM-scale transformer → animatable FLAME-rigged GS head from 4 images.",
     "abstract": "A large reconstruction model that turns 4 input images into an animatable FLAME-rigged Gaussian head avatar via a single forward pass — the first truly SOTA one-shot avatar generator.",
-    "figureUrl": "https://tobias-kirschstein.github.io/avat3r/static/images/avat3r_method.jpg"
+    "figureUrl": "https://tobias-kirschstein.github.io/avat3r/static/images/avat3r_method.jpg",
+    "builds_on": [
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gghead-2024",
+      "npga-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "d3ga-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "liftavatar-2026",
+      "fastgha-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "architecthead-2025"
+    ]
   },
   {
     "id": "gaf-2024",
@@ -1542,7 +2059,41 @@
     "figure": "Multi-view head diffusion prior inside monocular 3DGS fitting — fixes under-constrained novel views.",
     "abstract": "Uses a multi-view head-diffusion prior (conditioned on FLAME normal maps + identity VAE features) to hallucinate consistent side/back views during monocular 3DGS head training.",
     "figureUrl": "https://tangjiapeng.github.io/projects/teaser.png",
-    "codeUrl": "https://github.com/tangjiapeng/GAF"
+    "codeUrl": "https://github.com/tangjiapeng/GAF",
+    "builds_on": [
+      "gagavatar-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "npga-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "fastgha-2026",
+      "elite-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "factorportrait-2025",
+      "agora-2025",
+      "mind-to-face-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "avat3r-2025"
+    ]
   },
   {
     "id": "gagavatar-2024",
@@ -1567,7 +2118,35 @@
     "project": "https://xg-chu.site/project_gagavatar/",
     "figure": "One-shot generalizable animatable head avatar (single image → 3DGS + FLAME rig).",
     "abstract": "A single feed-forward network reconstructs an animatable FLAME-driven Gaussian head avatar from one image, trained on a large head-video corpus.",
-    "codeUrl": "https://github.com/xg-chu/GAGAvatar"
+    "codeUrl": "https://github.com/xg-chu/GAGAvatar",
+    "builds_on": [
+      "talking-gaussian-2024",
+      "gpavatar-2024",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "splat-portrait-2026",
+      "fastgha-2026",
+      "fullhead-gs-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "vasa3d-2025",
+      "factorportrait-2025",
+      "agora-2025",
+      "stavatar-2025",
+      "mvp4d-2025",
+      "avat3r-2025",
+      "gaf-2024"
+    ]
   },
   {
     "id": "uravatar-2024",
@@ -1599,7 +2178,24 @@
     "project": "https://junxuan-li.github.io/urgca-website/",
     "figure": "Phone-scan to relightable 3DGS head avatar via a universal learned prior.",
     "abstract": "A universal prior that produces a drivable, relightable Gaussian-Codec head avatar from a phone scan — combining phone-scan personalization, 3DGS, and relighting.",
-    "figureUrl": "https://junxuan-li.github.io/urgca-website/static/images/overview.png"
+    "figureUrl": "https://junxuan-li.github.io/urgca-website/static/images/overview.png",
+    "builds_on": [
+      "pointavatar-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "elite-2026",
+      "flexavatar-2025",
+      "factorportrait-2025",
+      "gtavatar-2025",
+      "architecthead-2025",
+      "avat3r-2025"
+    ]
   },
   {
     "id": "gaussianheads-2024",
@@ -1628,7 +2224,27 @@
     "project": "https://vcai.mpi-inf.mpg.de/projects/GaussianHeads/",
     "figure": "Coarse-to-fine drivable Gaussian head avatars trained end-to-end from multi-view imagery.",
     "abstract": "Learns a hierarchical head avatar: coarse template deformations from image features followed by surface-initialized 3D Gaussians refined for dynamic expressions, mouth interiors, and large head motion.",
-    "codeUrl": "https://github.com/Kartik-Teotia/GaussianHeads"
+    "codeUrl": "https://github.com/Kartik-Teotia/GaussianHeads",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "avatarmav-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "omg-avatar-2026",
+      "relight-anyone-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "emodifftalk-2025",
+      "hravatar-2025",
+      "avat3r-2025"
+    ]
   },
   {
     "id": "headgap-2024",
@@ -1662,7 +2278,42 @@
     "project": "https://headgap.github.io/",
     "figure": "Few-shot head-avatar creation via a generalizable 3DGS prior.",
     "abstract": "Learns a Gaussian head prior across many subjects, then adapts to a new subject from as few as one or three images.",
-    "figureUrl": "https://headgap.github.io/static/images/teaser.jpg"
+    "figureUrl": "https://headgap.github.io/static/images/teaser.jpg",
+    "builds_on": [
+      "npga-2024",
+      "gpavatar-2024",
+      "mononphm-2024",
+      "voodoo3d-2024",
+      "mono-gaussian-avatar-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "fastgha-2026",
+      "elite-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "mvp4d-2025",
+      "architecthead-2025",
+      "avat3r-2025",
+      "gaf-2024"
+    ]
   },
   {
     "id": "gphm-2024",
@@ -1690,7 +2341,28 @@
     "project": "https://yuelangx.github.io/gphm/",
     "figure": "Parametric 3DGS head model with decoupled identity and expression controls.",
     "abstract": "Builds a Gaussian-based parametric head model that captures detailed hair, accessories, identity, and expression variation, enabling real-time high-quality rendering and single-image reconstruction.",
-    "codeUrl": "https://github.com/YuelangX/GPHM"
+    "codeUrl": "https://github.com/YuelangX/GPHM",
+    "builds_on": [
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "fastgha-2026",
+      "gaf-2024"
+    ]
   },
   {
     "id": "gghead-2024",
@@ -1719,7 +2391,22 @@
     "figure": "Generative model of FLAME-anchored 3DGS heads from 2D images.",
     "abstract": "A 3D-GAN whose generator outputs a UV-space texture of 3D Gaussians on a FLAME mesh, trained purely from 2D images; samples photoreal animatable head avatars at interactive rates.",
     "figureUrl": "https://tobias-kirschstein.github.io/gghead/static/images/gghead_method_overview.jpg",
-    "codeUrl": "https://github.com/tobias-kirschstein/gghead"
+    "codeUrl": "https://github.com/tobias-kirschstein/gghead",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "d3ga-2023"
+    ],
+    "cited_by": [
+      "fhavatar-2026",
+      "omega-avatar-2026",
+      "fullhead-gs-2026",
+      "texavatars-2025",
+      "instant-expressive-gha-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "hravatar-2025",
+      "avat3r-2025"
+    ]
   },
   {
     "id": "npga-2024",
@@ -1747,7 +2434,26 @@
     "project": "https://simongiebenhain.github.io/NPGA/",
     "figure": "NPHM-conditioned 3DGS avatars with per-Gaussian latent features for fine-grained expression dynamics.",
     "abstract": "Creates high-fidelity controllable avatars from multi-view video by distilling NPHM deformations into rasterization-friendly forward warps and learning expression-dependent Gaussian dynamics.",
-    "figureUrl": "https://simongiebenhain.github.io/NPGA/static/teaser/teaser_npga.jpg"
+    "figureUrl": "https://simongiebenhain.github.io/NPGA/static/teaser/teaser_npga.jpg",
+    "builds_on": [
+      "mononphm-2024",
+      "gaussian-avatars-2024",
+      "rignerf-2022",
+      "mvp-2021"
+    ],
+    "cited_by": [
+      "fastgha-2026",
+      "texavatars-2025",
+      "instant-expressive-gha-2025",
+      "agora-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "becominglit-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "headgap-2024"
+    ]
   },
   {
     "id": "gene-avatar-2024",
@@ -1781,7 +2487,21 @@
     "figure": "Expression-aware single-image edit propagation across dynamic head avatars.",
     "abstract": "A generic editing approach that propagates a single-image edit across all expressions and views of an existing volumetric head avatar, via an expression-aware diffusion model.",
     "figureUrl": "https://zju3dv.github.io/geneavatar/geneavatar/appearance/insta/justin_blonde.gif",
-    "codeUrl": "https://github.com/zju3dv/GeneAvatar"
+    "codeUrl": "https://github.com/zju3dv/GeneAvatar",
+    "builds_on": [
+      "avatarstudio-2023",
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "liftavatar-2026",
+      "fym-2025"
+    ]
   },
   {
     "id": "talking-gaussian-2024",
@@ -1810,7 +2530,22 @@
     "figure": "Audio-driven talking head on 3DGS with explicit structural decomposition.",
     "abstract": "Audio-driven talking-head avatar on 3DGS with a structure-preserving deformation field that decouples lip, face, and head motion.",
     "figureUrl": "https://fictionarry.github.io/TalkingGaussian/static/images/main.png",
-    "codeUrl": "https://github.com/Fictionarry/TalkingGaussian"
+    "codeUrl": "https://github.com/Fictionarry/TalkingGaussian",
+    "builds_on": [
+      "mono-gaussian-avatar-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024"
+    ],
+    "cited_by": [
+      "emotag-2026",
+      "embedtalk-2026",
+      "fg-3dgs-2026",
+      "rsatalker-2026",
+      "vasa3d-2025",
+      "personalive-2025",
+      "emodifftalk-2025",
+      "gagavatar-2024"
+    ]
   },
   {
     "id": "headstudio-2024",
@@ -1836,7 +2571,20 @@
     "arxiv": "https://arxiv.org/abs/2402.06149",
     "project": "",
     "figure": "Text-to-animatable head avatar on 3DGS with FLAME rig.",
-    "abstract": "Generates a FLAME-rigged Gaussian head avatar from text using SDS with a specialized view-dependent camera scheme for consistent faces."
+    "abstract": "Generates a FLAME-rigged Gaussian head avatar from text using SDS with a specialized view-dependent camera scheme for consistent faces.",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "diffusionavatars-2024",
+      "dreamface-2023",
+      "pointavatar-2023",
+      "rodin-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022"
+    ],
+    "cited_by": [
+      "agora-2025"
+    ]
   },
   {
     "id": "hq3davatar-2024",
@@ -1864,7 +2612,21 @@
     "arxiv": "https://arxiv.org/abs/2303.14471",
     "project": "https://vcai.mpi-inf.mpg.de/projects/HQ3DAvatar/",
     "figure": "Implicit canonical-space head avatar with hash encoding for high-quality free-viewpoint rendering.",
-    "abstract": "Learns a photorealistic implicit head avatar from multi-view data, with image-conditioned canonical features and optical-flow regularization for temporally consistent drivable renderings."
+    "abstract": "Learns a photorealistic implicit head avatar from multi-view data, with image-conditioned canonical features and optical-flow regularization for temporally consistent drivable renderings.",
+    "builds_on": [
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "gaf-2024",
+      "gan-avatar-2024",
+      "avatarstudio-2023"
+    ]
   },
   {
     "id": "psavatar-2024",
@@ -1892,7 +2654,16 @@
     "arxiv": "https://arxiv.org/abs/2401.12900",
     "project": "",
     "figure": "Point-prior + 3DGS fast head avatars.",
-    "abstract": "Combines a point-based discrete shape prior with Gaussian splatting to speed up monocular head-avatar reconstruction and rendering."
+    "abstract": "Combines a point-based discrete shape prior with Gaussian splatting to speed up monocular head-avatar reconstruction and rendering.",
+    "builds_on": [
+      "mono-gaussian-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
   },
   {
     "id": "gpavatar-2024",
@@ -1923,7 +2694,33 @@
     "project": "https://xg-chu.github.io/project_gpavatar/",
     "figure": "Dynamic-point expression field on a triplane — precise one-shot head reenactment.",
     "abstract": "One-shot (or few-shot) generalizable head avatar with a dynamic point-based expression field and a tri-plane identity encoder, enabling precise cross-identity reenactment.",
-    "codeUrl": "https://github.com/xg-chu/GPAvatar"
+    "codeUrl": "https://github.com/xg-chu/GPAvatar",
+    "builds_on": [
+      "monoavatar-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "avatarpointillist-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "omega-avatar-2026",
+      "fastgha-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "vasa3d-2025",
+      "turboportrait3d-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gagavatar-2024",
+      "headgap-2024",
+      "diffusionavatars-2024"
+    ]
   },
   {
     "id": "gaussian-avatars-2024",
@@ -1954,7 +2751,44 @@
     "codeUrl": "https://github.com/ShenhanQian/GaussianAvatars",
     "figure": "FLAME-rigged Gaussians — the de facto head-avatar template for 3DGS.",
     "abstract": "Rigs 3D Gaussians to the triangles of a tracked FLAME mesh, so expressions and pose drive the Gaussians via local frames. Real-time, sharp head avatars from multi-view capture.",
-    "figureUrl": "https://shenhanqian.github.io/assets/2023-12-04-gaussian-avatars/method.jpg"
+    "figureUrl": "https://shenhanqian.github.io/assets/2023-12-04-gaussian-avatars/method.jpg",
+    "builds_on": [
+      "d3ga-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "neural-strands-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "avatarpointillist-2026",
+      "liftavatar-2026",
+      "fg-3dgs-2026",
+      "fastgha-2026",
+      "elite-2026",
+      "uika-2026",
+      "relight-anyone-2026",
+      "mango-2026",
+      "vasa3d-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "lightweight-talkingface-compression-2026",
+      "mvp4d-2025",
+      "becominglit-2025",
+      "gaf-2024",
+      "gaussianheads-2024",
+      "gphm-2024",
+      "gghead-2024",
+      "npga-2024",
+      "talking-gaussian-2024",
+      "headstudio-2024",
+      "gaussian-head-avatar-2024",
+      "d3ga-2023"
+    ]
   },
   {
     "id": "mono-gaussian-avatar-2024",
@@ -1985,7 +2819,41 @@
     "figure": "Monocular head avatars with FLAME-anchored Gaussians + per-point MLP.",
     "abstract": "Per-point deformation MLP drives 3D Gaussians that live in a FLAME-anchored canonical space; produces sharp monocular head avatars in real time.",
     "figureUrl": "https://yufan1012.github.io/assets/MonoGaussianAvatar/images/teaser.png",
-    "codeUrl": "https://github.com/yufan1012/MonoGaussianAvatar"
+    "codeUrl": "https://github.com/yufan1012/MonoGaussianAvatar",
+    "builds_on": [
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "liftavatar-2026",
+      "geodiff4d-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "im-portrait-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "talking-gaussian-2024",
+      "psavatar-2024",
+      "gaussian-head-avatar-2024"
+    ]
   },
   {
     "id": "flash-avatar-2024",
@@ -2014,7 +2882,39 @@
     "figure": "UV-atlas–initialized Gaussians for very fast monocular head avatars.",
     "abstract": "Initializes Gaussians on a UV texel grid of a 3DMM mesh and learns position offsets + features, reaching real-time monocular head avatars in minutes.",
     "figureUrl": "https://raw.githubusercontent.com/xiangjun-xj/project_page_assets/master/FlashAvatar/teaser.png",
-    "codeUrl": "https://github.com/USTC3DV/FlashAvatar-code"
+    "codeUrl": "https://github.com/USTC3DV/FlashAvatar-code",
+    "builds_on": [
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "fullhead-gs-2026",
+      "elite-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "gtavatar-2025",
+      "lightweight-talkingface-compression-2026",
+      "stavatar-2025",
+      "mvp4d-2025",
+      "gat-nerf-2026",
+      "hravatar-2025",
+      "avat3r-2025",
+      "headgap-2024",
+      "gphm-2024",
+      "gaussian-head-avatar-2024"
+    ]
   },
   {
     "id": "gaussian-head-avatar-2024",
@@ -2045,7 +2945,31 @@
     "figure": "SOTA studio head avatar with 2K rendering and clean geometry initialization.",
     "abstract": "Studio-captured head avatar with a controllable dynamic Gaussian representation and a two-stage (geometry → appearance) training, reaching ultra-high fidelity at 2K.",
     "figureUrl": "https://yuelangx.github.io/gaussianheadavatar/assets/teaser.png",
-    "codeUrl": "https://github.com/YuelangX/Gaussian-Head-Avatar"
+    "codeUrl": "https://github.com/YuelangX/Gaussian-Head-Avatar",
+    "builds_on": [
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "neural-strands-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "fhavatar-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "stavatar-2025",
+      "gphm-2024",
+      "talking-gaussian-2024"
+    ]
   },
   {
     "id": "gaussian-codec-avatars-2024",
@@ -2072,7 +2996,30 @@
     "arxiv": "https://arxiv.org/abs/2312.03704",
     "project": "https://shunsukesaito.github.io/gca/",
     "figure": "Codec-Avatar family ported to 3DGS, setting the bar for studio head realism.",
-    "abstract": "Meta Codec Avatars on Gaussian Splatting: encodes identity and expression into a latent-driven 3DGS head, enabling high-fidelity telepresence at interactive rates."
+    "abstract": "Meta Codec Avatars on Gaussian Splatting: encodes identity and expression into a latent-driven 3DGS head, enabling high-fidelity telepresence at interactive rates.",
+    "builds_on": [
+      "pointavatar-2023",
+      "insta-2023",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "elite-2026",
+      "relight-anyone-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "gtavatar-2025",
+      "stavatar-2025",
+      "becominglit-2025",
+      "im-portrait-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "gphm-2024",
+      "d3ga-2023"
+    ]
   },
   {
     "id": "relightable-gs-codec-2024",
@@ -2101,7 +3048,30 @@
     "project": "https://shunsukesaito.github.io/rgca/",
     "figure": "Relightable extension of Gaussian Codec Avatars — current SOTA studio head relighting.",
     "abstract": "Adds a learned visibility + BRDF decomposition per Gaussian to Gaussian Codec Avatars, producing studio-grade relightable head avatars under any HDRI.",
-    "figureUrl": "https://shunsukesaito.github.io/rgca/static/images/overview.png"
+    "figureUrl": "https://shunsukesaito.github.io/rgca/static/images/overview.png",
+    "builds_on": [
+      "pointavatar-2023",
+      "insta-2023",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "elite-2026",
+      "relight-anyone-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "gtavatar-2025",
+      "stavatar-2025",
+      "becominglit-2025",
+      "im-portrait-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "gphm-2024",
+      "d3ga-2023"
+    ]
   },
   {
     "id": "haar-2024",
@@ -2129,7 +3099,13 @@
     "figure": "Text-conditioned strand-level hair generation.",
     "abstract": "A diffusion model over a latent hair-strand representation that generates strand-based 3D hairstyles from text prompts, compatible with standard groom pipelines.",
     "figureUrl": "https://haar.is.tue.mpg.de/static/raw_teaser/0.jpg",
-    "codeUrl": "https://github.com/Vanessik/HAAR"
+    "codeUrl": "https://github.com/Vanessik/HAAR",
+    "builds_on": [
+      "neural-strands-2022"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026"
+    ]
   },
   {
     "id": "mononphm-2024",
@@ -2159,7 +3135,26 @@
     "figure": "Monocular fitting of a neural parametric head SDF (NPHM) with expression disentanglement.",
     "abstract": "Fits NPHM — a neural parametric head SDF — to monocular video via a latent space optimization, giving metrically-correct, expression-disentangled head geometry.",
     "figureUrl": "https://simongiebenhain.github.io/MonoNPHM/static/teaser/teaser.jpg",
-    "codeUrl": "https://github.com/SimonGiebenhain/MonoNPHM"
+    "codeUrl": "https://github.com/SimonGiebenhain/MonoNPHM",
+    "builds_on": [
+      "diffusionavatars-2024",
+      "pointavatar-2023",
+      "rodin-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "texavatars-2025",
+      "instant-expressive-gha-2025",
+      "gtavatar-2025",
+      "headgap-2024",
+      "gphm-2024",
+      "npga-2024",
+      "diffusionavatars-2024"
+    ]
   },
   {
     "id": "voodoo3d-2024",
@@ -2188,7 +3183,34 @@
     "project": "https://p0lyfish.github.io/voodoo3d/",
     "figure": "One-shot 3D-aware head reenactment via volumetric appearance/expression disentanglement.",
     "abstract": "Lifts source and driver portraits into tri-plane radiance fields, disentangles source appearance from driver expression, and renders high-fidelity view-consistent reenactments for arbitrary views.",
-    "codeUrl": "https://github.com/MBZUAI-Metaverse/VOODOO3D-official"
+    "codeUrl": "https://github.com/MBZUAI-Metaverse/VOODOO3D-official",
+    "builds_on": [
+      "monoavatar-2023",
+      "pointavatar-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "geodiff4d-2026",
+      "omega-avatar-2026",
+      "fullhead-gs-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "vasa3d-2025",
+      "agora-2025",
+      "mind-to-face-2025",
+      "mvp4d-2025",
+      "diffportrait360-2025",
+      "avat3r-2025",
+      "headgap-2024"
+    ]
   },
   {
     "id": "diffusionavatars-2024",
@@ -2214,7 +3236,29 @@
     "project": "https://tobias-kirschstein.github.io/diffusion-avatars/",
     "figure": "Deferred diffusion renderer driven by NPHM geometry, expression tokens, and rigged triplane features.",
     "abstract": "Combines an NPHM proxy render with cross-attended expression codes and canonical triplane features to synthesize high-fidelity, temporally consistent drivable head avatars.",
-    "codeUrl": "https://github.com/tobias-kirschstein/diffusion-avatars"
+    "codeUrl": "https://github.com/tobias-kirschstein/diffusion-avatars",
+    "builds_on": [
+      "gpavatar-2024",
+      "mononphm-2024",
+      "avatarstudio-2023",
+      "pointavatar-2023",
+      "rodin-2023",
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "liftavatar-2026",
+      "texavatars-2025",
+      "factorportrait-2025",
+      "avat3r-2025",
+      "headgap-2024",
+      "headstudio-2024",
+      "mononphm-2024"
+    ]
   },
   {
     "id": "gan-avatar-2024",
@@ -2242,7 +3286,22 @@
     "project": "https://ganavatar.github.io/",
     "figure": "Personalized 3D-aware GAN avatar controlled by mapping 3DMM expression parameters into latent space.",
     "abstract": "Learns a person-specific animatable head avatar from images and camera parameters without requiring precise expression tracking, decoupling appearance reconstruction from animation control.",
-    "codeUrl": "https://github.com/bernakabadayi/ganavatar"
+    "codeUrl": "https://github.com/bernakabadayi/ganavatar",
+    "builds_on": [
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "gpica-2025",
+      "avat3r-2025"
+    ]
   },
   {
     "id": "d3ga-2023",
@@ -2271,7 +3330,24 @@
     "project": "https://wojciechzielonka.com/d3ga/",
     "figure": "Body-scale drivable 3DGS avatars using tetrahedral cage deformations instead of LBS.",
     "abstract": "Embeds 3D Gaussian primitives in tetrahedral cages and decomposes avatars into layers, enabling real-time photorealistic drivable humans from dense multi-view video.",
-    "codeUrl": "https://github.com/facebookresearch/D3GA"
+    "codeUrl": "https://github.com/facebookresearch/D3GA",
+    "builds_on": [
+      "relightable-gs-codec-2024",
+      "gaussian-avatars-2024",
+      "pointavatar-2023",
+      "mvp-2021",
+      "nerface-2021",
+      "gaussian-codec-avatars-2024"
+    ],
+    "cited_by": [
+      "autoregressive-appearance-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "gsac-2025",
+      "avat3r-2025",
+      "gghead-2024",
+      "gaussian-avatars-2024"
+    ]
   },
   {
     "id": "avatarstudio-2023",
@@ -2303,7 +3379,21 @@
     "project": "https://vcai.mpi-inf.mpg.de/projects/AvatarStudio/",
     "figure": "Identity-preserving text editing of dynamic head avatars.",
     "abstract": "Text-driven editing of a captured NeRF-based dynamic head avatar via a personalized InstructPix2Pix-style diffusion model.",
-    "figureUrl": "https://vcai.mpi-inf.mpg.de/projects/AvatarStudio/HQ3DAvatar/new_teaser.png"
+    "figureUrl": "https://vcai.mpi-inf.mpg.de/projects/AvatarStudio/HQ3DAvatar/new_teaser.png",
+    "builds_on": [
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "gene-avatar-2024",
+      "diffusionavatars-2024"
+    ]
   },
   {
     "id": "monoavatar-2023",
@@ -2342,7 +3432,28 @@
     "project": "https://augmentedperception.github.io/monoavatar/",
     "figure": "Per-vertex local radiance MLPs anchored on a 3DMM for monocular head avatars.",
     "abstract": "MonoAvatar attaches per-vertex local MLPs to a tracked 3DMM, producing a volumetric head rendered by volume rendering; sharper than NerFACE/INSTA on monocular input.",
-    "figureUrl": "https://augmentedperception.github.io/monoavatar/static/images/teaser.png"
+    "figureUrl": "https://augmentedperception.github.io/monoavatar/static/images/teaser.png",
+    "builds_on": [
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "texavatars-2025",
+      "im-portrait-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gene-avatar-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "gan-avatar-2024",
+      "avatarstudio-2023"
+    ]
   },
   {
     "id": "dreamface-2023",
@@ -2376,7 +3487,14 @@
     "project": "https://sites.google.com/view/dreamface",
     "figure": "Progressive text-to-animatable-face pipeline with production assets.",
     "abstract": "Stages geometry, texture, and animation generation of a production-ready animatable face from a text prompt, using CLIP guidance + diffusion.",
-    "figureUrl": "https://lh3.googleusercontent.com/sitesv/AA5AbUBr7Dwv9TI_xv2UxZap1n4wNQkV_071AS-wc1dupaVPp2W8CrgCw66d1Ql3CAtM2A9wleHVWIjX5aF5yUfu4VsWD8GJ9-JlXPvPYCKRth1RvdtB3C8U8EZO6qply6OLzScHaoveyNceAKd6lrSGNYNZCjOP3EXi-PZTgHGWlz11751lRXUWJspJhre2pmYvV8UpexkCyGHTPHIWUGGktAqP240hSFkh4b1Q=w1280"
+    "figureUrl": "https://lh3.googleusercontent.com/sitesv/AA5AbUBr7Dwv9TI_xv2UxZap1n4wNQkV_071AS-wc1dupaVPp2W8CrgCw66d1Ql3CAtM2A9wleHVWIjX5aF5yUfu4VsWD8GJ9-JlXPvPYCKRth1RvdtB3C8U8EZO6qply6OLzScHaoveyNceAKd6lrSGNYNZCjOP3EXi-PZTgHGWlz11751lRXUWJspJhre2pmYvV8UpexkCyGHTPHIWUGGktAqP240hSFkh4b1Q=w1280",
+    "builds_on": [
+      "dam-2018"
+    ],
+    "cited_by": [
+      "promptavatar-2026",
+      "headstudio-2024"
+    ]
   },
   {
     "id": "pointavatar-2023",
@@ -2405,7 +3523,53 @@
     "figure": "Deformable point-cloud head avatar — points beat volumes for faces.",
     "abstract": "Represents the head as an oriented point cloud in canonical space, deformed per-frame by a FLAME-driven network. Faster and sharper than NeRF-based IMavatar.",
     "codeUrl": "https://github.com/zhengyuf/pointavatar",
-    "figureUrl": "https://zhengyuf.github.io/PointAvatar/static/images/pointavatar_method_figure_v6.png"
+    "figureUrl": "https://zhengyuf.github.io/PointAvatar/static/images/pointavatar_method_figure_v6.png",
+    "builds_on": [
+      "insta-2023",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "fullhead-gs-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "vasa3d-2025",
+      "personalive-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "gat-nerf-2026",
+      "svg-head-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "gene-avatar-2024",
+      "headstudio-2024",
+      "psavatar-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "d3ga-2023",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "rodin-2023",
@@ -2439,7 +3603,18 @@
     "project": "https://3d-avatar-diffusion.microsoft.com/",
     "figure": "Tri-plane latent diffusion for 3D head avatar generation.",
     "abstract": "Trains a diffusion model in 3D tri-plane latent space to generate 3D head avatars from text / image, with an auto-encoder that compresses radiance fields.",
-    "figureUrl": "https://3d-avatar-diffusion.microsoft.com/1.jpg"
+    "figureUrl": "https://3d-avatar-diffusion.microsoft.com/1.jpg",
+    "builds_on": [
+      "dam-2018"
+    ],
+    "cited_by": [
+      "omega-avatar-2026",
+      "im-portrait-2025",
+      "gsac-2025",
+      "headstudio-2024",
+      "mononphm-2024",
+      "diffusionavatars-2024"
+    ]
   },
   {
     "id": "auth-vol-avatars-2022",
@@ -2501,7 +3676,52 @@
     "codeUrl": "https://github.com/Zielon/INSTA",
     "figure": "Instant-NGP + FLAME-anchored deformation = 10-minute head avatars.",
     "abstract": "INSTA builds an expression-driven NeRF head avatar in minutes by deforming a multi-resolution hash grid around a tracked FLAME mesh.",
-    "figureUrl": "https://zielon.github.io//assets/img//insta/avatars_small.jpg"
+    "figureUrl": "https://zielon.github.io//assets/img//insta/avatars_small.jpg",
+    "builds_on": [
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "emotag-2026",
+      "omg-avatar-2026",
+      "fullhead-gs-2026",
+      "elite-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "vasa3d-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "becominglit-2025",
+      "im-portrait-2025",
+      "fym-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "gene-avatar-2024",
+      "headstudio-2024",
+      "psavatar-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "pointavatar-2023",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "avatarmav-2023",
@@ -2529,7 +3749,34 @@
     "arxiv": "https://arxiv.org/abs/2211.13206",
     "project": "",
     "figure": "Linear-blended neural voxel grids for fast, controllable head avatars.",
-    "abstract": "Decomposes a head avatar into motion-aware neural voxels: a canonical appearance grid plus motion grids that are linearly combined by expression coefficients."
+    "abstract": "Decomposes a head avatar into motion-aware neural voxels: a canonical appearance grid plus motion grids that are linearly combined by expression coefficients.",
+    "builds_on": [
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "uika-2026",
+      "flexavatar-2025",
+      "vasa3d-2025",
+      "lightweight-talkingface-compression-2026",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "gene-avatar-2024",
+      "headstudio-2024",
+      "psavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024"
+    ]
   },
   {
     "id": "megaportraits-2022",
@@ -2557,7 +3804,29 @@
     "arxiv": "https://arxiv.org/abs/2207.07621",
     "project": "https://neeek2303.github.io/MegaPortraits/",
     "figure": "One-shot neural head avatars at megapixel resolution with stronger cross-driving quality.",
-    "abstract": "Combines medium-resolution video data with high-resolution still images to train one-shot neural head avatars that preserve high-resolution identity appearance under novel driving motion."
+    "abstract": "Combines medium-resolution video data with high-resolution still images to train one-shot neural head avatars that preserve high-resolution identity appearance under novel driving motion.",
+    "builds_on": [
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "avatarpointillist-2026",
+      "fg-portrait-2026",
+      "omg-avatar-2026",
+      "uika-2026",
+      "avatar-forcing-2026",
+      "flexavatar-2025",
+      "instant-expressive-gha-2025",
+      "factorportrait-2025",
+      "mvp4d-2025",
+      "im-portrait-2025",
+      "avat3r-2025",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "voodoo3d-2024",
+      "avatarmav-2023"
+    ]
   },
   {
     "id": "neural-strands-2022",
@@ -2586,7 +3855,17 @@
     "project": "https://radualexandru.github.io/neural_strands/",
     "figure": "Explicit neural strands — strand-level hair for avatars.",
     "abstract": "Learns a volumetric field of oriented hair strands with per-strand appearance, recovering individual fibers from multi-view studio captures.",
-    "figureUrl": "https://radualexandru.github.io/neural_strands/img/overview/test_crop.png"
+    "figureUrl": "https://radualexandru.github.io/neural_strands/img/overview/test_crop.png",
+    "builds_on": [
+      "mvp-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "fhavatar-2026",
+      "haar-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024"
+    ]
   },
   {
     "id": "rignerf-2022",
@@ -2614,7 +3893,38 @@
     "project": "http://shahrukhathar.github.io/2022/06/06/RigNeRF.html",
     "figure": "Deformable NeRF portrait with 3DMM-based rigged control.",
     "abstract": "Conditions a portrait NeRF on 3DMM pose + expression with a deformation field, giving rig-like control of head orientation and expressions.",
-    "figureUrl": "https://shahrukhathar.github.io/images/RigNeRF/paper-thumb.png"
+    "figureUrl": "https://shahrukhathar.github.io/images/RigNeRF/paper-thumb.png",
+    "builds_on": [
+      "mvp-2021",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "fhavatar-2026",
+      "omg-avatar-2026",
+      "liftavatar-2026",
+      "texavatars-2025",
+      "gat-nerf-2026",
+      "im-portrait-2025",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "npga-2024",
+      "gene-avatar-2024",
+      "gpavatar-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "gaussian-head-avatar-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "avatarstudio-2023",
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023"
+    ]
   },
   {
     "id": "nha-2022",
@@ -2645,7 +3955,50 @@
     "figure": "Mesh-based monocular head avatar with explicit geometry + learned texture.",
     "abstract": "Hybrid head avatar: a deformable FLAME mesh whose vertex offsets and texture are learned from monocular video, giving controllable geometry + photo textures.",
     "figureUrl": "https://philgras.github.io/neural_head_avatars/preview.png",
-    "codeUrl": "https://github.com/philgras/neural-head-avatars"
+    "codeUrl": "https://github.com/philgras/neural-head-avatars",
+    "builds_on": [
+      "pixel-codec-2021",
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "partnerface-2026",
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "geodiff4d-2026",
+      "elite-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "vasa3d-2025",
+      "agora-2025",
+      "mind-to-face-2025",
+      "stavatar-2025",
+      "gat-nerf-2026",
+      "svg-head-2025",
+      "im-portrait-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "psavatar-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "avatarstudio-2023",
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "imavatar-2022"
+    ]
   },
   {
     "id": "imavatar-2022",
@@ -2674,7 +4027,53 @@
     "project": "https://ait.ethz.ch/projects/2022/IMavatar/",
     "figure": "Implicit (SDF) FLAME-driven head avatar from monocular video.",
     "abstract": "Implicit morphable head avatar: learns a per-subject canonical SDF + neural deformation driven by FLAME pose/expression, with ray marching for differentiable surface rendering.",
-    "codeUrl": "https://github.com/zhengyuf/IMavatar"
+    "codeUrl": "https://github.com/zhengyuf/IMavatar",
+    "builds_on": [
+      "nha-2022",
+      "nerface-2021"
+    ],
+    "cited_by": [
+      "partnerface-2026",
+      "avatarpointillist-2026",
+      "geodiff4d-2026",
+      "fullhead-gs-2026",
+      "elite-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "gpica-2025",
+      "vasa3d-2025",
+      "agora-2025",
+      "mind-to-face-2025",
+      "stavatar-2025",
+      "svg-head-2025",
+      "fym-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "gene-avatar-2024",
+      "headstudio-2024",
+      "psavatar-2024",
+      "gpavatar-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "avatarstudio-2023",
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023"
+    ]
   },
   {
     "id": "relightable-neural-assets-2020",
@@ -2736,7 +4135,32 @@
     "arxiv": "https://arxiv.org/abs/2104.04638",
     "project": "",
     "figure": "Lightweight per-pixel neural shader enables real-time codec avatars.",
-    "abstract": "Decodes per-pixel features on a coarse mesh surface and renders them with a tiny neural shader, lowering compute at the expense of a slightly lower-res geometry."
+    "abstract": "Decodes per-pixel features on a coarse mesh surface and renders them with a tiny neural shader, lowering compute at the expense of a slightly lower-res geometry.",
+    "builds_on": [
+      "dam-2018"
+    ],
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "autoregressive-appearance-2026",
+      "liftavatar-2026",
+      "elite-2026",
+      "texavatars-2025",
+      "gpica-2025",
+      "architecthead-2025",
+      "gat-nerf-2026",
+      "becominglit-2025",
+      "uravatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "gan-avatar-2024",
+      "hq3davatar-2024",
+      "nha-2022",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "mvp-2021",
@@ -2764,7 +4188,42 @@
     "arxiv": "https://arxiv.org/abs/2103.01954",
     "project": "",
     "figure": "Mesh-anchored mini-voxel primitives — conceptual ancestor of mesh-anchored 3DGS.",
-    "abstract": "Represents a dynamic actor as a cloud of volumetric primitives attached to a guide mesh, each a tiny RGBα voxel grid — fast, sharp, and animatable."
+    "abstract": "Represents a dynamic actor as a cloud of volumetric primitives attached to a guide mesh, each a tiny RGBα voxel grid — fast, sharp, and animatable.",
+    "builds_on": [
+      "nerface-2021",
+      "dam-2018"
+    ],
+    "cited_by": [
+      "elite-2026",
+      "relight-anyone-2026",
+      "texavatars-2025",
+      "gpica-2025",
+      "factorportrait-2025",
+      "becominglit-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "npga-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "d3ga-2023",
+      "avatarstudio-2023",
+      "hq3davatar-2024",
+      "insta-2023",
+      "neural-strands-2022",
+      "rignerf-2022",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "nerface-2021",
@@ -2792,7 +4251,61 @@
     "figure": "First expression-conditioned neural-radiance head avatar from monocular video.",
     "abstract": "NerFACE: a monocular head avatar where a 3DMM expression code conditions the NeRF, allowing expression and viewpoint control after a short subject-specific fit.",
     "figureUrl": "https://gafniguy.github.io/4D-Facial-Avatars/paper_preview.PNG",
-    "codeUrl": "https://github.com/gafniguy/4D-Facial-Avatars"
+    "codeUrl": "https://github.com/gafniguy/4D-Facial-Avatars",
+    "cited_by": [
+      "one-shot-compositional-hair-2026",
+      "partnerface-2026",
+      "avatarpointillist-2026",
+      "fhavatar-2026",
+      "emotag-2026",
+      "omg-avatar-2026",
+      "geodiff4d-2026",
+      "fastgha-2026",
+      "elite-2026",
+      "uika-2026",
+      "texavatars-2025",
+      "flexavatar-2025",
+      "vasa3d-2025",
+      "gtavatar-2025",
+      "agora-2025",
+      "mind-to-face-2025",
+      "stavatar-2025",
+      "architecthead-2025",
+      "gat-nerf-2026",
+      "svg-head-2025",
+      "im-portrait-2025",
+      "hravatar-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "headgap-2024",
+      "gphm-2024",
+      "gene-avatar-2024",
+      "psavatar-2024",
+      "gpavatar-2024",
+      "mononphm-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "diffusionavatars-2024",
+      "gan-avatar-2024",
+      "d3ga-2023",
+      "avatarstudio-2023",
+      "monoavatar-2023",
+      "hq3davatar-2024",
+      "pointavatar-2023",
+      "avatarmav-2023",
+      "insta-2023",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "mvp-2021"
+    ]
   },
   {
     "id": "dam-2018",
@@ -2819,7 +4332,30 @@
     "arxiv": "https://arxiv.org/abs/1808.00362",
     "project": "",
     "figure": "View-conditioned VAE texture — the root of the Codec Avatars line.",
-    "abstract": "Encodes a view-conditioned high-resolution face texture into a VAE, decoded on top of a tracked mesh. The first \"Codec Avatar\" — foundation for Meta’s telepresence stack."
+    "abstract": "Encodes a view-conditioned high-resolution face texture into a VAE, decoded on top of a tracked mesh. The first \"Codec Avatar\" — foundation for Meta’s telepresence stack.",
+    "cited_by": [
+      "promptavatar-2026",
+      "elite-2026",
+      "gpica-2025",
+      "svg-head-2025",
+      "diffportrait360-2025",
+      "uravatar-2024",
+      "gaussianheads-2024",
+      "mono-gaussian-avatar-2024",
+      "voodoo3d-2024",
+      "relightable-gs-codec-2024",
+      "gaussian-head-avatar-2024",
+      "avatarstudio-2023",
+      "dreamface-2023",
+      "hq3davatar-2024",
+      "rodin-2023",
+      "neural-strands-2022",
+      "megaportraits-2022",
+      "nha-2022",
+      "pixel-codec-2021",
+      "mvp-2021",
+      "gaussian-codec-avatars-2024"
+    ]
   },
   {
     "id": "flame-2017",
