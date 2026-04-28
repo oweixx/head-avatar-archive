@@ -8,7 +8,6 @@ import { Toggles } from '@/components/Toggles';
 import { YearColumn } from '@/components/YearColumn';
 import { Detail } from '@/components/Detail';
 import { Tweaks } from '@/components/Tweaks';
-import { BgMosaic } from '@/components/BgMosaic';
 
 const DEFAULT_TWEAKS: TweakState = {
   palette: 'vivid',
@@ -156,7 +155,6 @@ export default function HomePage() {
 
   return (
     <div className="app">
-      <BgMosaic />
       <div>
         <Ledger total={PAPERS.length} shown={shownCount} />
         <Toggles
