@@ -2283,6 +2283,35 @@
     ]
   },
   {
+    "id": "vrmm-2024",
+    "title": "VRMM: A Volumetric Relightable Morphable Head Model",
+    "short": "VRMM",
+    "authors": [
+      "Yang",
+      "Zheng",
+      "Ma",
+      "Lai",
+      "Wan",
+      "Huang"
+    ],
+    "year": 2024,
+    "month": 9,
+    "venue": "SIGGRAPH",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Relightable",
+      "Animatable",
+      "Multiview"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2402.04101",
+    "project": "https://vrmm-paper.github.io/",
+    "figure": "Volumetric morphable head prior with disentangled identity, expression, and illumination spaces.",
+    "abstract": "Learns a relightable volumetric parametric head model from LightStage captures, supporting few-shot personalized reconstruction, animation, and controllable illumination."
+  },
+  {
     "id": "gaussianheads-2024",
     "title": "GaussianHeads: End-to-End Learning of Drivable Gaussian Head Avatars from Coarse-to-fine Representations",
     "short": "GaussianHeads",
@@ -2672,6 +2701,37 @@
     ]
   },
   {
+    "id": "one2avatar-2024",
+    "title": "One2Avatar: Generative Implicit Head Avatar for Few-shot User Adaptation",
+    "short": "One2Avatar",
+    "authors": [
+      "Yu",
+      "Bai",
+      "Meka",
+      "Tan",
+      "Xu",
+      "Pandey",
+      "Fanello",
+      "Park",
+      "Zhang"
+    ],
+    "year": 2024,
+    "month": 2,
+    "venue": "arXiv",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2402.11909",
+    "project": "https://zhixuany.github.io/one2avatar_webpage/",
+    "figure": "Few-shot personalization from a generative 3DMM-anchored implicit head-avatar prior.",
+    "abstract": "Learns a generative NeRF-based animatable head-avatar prior from multi-view multi-expression data, then adapts it to one or a few user images with joint camera and 3DMM refinement."
+  },
+  {
     "id": "hq3davatar-2024",
     "title": "HQ3DAvatar: High-quality Implicit 3D Head Avatar",
     "short": "HQ3DAvatar",
@@ -2806,6 +2866,34 @@
       "headgap-2024",
       "diffusionavatars-2024"
     ]
+  },
+  {
+    "id": "invertavatar-2024",
+    "title": "InvertAvatar: Incremental GAN Inversion for Generalized Head Avatars",
+    "short": "InvertAvatar",
+    "authors": [
+      "Zhao",
+      "Sun",
+      "Wang",
+      "Suo",
+      "Liu"
+    ],
+    "year": 2023,
+    "month": 12,
+    "venue": "SIGGRAPH",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2312.02222",
+    "project": "https://xchenz.github.io/invertavatar_page/",
+    "figure": "Incremental 3D GAN inversion for generalized head avatars from one or more source images.",
+    "abstract": "Builds an animatable 3D GAN prior with expression control and neural texture encoding, using recurrent aggregation to improve geometry and texture from few observations."
   },
   {
     "id": "gaussian-avatars-2024",
@@ -3481,6 +3569,56 @@
     ]
   },
   {
+    "id": "triplanenet-2024",
+    "title": "TriPlaneNet: An Encoder for EG3D Inversion",
+    "short": "TriPlaneNet",
+    "authors": [
+      "Bhattarai",
+      "Nießner",
+      "Sevastopolsky"
+    ],
+    "year": 2023,
+    "month": 3,
+    "venue": "WACV",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2303.13497",
+    "project": "https://anantarb.github.io/triplanenet/",
+    "figure": "Feed-forward EG3D inversion using latent prediction plus tri-plane residual offsets.",
+    "abstract": "Directly predicts tri-plane offsets for EG3D inversion, improving identity preservation and novel-view consistency compared with latent-only encoder inversion."
+  },
+  {
+    "id": "goae-2023",
+    "title": "Make Encoder Great Again in 3D GAN Inversion through Geometry and Occlusion-Aware Encoding",
+    "short": "GOAE",
+    "authors": [
+      "Yuan",
+      "Zhu",
+      "Li",
+      "Liu",
+      "Yuan"
+    ],
+    "year": 2023,
+    "month": 3,
+    "venue": "ICCV",
+    "venueYear": 2023,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2303.12326",
+    "project": "https://eg3d-goae.github.io/",
+    "figure": "Geometry- and occlusion-aware encoder for fast EG3D inversion.",
+    "abstract": "Adds geometry-aware latent encoding, feature refinement, and occlusion-aware fusion to recover high-fidelity 3D GAN inversions much faster than optimization-based methods."
+  },
+  {
     "id": "monoavatar-2023",
     "title": "Learning Personalized High Quality Volumetric Head Avatars from Monocular RGB Videos",
     "short": "Monoavatar",
@@ -3580,6 +3718,121 @@
       "promptavatar-2026",
       "headstudio-2024"
     ]
+  },
+  {
+    "id": "exp-gan-2022",
+    "title": "Exp-GAN: 3D-Aware Facial Image Generation with Expression Control",
+    "short": "Exp-GAN",
+    "authors": [
+      "Lee",
+      "Choi",
+      "Go",
+      "Lee",
+      "Cho",
+      "Kim"
+    ],
+    "year": 2022,
+    "month": 12,
+    "venue": "ACCV",
+    "venueYear": 2022,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://openaccess.thecvf.com/content/ACCV2022/html/Lee_Exp-GAN_3D-Aware_Facial_Image_Generation_with_Expression_Control_ACCV_2022_paper.html",
+    "project": "",
+    "figure": "3D-aware facial image GAN with explicit pose, expression, shape, and appearance controls.",
+    "abstract": "Combines a 3DMM/neural-texture face branch with a NeRF branch for non-face regions, using depth-based integration for view-consistent expression-controlled synthesis.",
+    "codeUrl": "https://github.com/kakaobrain/expgan"
+  },
+  {
+    "id": "next3d-2023",
+    "title": "Next3D: Generative Neural Texture Rasterization for 3D-Aware Head Avatars",
+    "short": "Next3D",
+    "authors": [
+      "Sun",
+      "Wang",
+      "Wang",
+      "Li",
+      "Zhang",
+      "Zhang",
+      "Liu"
+    ],
+    "year": 2022,
+    "month": 11,
+    "venue": "CVPR",
+    "venueYear": 2023,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2211.11208",
+    "project": "https://mrtornado24.github.io/Next3D/",
+    "figure": "Generative neural texture rasterization for animatable 3D-aware head avatars.",
+    "abstract": "Learns neural textures on a parametric mesh template, rasterizes them into tri-plane features, and volume-renders 3D-aware portraits with expression control and topology flexibility.",
+    "codeUrl": "https://github.com/MrTornado24/Next3D"
+  },
+  {
+    "id": "3dfaceshop-2023",
+    "title": "3DFaceShop: Explicitly Controllable 3D-Aware Portrait Generation",
+    "short": "3DFaceShop",
+    "authors": [
+      "Tang",
+      "Zhang",
+      "Yang",
+      "Zhang",
+      "Chen",
+      "Ma",
+      "Wen"
+    ],
+    "year": 2022,
+    "month": 9,
+    "venue": "TVCG",
+    "venueYear": 2023,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2209.05434",
+    "project": "",
+    "figure": "Explicitly controllable 3D-aware portrait generation guided by 3DMM semantic parameters.",
+    "abstract": "Generates 3D-aware portraits controllable by pose, identity, expression, and illumination, with volume blending to stabilize non-face regions under expression changes."
+  },
+  {
+    "id": "3dfm-gan-2022",
+    "title": "3D-FM GAN: Towards 3D-Controllable Face Manipulation",
+    "short": "3D-FM GAN",
+    "authors": [
+      "Liu",
+      "Shu",
+      "Li",
+      "Lin",
+      "Zhang",
+      "Kung"
+    ],
+    "year": 2022,
+    "month": 9,
+    "venue": "ECCV",
+    "venueYear": 2022,
+    "tags": [
+      "MESH",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://doi.org/10.1007/978-3-031-19784-0_7",
+    "project": "https://research.adobe.com/publication/3d-fm-gan-towards-3d-controllable-face-manipulation/",
+    "figure": "Conditional GAN for identity-preserving 3D-controllable face manipulation.",
+    "abstract": "Encodes an input face and physically-based 3D edit renderings into StyleGAN latent spaces, using co-modulation to support pose, expression, and lighting edits without per-image optimization."
   },
   {
     "id": "pointavatar-2023",
@@ -3953,6 +4206,33 @@
     ]
   },
   {
+    "id": "ide3d-2022",
+    "title": "IDE-3D: Interactive Disentangled Editing for High-Resolution 3D-Aware Portrait Synthesis",
+    "short": "IDE-3D",
+    "authors": [
+      "Sun",
+      "Wang",
+      "Shi",
+      "Wang",
+      "Wang",
+      "Liu"
+    ],
+    "year": 2022,
+    "month": 5,
+    "venue": "TOG",
+    "venueYear": 2022,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2205.15517",
+    "project": "",
+    "figure": "Interactive high-resolution editing for 3D-aware portrait synthesis with disentangled semantics.",
+    "abstract": "Combines a 3D-semantics-aware generator, hybrid GAN inversion, and a canonical editor for view-consistent portrait drawing, semantic editing, and style control."
+  },
+  {
     "id": "rignerf-2022",
     "title": "RigNeRF: Fully Controllable Neural 3D Portraits",
     "short": "RigNeRF",
@@ -4010,6 +4290,34 @@
       "pointavatar-2023",
       "avatarmav-2023"
     ]
+  },
+  {
+    "id": "headnerf-2022",
+    "title": "HeadNeRF: A Real-time NeRF-based Parametric Head Model",
+    "short": "HeadNeRF",
+    "authors": [
+      "Hong",
+      "Peng",
+      "Xiao",
+      "Liu",
+      "Zhang"
+    ],
+    "year": 2021,
+    "month": 12,
+    "venue": "CVPR",
+    "venueYear": 2022,
+    "tags": [
+      "NERF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2112.05637",
+    "project": "https://crishy1995.github.io/HeadNeRF-Project/",
+    "figure": "Real-time NeRF-based parametric head model with pose and semantic attribute control.",
+    "abstract": "Integrates neural radiance fields into a parametric head representation and accelerates rendering with 2D neural rendering, reducing render time to real-time rates while preserving facial detail.",
+    "codeUrl": "https://github.com/CrisHY1995/headnerf"
   },
   {
     "id": "nha-2022",
