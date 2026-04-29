@@ -1967,6 +1967,38 @@
     ]
   },
   {
+    "id": "lam-2025",
+    "title": "LAM: Large Avatar Model for One-shot Animatable Gaussian Head",
+    "short": "LAM",
+    "authors": [
+      "He",
+      "Gu",
+      "Ye",
+      "Xu",
+      "Zhao",
+      "Dong",
+      "Yuan",
+      "Dong",
+      "Bo"
+    ],
+    "year": 2025,
+    "month": 2,
+    "venue": "SIGGRAPH",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2502.17796",
+    "project": "https://github.com/aigc3d/LAM",
+    "figure": "Large one-shot model that outputs immediately animatable Gaussian heads from a single image.",
+    "abstract": "Uses FLAME canonical points as transformer queries over multi-scale image features to predict canonical Gaussian attributes, enabling real-time LBS animation and rendering without per-subject optimization.",
+    "codeUrl": "https://github.com/aigc3d/LAM"
+  },
+  {
     "id": "avat3r-2025",
     "title": "Avat3r: Large Animatable Gaussian Reconstruction Model for High-Fidelity 3D Head Avatars",
     "short": "Avat3r",
@@ -2031,6 +2063,59 @@
       "instant-expressive-gha-2025",
       "architecthead-2025"
     ]
+  },
+  {
+    "id": "facelift-2024",
+    "title": "FaceLift: Learning Generalizable Single Image 3D Face Reconstruction from Synthetic Heads",
+    "short": "FaceLift",
+    "authors": [
+      "Lyu",
+      "Zhou",
+      "Yang",
+      "Shu"
+    ],
+    "year": 2024,
+    "month": 12,
+    "venue": "ICCV",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2412.17812",
+    "project": "https://www.wlyu.me/FaceLift/",
+    "figure": "Single-image full-head reconstruction via multi-view diffusion and a GS-LRM Gaussian reconstructor.",
+    "abstract": "Generates consistent side/back views from one face image, then reconstructs a full 3D Gaussian head with a transformer-based GS-LRM model trained on synthetic head data.",
+    "codeUrl": "https://github.com/weijielyu/FaceLift"
+  },
+  {
+    "id": "cap4d-2024",
+    "title": "CAP4D: Creating Animatable 4D Portrait Avatars with Morphable Multi-View Diffusion Models",
+    "short": "CAP4D",
+    "authors": [
+      "Taubner",
+      "Zhang",
+      "Tuli",
+      "Lindell"
+    ],
+    "year": 2024,
+    "month": 12,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2412.12093",
+    "project": "https://felixtaubner.github.io/cap4d/",
+    "figure": "Morphable multi-view diffusion creates real-time animatable 4D portrait avatars from 1-100 images.",
+    "abstract": "Generates pose- and expression-controlled multi-view images with a morphable diffusion model, then fits a controllable 4D avatar that can be animated via 3DMM parameters and rendered in real time.",
+    "codeUrl": "https://github.com/felixtaubner/cap4d"
   },
   {
     "id": "gaf-2024",
