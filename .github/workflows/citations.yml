@@ -1,0 +1,47 @@
+name: Monthly citation graph refresh
+
+on:
+  schedule:
+    # 1st of every month 06:00 UTC (after enrich/venues/figures/project-meta).
+    - cron: '0 6 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  citations:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: npm
+
+      - run: npm ci
+
+      - name: Build citation graph
+        env:
+          SEMANTIC_SCHOLAR_API_KEY: ${{ secrets.SEMANTIC_SCHOLAR_API_KEY }}
+        run: npm run citations
+
+      - name: Open PR if anything changed
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: auto/citations
+          commit-message: 'chore(data): refresh citation graph'
+          title: 'Citations: refresh archive-internal builds_on / cited_by edges'
+          body: |
+            Automated monthly Semantic-Scholar pull by `.github/workflows/citations.yml`.
+
+            For each paper in `src/data/papers.json`, asks S2 for references
+            (papers it cites) and citations (papers that cite it), keeps
+            **only** edges where both endpoints are inside this archive, and
+            stores them as `builds_on[]` / `cited_by[]`. The cross-check pass
+            ensures every edge is symmetric.
+
+            Requires `SEMANTIC_SCHOLAR_API_KEY` repo secret.
+          add-paths: src/data/papers.json

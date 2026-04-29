@@ -30,9 +30,13 @@ type Props = {
   pinned: boolean;
   onUnpin: () => void;
   onClose: () => void;
+  papersById: Map<string, Paper>;
+  onJumpTo: (id: string) => void;
 };
 
-export function Detail({ paper, open, pinned, onUnpin, onClose }: Props) {
+export function Detail({
+  paper, open, pinned, onUnpin, onClose, papersById, onJumpTo,
+}: Props) {
   if (!open) return null;
   // drag state
   const [pos, setPos] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
@@ -170,6 +174,54 @@ export function Detail({ paper, open, pinned, onUnpin, onClose }: Props) {
             <span key={t}>#{t.toLowerCase()}</span>
           ))}
         </div>
+        {paper.builds_on && paper.builds_on.length > 0 && (
+          <div className="lineage-section lineage-builds-section">
+            <div className="lineage-label">
+              <span className="lineage-arrow">↑</span> Builds on ({paper.builds_on.length})
+            </div>
+            <div className="lineage-chips">
+              {paper.builds_on.map((id) => {
+                const linked = papersById.get(id);
+                if (!linked) return null;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    className="lineage-chip"
+                    onClick={() => onJumpTo(id)}
+                    title={linked.title}
+                  >
+                    {linked.short}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
+        {paper.cited_by && paper.cited_by.length > 0 && (
+          <div className="lineage-section lineage-cited-section">
+            <div className="lineage-label">
+              <span className="lineage-arrow">↓</span> Cited by ({paper.cited_by.length})
+            </div>
+            <div className="lineage-chips">
+              {paper.cited_by.map((id) => {
+                const linked = papersById.get(id);
+                if (!linked) return null;
+                return (
+                  <button
+                    key={id}
+                    type="button"
+                    className="lineage-chip"
+                    onClick={() => onJumpTo(id)}
+                    title={linked.title}
+                  >
+                    {linked.short}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        )}
         <div className="links">
           {paper.arxiv ? (
             <a href={paper.arxiv} target="_blank" rel="noreferrer">

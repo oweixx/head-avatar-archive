@@ -10,7 +10,7 @@ import { Detail } from '@/components/Detail';
 import { Tweaks } from '@/components/Tweaks';
 
 const DEFAULT_TWEAKS: TweakState = {
-  palette: 'pastel',
+  palette: 'vivid',
   bg: 'cream',
   font: 'sans',
   density: 'compact',
@@ -36,14 +36,28 @@ export default function HomePage() {
     });
   }, [tweakState]);
 
+  // Bucket by conference year when the paper has been accepted somewhere
+  // (so a CVPR'26 preprint posted in Nov 2025 sits in the 2026 column),
+  // and fall back to the arXiv-post year for venue==arXiv preprints.
+  const bucketYear = useCallback(
+    (p: Paper) => (p.venue === 'arXiv' ? p.year : p.venueYear),
+    [],
+  );
+
   const yearsMap = useMemo(() => {
     const m = new Map<number, Paper[]>();
     PAPERS.forEach((p) => {
-      if (!m.has(p.year)) m.set(p.year, []);
-      m.get(p.year)!.push(p);
+      const y = bucketYear(p);
+      if (!m.has(y)) m.set(y, []);
+      m.get(y)!.push(p);
     });
     return m;
-  }, []);
+  }, [bucketYear]);
+
+  const papersById = useMemo(
+    () => new Map(PAPERS.map((p) => [p.id, p])),
+    [],
+  );
 
   const years = useMemo(
     () => [...yearsMap.keys()].sort((a, b) => a - b),
@@ -105,9 +119,39 @@ export default function HomePage() {
     setManualOpen(false);
   }, []);
 
+  // Jump from a lineage chip in the Detail panel to the actual card on the
+  // timeline: pin it, then horizontally scroll the card into view.
+  const onJumpTo = useCallback(
+    (id: string) => {
+      const target = papersById.get(id);
+      if (!target) return;
+      setHover(null);
+      setPinned(target);
+      setManualOpen(true);
+      requestAnimationFrame(() => {
+        const el = scrollerRef.current?.querySelector(
+          `[data-paper-id="${id}"]`,
+        ) as HTMLElement | null;
+        el?.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      });
+    },
+    [papersById],
+  );
+
   const displayPaper = hover ?? pinned;
   const pinnedId = pinned?.id;
   const detailOpen = !!displayPaper || manualOpen;
+
+  // Citation-graph highlights: when a card is active, light up its
+  // archive-internal references / citations so the lineage is visible.
+  const linkedBuilds = useMemo(
+    () => new Set(displayPaper?.builds_on ?? []),
+    [displayPaper],
+  );
+  const linkedCited = useMemo(
+    () => new Set(displayPaper?.cited_by ?? []),
+    [displayPaper],
+  );
 
   return (
     <div className="app">
@@ -136,6 +180,8 @@ export default function HomePage() {
                 pinnedId={pinnedId}
                 anyHover={!!displayPaper}
                 enabled={enabled}
+                linkedBuilds={linkedBuilds}
+                linkedCited={linkedCited}
               />
             ))}
           </div>
@@ -146,6 +192,8 @@ export default function HomePage() {
           pinned={!!pinned && (hover?.id ?? pinned.id) === pinned.id}
           onUnpin={() => setPinned(null)}
           onClose={onClosePanel}
+          papersById={papersById}
+          onJumpTo={onJumpTo}
         />
         <div className="caption">Figure 3-1.  Speed Index — 3D Head Archive</div>
       </div>

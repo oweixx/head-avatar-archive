@@ -17,7 +17,9 @@
     "figures": "tsx scripts/figures.ts",
     "figures:dry": "tsx scripts/figures.ts --dry",
     "project-meta": "tsx scripts/project-meta.ts",
-    "project-meta:dry": "tsx scripts/project-meta.ts --dry"
+    "project-meta:dry": "tsx scripts/project-meta.ts --dry",
+    "citations": "tsx scripts/citations.ts",
+    "citations:dry": "tsx scripts/citations.ts --dry"
   },
   "dependencies": {
     "next": "^14.2.35",

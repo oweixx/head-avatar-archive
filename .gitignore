@@ -34,5 +34,8 @@ yarn-error.log*
 # claude code harness
 .claude/
 
+# claude-design handoff bundle (reference only, not part of the app)
+page/
+
 # crawl artifact
 scripts/.crawl-raw.json

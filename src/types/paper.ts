@@ -30,6 +30,10 @@ export type Paper = {
   /** optional code repo URL; falls back to `project` when missing */
   codeUrl?: string;
   abstract: string;
+  /** ids (within this archive) of papers that this one cites */
+  builds_on?: string[];
+  /** ids (within this archive) of papers that cite this one */
+  cited_by?: string[];
 };
 
 export type TweakState = {
