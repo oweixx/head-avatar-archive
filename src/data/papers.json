@@ -2889,11 +2889,12 @@
       "Single Image"
     ],
     "citations": 0,
-    "code": false,
+    "code": true,
     "arxiv": "https://arxiv.org/abs/2312.02222",
     "project": "https://xchenz.github.io/invertavatar_page/",
     "figure": "Incremental 3D GAN inversion for generalized head avatars from one or more source images.",
-    "abstract": "Builds an animatable 3D GAN prior with expression control and neural texture encoding, using recurrent aggregation to improve geometry and texture from few observations."
+    "abstract": "Builds an animatable 3D GAN prior with expression control and neural texture encoding, using recurrent aggregation to improve geometry and texture from few observations.",
+    "codeUrl": "https://github.com/XChenZ/invertAvatar"
   },
   {
     "id": "gaussian-avatars-2024",
@@ -3616,7 +3617,8 @@
     "arxiv": "https://arxiv.org/abs/2303.12326",
     "project": "https://eg3d-goae.github.io/",
     "figure": "Geometry- and occlusion-aware encoder for fast EG3D inversion.",
-    "abstract": "Adds geometry-aware latent encoding, feature refinement, and occlusion-aware fusion to recover high-fidelity 3D GAN inversions much faster than optimization-based methods."
+    "abstract": "Adds geometry-aware latent encoding, feature refinement, and occlusion-aware fusion to recover high-fidelity 3D GAN inversions much faster than optimization-based methods.",
+    "codeUrl": "https://github.com/jiangyzy/GOAE"
   },
   {
     "id": "monoavatar-2023",
