@@ -1996,7 +1996,8 @@
     "project": "https://github.com/aigc3d/LAM",
     "figure": "Large one-shot model that outputs immediately animatable Gaussian heads from a single image.",
     "abstract": "Uses FLAME canonical points as transformer queries over multi-scale image features to predict canonical Gaussian attributes, enabling real-time LBS animation and rendering without per-subject optimization.",
-    "codeUrl": "https://github.com/aigc3d/LAM"
+    "codeUrl": "https://github.com/aigc3d/LAM",
+    "figureUrl": "https://opengraph.githubassets.com/62f8fbab9c7f29d9add8a448f94104b7e611c9670827d7ddf068311e403942c8/aigc3d/LAM"
   },
   {
     "id": "avat3r-2025",
@@ -2088,7 +2089,8 @@
     "project": "https://www.wlyu.me/FaceLift/",
     "figure": "Single-image full-head reconstruction via multi-view diffusion and a GS-LRM Gaussian reconstructor.",
     "abstract": "Generates consistent side/back views from one face image, then reconstructs a full 3D Gaussian head with a transformer-based GS-LRM model trained on synthetic head data.",
-    "codeUrl": "https://github.com/weijielyu/FaceLift"
+    "codeUrl": "https://github.com/weijielyu/FaceLift",
+    "figureUrl": "https://www.wlyu.me/FaceLift/static/images/teaser.png"
   },
   {
     "id": "cap4d-2024",
@@ -2115,7 +2117,8 @@
     "project": "https://felixtaubner.github.io/cap4d/",
     "figure": "Morphable multi-view diffusion creates real-time animatable 4D portrait avatars from 1-100 images.",
     "abstract": "Generates pose- and expression-controlled multi-view images with a morphable diffusion model, then fits a controllable 4D avatar that can be animated via 3DMM parameters and rendered in real time.",
-    "codeUrl": "https://github.com/felixtaubner/cap4d"
+    "codeUrl": "https://github.com/felixtaubner/cap4d",
+    "figureUrl": "https://felixtaubner.github.io/cap4d/static/images/cap4dbanner.webp"
   },
   {
     "id": "gaf-2024",
@@ -2309,7 +2312,8 @@
     "arxiv": "https://arxiv.org/abs/2402.04101",
     "project": "https://vrmm-paper.github.io/",
     "figure": "Volumetric morphable head prior with disentangled identity, expression, and illumination spaces.",
-    "abstract": "Learns a relightable volumetric parametric head model from LightStage captures, supporting few-shot personalized reconstruction, animation, and controllable illumination."
+    "abstract": "Learns a relightable volumetric parametric head model from LightStage captures, supporting few-shot personalized reconstruction, animation, and controllable illumination.",
+    "figureUrl": "https://vrmm-paper.github.io/static/images/fig_representative.jpg"
   },
   {
     "id": "gaussianheads-2024",
@@ -2358,7 +2362,8 @@
       "emodifftalk-2025",
       "hravatar-2025",
       "avat3r-2025"
-    ]
+    ],
+    "figureUrl": "https://vcai.mpi-inf.mpg.de/projects/GaussianHeads/HQ3DAvatar/teaser.png"
   },
   {
     "id": "headgap-2024",
@@ -2476,7 +2481,8 @@
     "cited_by": [
       "fastgha-2026",
       "gaf-2024"
-    ]
+    ],
+    "figureUrl": "https://yuelangx.github.io/gphm/assets/teaser.jpg"
   },
   {
     "id": "gghead-2024",
@@ -2729,7 +2735,8 @@
     "arxiv": "https://arxiv.org/abs/2402.11909",
     "project": "https://zhixuany.github.io/one2avatar_webpage/",
     "figure": "Few-shot personalization from a generative 3DMM-anchored implicit head-avatar prior.",
-    "abstract": "Learns a generative NeRF-based animatable head-avatar prior from multi-view multi-expression data, then adapts it to one or a few user images with joint camera and 3DMM refinement."
+    "abstract": "Learns a generative NeRF-based animatable head-avatar prior from multi-view multi-expression data, then adapts it to one or a few user images with joint camera and 3DMM refinement.",
+    "figureUrl": "https://zhixuany.github.io/one2avatar_webpage/resource/static/images/teaser.png"
   },
   {
     "id": "hq3davatar-2024",
@@ -2771,7 +2778,8 @@
       "gaf-2024",
       "gan-avatar-2024",
       "avatarstudio-2023"
-    ]
+    ],
+    "figureUrl": "https://vcai.mpi-inf.mpg.de/projects/HQ3DAvatar/HQ3DAvatar/Teaser_updated-1.png"
   },
   {
     "id": "psavatar-2024",
@@ -2893,7 +2901,8 @@
     "arxiv": "https://arxiv.org/abs/2312.02222",
     "project": "https://xchenz.github.io/invertavatar_page/",
     "figure": "Incremental 3D GAN inversion for generalized head avatars from one or more source images.",
-    "abstract": "Builds an animatable 3D GAN prior with expression control and neural texture encoding, using recurrent aggregation to improve geometry and texture from few observations."
+    "abstract": "Builds an animatable 3D GAN prior with expression control and neural texture encoding, using recurrent aggregation to improve geometry and texture from few observations.",
+    "figureUrl": "https://xchenz.github.io/invertavatar_page/assets/teaser.png"
   },
   {
     "id": "gaussian-avatars-2024",
@@ -3383,7 +3392,8 @@
       "diffportrait360-2025",
       "avat3r-2025",
       "headgap-2024"
-    ]
+    ],
+    "figureUrl": "https://p0lyfish.github.io/voodoo3d/voodoo3d/static/images/teaser.jpg"
   },
   {
     "id": "diffusionavatars-2024",
@@ -3431,7 +3441,8 @@
       "headgap-2024",
       "headstudio-2024",
       "mononphm-2024"
-    ]
+    ],
+    "figureUrl": "https://tobias-kirschstein.github.io/diffusion-avatars/static/images/method_overview.jpg"
   },
   {
     "id": "gan-avatar-2024",
@@ -3474,7 +3485,8 @@
     "cited_by": [
       "gpica-2025",
       "avat3r-2025"
-    ]
+    ],
+    "figureUrl": "https://ganavatar.github.io/static/images/teaser_cr.jpg"
   },
   {
     "id": "d3ga-2023",
@@ -3520,7 +3532,8 @@
       "avat3r-2025",
       "gghead-2024",
       "gaussian-avatars-2024"
-    ]
+    ],
+    "figureUrl": "https://wojciechzielonka.com/assets/img//d3ga/teaser.png"
   },
   {
     "id": "avatarstudio-2023",
@@ -3616,7 +3629,8 @@
     "arxiv": "https://arxiv.org/abs/2303.12326",
     "project": "https://eg3d-goae.github.io/",
     "figure": "Geometry- and occlusion-aware encoder for fast EG3D inversion.",
-    "abstract": "Adds geometry-aware latent encoding, feature refinement, and occlusion-aware fusion to recover high-fidelity 3D GAN inversions much faster than optimization-based methods."
+    "abstract": "Adds geometry-aware latent encoding, feature refinement, and occlusion-aware fusion to recover high-fidelity 3D GAN inversions much faster than optimization-based methods.",
+    "figureUrl": "https://eg3d-goae.github.io/files/teaser.gif"
   },
   {
     "id": "monoavatar-2023",
@@ -3777,7 +3791,8 @@
     "project": "https://mrtornado24.github.io/Next3D/",
     "figure": "Generative neural texture rasterization for animatable 3D-aware head avatars.",
     "abstract": "Learns neural textures on a parametric mesh template, rasterizes them into tri-plane features, and volume-renders 3D-aware portraits with expression control and topology flexibility.",
-    "codeUrl": "https://github.com/MrTornado24/Next3D"
+    "codeUrl": "https://github.com/MrTornado24/Next3D",
+    "figureUrl": "https://mrtornado24.github.io/Next3D/images/pipeline_v3.jpg"
   },
   {
     "id": "3dfaceshop-2023",
@@ -3832,7 +3847,8 @@
     "arxiv": "https://doi.org/10.1007/978-3-031-19784-0_7",
     "project": "https://research.adobe.com/publication/3d-fm-gan-towards-3d-controllable-face-manipulation/",
     "figure": "Conditional GAN for identity-preserving 3D-controllable face manipulation.",
-    "abstract": "Encodes an input face and physically-based 3D edit renderings into StyleGAN latent spaces, using co-modulation to support pose, expression, and lighting edits without per-image optimization."
+    "abstract": "Encodes an input face and physically-based 3D edit renderings into StyleGAN latent spaces, using co-modulation to support pose, expression, and lighting edits without per-image optimization.",
+    "figureUrl": "https://research.adobe.com/wp-content/themes/adoberesearch.com/images/facebook-default.jpg"
   },
   {
     "id": "pointavatar-2023",
@@ -4164,7 +4180,8 @@
       "gpavatar-2024",
       "voodoo3d-2024",
       "avatarmav-2023"
-    ]
+    ],
+    "figureUrl": "https://neeek2303.github.io/MegaPortraits/static/images/method.png"
   },
   {
     "id": "neural-strands-2022",
@@ -4317,7 +4334,8 @@
     "project": "https://crishy1995.github.io/HeadNeRF-Project/",
     "figure": "Real-time NeRF-based parametric head model with pose and semantic attribute control.",
     "abstract": "Integrates neural radiance fields into a parametric head representation and accelerates rendering with 2D neural rendering, reducing render time to real-time rates while preserving facial detail.",
-    "codeUrl": "https://github.com/CrisHY1995/headnerf"
+    "codeUrl": "https://github.com/CrisHY1995/headnerf",
+    "figureUrl": "https://crishy1995.github.io/HeadNeRF-Project/Images/teaser_headnerf.png"
   },
   {
     "id": "nha-2022",
