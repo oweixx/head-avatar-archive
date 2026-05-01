@@ -3490,7 +3490,7 @@
     ],
     "year": 2023,
     "month": 11,
-    "venue": "arXiv",
+    "venue": "3DV",
     "venueYear": 2023,
     "tags": [
       "3DGS",
@@ -3803,7 +3803,7 @@
     "citations": 0,
     "code": false,
     "arxiv": "https://arxiv.org/abs/2209.05434",
-    "project": "",
+    "project": "https://junshutang.github.io/control/index.html",
     "figure": "Explicitly controllable 3D-aware portrait generation guided by 3DMM semantic parameters.",
     "abstract": "Generates 3D-aware portraits controllable by pose, identity, expression, and illumination, with volume blending to stabilize non-face regions under expression changes."
   },
@@ -4228,7 +4228,7 @@
     "citations": 0,
     "code": false,
     "arxiv": "https://arxiv.org/abs/2205.15517",
-    "project": "",
+    "project": "https://mrtornado24.github.io/IDE-3D/",
     "figure": "Interactive high-resolution editing for 3D-aware portrait synthesis with disentangled semantics.",
     "abstract": "Combines a 3D-semantics-aware generator, hybrid GAN inversion, and a canonical editor for view-consistent portrait drawing, semantic editing, and style control."
   },
