@@ -2741,6 +2741,77 @@
     ]
   },
   {
+    "id": "voodoo-xp-2024",
+    "title": "VOODOO XP: Expressive One-Shot Head Reenactment for VR Telepresence",
+    "short": "VOODOO XP",
+    "authors": [
+      "Tran",
+      "Zakharov",
+      "Ho",
+      "Hu",
+      "Karmanov",
+      "Agarwal",
+      "Goldwhite",
+      "Venegas",
+      "Tran",
+      "Li"
+    ],
+    "year": 2024,
+    "month": 5,
+    "venue": "SIGGRAPH Asia",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2405.16204",
+    "project": "https://mbzuai-metaverse.github.io/voodooxp/",
+    "figure": "Expressive one-shot 3D-aware head reenactment for real-time VR telepresence.",
+    "abstract": "Transfers driver expressions into transformer blocks of a 3D lifting module, using multi-stage self-supervision with neutralization and frontalization to improve expressiveness while preserving identity for one-shot VR telepresence.",
+    "builds_on": [
+      "voodoo3d-2024",
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
+    "id": "portrait4d-v2-2024",
+    "title": "Portrait4D-v2: Pseudo Multi-View Data Creates Better 4D Head Synthesizer",
+    "short": "Portrait4D-v2",
+    "authors": [
+      "Deng",
+      "Wang",
+      "Wang"
+    ],
+    "year": 2024,
+    "month": 3,
+    "venue": "ECCV",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2403.13570",
+    "project": "https://yudeng.github.io/Portrait4D-v2/",
+    "figure": "Pseudo multi-view video supervision for stronger feed-forward 4D head synthesis.",
+    "abstract": "Converts monocular real videos into pseudo multi-view videos with a learned 3D head synthesizer, then trains a motion-aware transformer 4D head synthesizer via cross-view self-reenactment.",
+    "codeUrl": "https://github.com/YuDeng/Portrait-4D",
+    "builds_on": [
+      "portrait4d-2024",
+      "lrm-2024",
+      "rome-2022",
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "npga-2024",
     "title": "NPGA: Neural Parametric Gaussian Avatars",
     "short": "NPGA",
@@ -4403,6 +4474,40 @@
     ]
   },
   {
+    "id": "rome-2022",
+    "title": "Realistic One-shot Mesh-based Head Avatars",
+    "short": "ROME",
+    "authors": [
+      "Khakhulin",
+      "Sklyarova",
+      "Lempitsky",
+      "Zakharov"
+    ],
+    "year": 2022,
+    "month": 6,
+    "venue": "ECCV",
+    "venueYear": 2022,
+    "tags": [
+      "MESH",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2206.08343",
+    "project": "https://samsunglabs.github.io/rome/",
+    "figure": "One-shot mesh-based head avatar with neural texture and deep rendering.",
+    "abstract": "Estimates a person-specific rigged head mesh and neural texture from a single photograph, then renders controllable avatars with a neural renderer trained on in-the-wild videos.",
+    "codeUrl": "https://github.com/samsunglabs/rome",
+    "builds_on": [
+      "megaportraits-2022",
+      "nha-2022",
+      "imavatar-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "megaportraits-2022",
     "title": "MegaPortraits: One-shot Megapixel Neural Head Avatars",
     "short": "MegaPortraits",
@@ -4984,6 +5089,38 @@
       "imavatar-2022",
       "nha-2022",
       "mvp-2021"
+    ]
+  },
+  {
+    "id": "stylerig-2020",
+    "title": "StyleRig: Rigging StyleGAN for 3D Control over Portrait Images",
+    "short": "StyleRig",
+    "authors": [
+      "Tewari",
+      "Elgharib",
+      "Bharaj",
+      "Bernard",
+      "Seidel",
+      "Perez",
+      "Zollhoefer",
+      "Theobalt"
+    ],
+    "year": 2020,
+    "month": 3,
+    "venue": "CVPR",
+    "venueYear": 2020,
+    "tags": [
+      "HYBRID",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2004.00121",
+    "project": "https://vcai.mpi-inf.mpg.de/projects/StyleRig/",
+    "figure": "RigNet maps 3DMM controls into StyleGAN latent edits for portrait control.",
+    "abstract": "Learns a self-supervised rigging network from 3DMM semantic parameters to a fixed StyleGAN latent space, enabling pose, expression, and illumination control over photoreal portrait images.",
+    "builds_on": [
+      "flame-2017"
     ]
   },
   {
