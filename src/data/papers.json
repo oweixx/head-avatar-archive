@@ -3094,6 +3094,36 @@
     ]
   },
   {
+    "id": "ohta-2024",
+    "title": "OHTA: One-shot Hand Avatar via Data-driven Implicit Priors",
+    "short": "OHTA",
+    "authors": [
+      "Zheng",
+      "Wen",
+      "Su",
+      "Xu",
+      "Li",
+      "Zhao",
+      "Xue"
+    ],
+    "year": 2024,
+    "month": 2,
+    "venue": "CVPR",
+    "venueYear": 2024,
+    "tags": [
+      "SDF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2402.18969",
+    "project": "https://zxz267.github.io/OHTA/",
+    "figure": "One-shot implicit animatable hand avatar using learned data-driven priors.",
+    "abstract": "Learns a hand-prior network from available hand data, then uses that prior for inversion and fitting from a single target image, producing high-fidelity drivable hand avatars with editing and latent-space manipulation support.",
+    "codeUrl": "https://github.com/bytedance/OHTA"
+  },
+  {
     "id": "one2avatar-2024",
     "title": "One2Avatar: Generative Implicit Head Avatar for Few-shot User Adaptation",
     "short": "One2Avatar",
