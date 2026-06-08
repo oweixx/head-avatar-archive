@@ -1012,6 +1012,48 @@
     ]
   },
   {
+    "id": "idol-2025",
+    "title": "IDOL: Instant Photorealistic 3D Human Creation from a Single Image",
+    "short": "IDOL",
+    "authors": [
+      "Zhuang",
+      "Lv",
+      "Wen",
+      "Shuai",
+      "Zeng",
+      "Zhu",
+      "Chen",
+      "Yang",
+      "Cao",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 12,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2412.14963",
+    "project": "https://yiyuzhuang.github.io/IDOL/",
+    "figure": "Instant single-image photorealistic full-body human Gaussian reconstruction.",
+    "abstract": "Feed-forward transformer reconstructs structured 3D human Gaussians from one image, trained on the HuGe100K multi-view generated human dataset and directly supporting animation and editing.",
+    "figureUrl": "https://yiyuzhuang.github.io/IDOL/static/images/teaser.png",
+    "codeUrl": "https://github.com/yiyuzhuang/IDOL",
+    "builds_on": [
+      "humansplat-2024",
+      "pghm-2025",
+      "lrm-2024",
+      "d3ga-2023",
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
     "id": "gtavatar-2025",
     "title": "GTAvatar: Bridging Gaussian Splatting and Texture Mapping for Relightable and Editable Gaussian Avatars",
     "short": "GTAvatar",
@@ -2592,6 +2634,43 @@
       "mvp4d-2025",
       "avat3r-2025",
       "gaf-2024"
+    ]
+  },
+  {
+    "id": "humansplat-2024",
+    "title": "HumanSplat: Generalizable Single-Image Human Gaussian Splatting with Structure Priors",
+    "short": "HumanSplat",
+    "authors": [
+      "Pan",
+      "Su",
+      "Lin",
+      "Fan",
+      "Zhang",
+      "Li",
+      "Shen",
+      "Mu",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 6,
+    "venue": "NeurIPS",
+    "venueYear": 2024,
+    "tags": [
+      "3DGS",
+      "Single Image",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2406.12459",
+    "project": "https://humansplat.github.io/",
+    "figure": "Single-image human Gaussian splatting with SMPL-guided structure priors.",
+    "abstract": "Combines a 2D multi-view diffusion model with a latent reconstruction transformer using human structure priors, predicting 3DGS properties from one human image for photorealistic novel-view synthesis.",
+    "codeUrl": "https://github.com/humansplat/humansplat",
+    "builds_on": [
+      "lrm-2024",
+      "d3ga-2023",
+      "gaussian-avatars-2024"
     ]
   },
   {
