@@ -900,6 +900,41 @@
     ]
   },
   {
+    "id": "logavatar-2026",
+    "title": "LoGAvatar: Local Gaussian Splatting for human avatar modeling from monocular video",
+    "short": "LoGAvatar",
+    "authors": [
+      "Zhang",
+      "Li",
+      "Jia",
+      "Li",
+      "Su",
+      "Wang",
+      "Li"
+    ],
+    "year": 2026,
+    "month": 1,
+    "venue": "Computer-Aided Design",
+    "venueYear": 2026,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://doi.org/10.1016/j.cad.2025.103973",
+    "project": "http://cic.tju.edu.cn/faculty/likun/projects/LoGAvatar",
+    "figure": "Local Gaussian avatar model with hierarchical geometry and convolutional texture prediction.",
+    "abstract": "Predicts local Gaussian primitives from sampled SMPL-template points and uses a convolutional texture atlas to preserve spatial continuity, producing editable high-fidelity human avatars from monocular video.",
+    "codeUrl": "http://cic.tju.edu.cn/faculty/likun/projects/LoGAvatar",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
     "id": "elite-2026",
     "title": "ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation",
     "short": "ELITE",
@@ -1765,6 +1800,40 @@
     "builds_on": [
       "megaportraits-2022",
       "nerface-2021"
+    ]
+  },
+  {
+    "id": "pghm-2025",
+    "title": "Parametric Gaussian Human Model: Generalizable Prior for Efficient and Realistic Human Avatar Modeling",
+    "short": "PGHM",
+    "authors": [
+      "Peng",
+      "Sun",
+      "Chen",
+      "Su",
+      "Su",
+      "Liu"
+    ],
+    "year": 2025,
+    "month": 6,
+    "venue": "3DV",
+    "venueYear": 2026,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2506.06645",
+    "project": "https://pengc02.github.io/pghm/",
+    "figure": "Generalizable parametric Gaussian human prior for fast monocular avatar adaptation.",
+    "abstract": "Learns a UV-aligned latent identity map and disentangled multi-head U-Net to predict static, pose-dependent, and view-dependent Gaussian attributes, enabling high-fidelity monocular human avatar reconstruction with short subject adaptation.",
+    "codeUrl": "https://github.com/pengc02/PGHM",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
     ]
   },
   {
