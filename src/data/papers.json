@@ -1731,6 +1731,43 @@
     ]
   },
   {
+    "id": "x-nemo-2025",
+    "title": "X-NeMo: Expressive Neural Motion Reenactment via Disentangled Latent Attention",
+    "short": "X-NeMo",
+    "authors": [
+      "Zhao",
+      "Xu",
+      "Song",
+      "Xie",
+      "Zhang",
+      "Li",
+      "Luo",
+      "Suo",
+      "Liu"
+    ],
+    "year": 2025,
+    "month": 7,
+    "venue": "ICLR",
+    "venueYear": 2025,
+    "tags": [
+      "DIFFUSION",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2507.23143",
+    "project": "https://byteaigc.github.io/X-Portrait2/",
+    "figure": "Disentangled latent-motion attention for expressive zero-shot portrait reenactment.",
+    "abstract": "Diffusion portrait animation pipeline that encodes driving motion into a 1D identity-agnostic latent descriptor and injects it through cross-attention, improving expression transfer while reducing identity leakage.",
+    "figureUrl": "https://github.com/bytedance/x-nemo-inference/raw/main/teaser.png",
+    "codeUrl": "https://github.com/bytedance/x-nemo-inference",
+    "builds_on": [
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "becominglit-2025",
     "title": "BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading",
     "short": "BecomingLit",
@@ -3047,6 +3084,74 @@
       "headgap-2024",
       "diffusionavatars-2024"
     ]
+  },
+  {
+    "id": "portrait4d-2024",
+    "title": "Portrait4D: Learning One-Shot 4D Head Avatar Synthesis using Synthetic Data",
+    "short": "Portrait4D",
+    "authors": [
+      "Deng",
+      "Wang",
+      "Ren",
+      "Chen",
+      "Wang"
+    ],
+    "year": 2023,
+    "month": 11,
+    "venue": "CVPR",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2311.18729",
+    "project": "https://yudeng.github.io/Portrait4D/",
+    "figure": "One-shot 4D head avatar synthesis trained from large-scale synthetic 4D data.",
+    "abstract": "Learns a part-wise 4D generative head model to synthesize multi-view identities and motions, then trains a transformer-based animatable triplane reconstructor for one-shot 4D head reconstruction and reenactment.",
+    "codeUrl": "https://github.com/YuDeng/Portrait-4D",
+    "builds_on": [
+      "invertavatar-2024",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
+  },
+  {
+    "id": "lrm-2024",
+    "title": "LRM: Large Reconstruction Model for Single Image to 3D",
+    "short": "LRM",
+    "authors": [
+      "Hong",
+      "Zhang",
+      "Gu",
+      "Bi",
+      "Zhou",
+      "Liu",
+      "Liu",
+      "Sunkavalli",
+      "Bui",
+      "Tan"
+    ],
+    "year": 2023,
+    "month": 11,
+    "venue": "ICLR",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2311.04400",
+    "project": "https://yiconghong.me/LRM/",
+    "figure": "500M-parameter transformer reconstructs a NeRF from one object image in seconds.",
+    "abstract": "Large reconstruction model trained end-to-end on about one million multi-view objects, using image features and a transformer decoder to predict a triplane NeRF from a single image."
   },
   {
     "id": "invertavatar-2024",
