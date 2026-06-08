@@ -1928,6 +1928,41 @@
     ]
   },
   {
+    "id": "reperformer-2025",
+    "title": "RePerformer: Immersive Human-centric Volumetric Videos from Playback to Photoreal Reperformance",
+    "short": "RePerformer",
+    "authors": [
+      "Jiang",
+      "Shen",
+      "Guo",
+      "Hong",
+      "Su",
+      "Zhang",
+      "Habermann",
+      "Xu"
+    ],
+    "year": 2025,
+    "month": 3,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Multiview",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2503.12242",
+    "project": "https://moqiyinlun.github.io/RePerformer/",
+    "figure": "Gaussian volumetric video representation that supports both playback and photoreal reperformance.",
+    "abstract": "Disentangles human-centric dynamic scenes into canonical motion and appearance Gaussians, packs appearance Gaussians into Morton-parameterized 2D maps, and transfers deformation to render novel performances photorealistically.",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
     "id": "hravatar-2025",
     "title": "HRAvatar: High-Quality and Relightable Gaussian Head Avatar",
     "short": "HRAvatar",
