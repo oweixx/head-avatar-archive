@@ -1766,6 +1766,45 @@
     ]
   },
   {
+    "id": "gaia-2025",
+    "title": "GAIA: Generative Animatable Interactive Avatars with Expression-conditioned Gaussians",
+    "short": "GAIA",
+    "authors": [
+      "Yu",
+      "Li",
+      "Sun",
+      "Shapira",
+      "Park",
+      "Stengel",
+      "Chan",
+      "Li",
+      "Wang",
+      "Nagano",
+      "De Mello"
+    ],
+    "year": 2025,
+    "month": 7,
+    "venue": "SIGGRAPH",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://doi.org/10.1145/3721238.3730737",
+    "project": "https://research.nvidia.com/labs/amri/projects/gaia/",
+    "figure": "Generative Gaussian head-avatar model with expression-conditioned geometry and appearance.",
+    "abstract": "Generates animation-ready Gaussian head avatars embedded in a morphable-model UV parameterization, using expression-conditioned detail modeling and a two-branch identity/expression architecture for interactive animation and editing.",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "gphm-2024",
+      "npga-2024",
+      "next3d-2023"
+    ]
+  },
+  {
     "id": "x-nemo-2025",
     "title": "X-NeMo: Expressive Neural Motion Reenactment via Disentangled Latent Attention",
     "short": "X-NeMo",
