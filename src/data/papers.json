@@ -1731,6 +1731,43 @@
     ]
   },
   {
+    "id": "x-nemo-2025",
+    "title": "X-NeMo: Expressive Neural Motion Reenactment via Disentangled Latent Attention",
+    "short": "X-NeMo",
+    "authors": [
+      "Zhao",
+      "Xu",
+      "Song",
+      "Xie",
+      "Zhang",
+      "Li",
+      "Luo",
+      "Suo",
+      "Liu"
+    ],
+    "year": 2025,
+    "month": 7,
+    "venue": "ICLR",
+    "venueYear": 2025,
+    "tags": [
+      "DIFFUSION",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2507.23143",
+    "project": "https://byteaigc.github.io/X-Portrait2/",
+    "figure": "Disentangled latent-motion attention for expressive zero-shot portrait reenactment.",
+    "abstract": "Diffusion portrait animation pipeline that encodes driving motion into a 1D identity-agnostic latent descriptor and injects it through cross-attention, improving expression transfer while reducing identity leakage.",
+    "figureUrl": "https://github.com/bytedance/x-nemo-inference/raw/main/teaser.png",
+    "codeUrl": "https://github.com/bytedance/x-nemo-inference",
+    "builds_on": [
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "becominglit-2025",
     "title": "BecomingLit: Relightable Gaussian Avatars with Hybrid Neural Shading",
     "short": "BecomingLit",
@@ -1768,6 +1805,56 @@
     ],
     "cited_by": [
       "relight-anyone-2026"
+    ]
+  },
+  {
+    "id": "sega-2025",
+    "title": "SEGA: Drivable 3D Gaussian Head Avatar from a Single Image",
+    "short": "SEGA",
+    "authors": [
+      "Guo",
+      "Su",
+      "Wang",
+      "Wang",
+      "Li",
+      "Chang",
+      "Li",
+      "Zhao",
+      "Wang",
+      "Liu",
+      "Huang"
+    ],
+    "year": 2025,
+    "month": 4,
+    "venue": "arXiv",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2504.14373",
+    "project": "https://sega-head.github.io/",
+    "figure": "Single-image drivable Gaussian head avatar with hierarchical UV-space 3DGS.",
+    "abstract": "Combines generalized 2D and 3D priors with a hierarchical static/dynamic UV-space Gaussian framework, producing real-time drivable head avatars from a single image with optional person-specific tuning.",
+    "builds_on": [
+      "lam-2025",
+      "avat3r-2025",
+      "gaf-2024",
+      "uravatar-2024",
+      "gagavatar-2024",
+      "headgap-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
     ]
   },
   {
@@ -1930,6 +2017,92 @@
     ]
   },
   {
+    "id": "taoavatar-2025",
+    "title": "TaoAvatar: Real-Time Lifelike Full-Body Talking Avatars for Augmented Reality via 3D Gaussian Splatting",
+    "short": "TaoAvatar",
+    "authors": [
+      "Chen",
+      "Hu",
+      "Wang",
+      "Jiang",
+      "Zhou",
+      "Chen",
+      "Lv"
+    ],
+    "year": 2025,
+    "month": 3,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Full Body",
+      "AR"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2503.17032",
+    "project": "https://pixelai-team.github.io/TaoAvatar/",
+    "figure": "Lightweight full-body 3DGS talking avatar for real-time AR deployment.",
+    "abstract": "Builds a personalized clothed human template with bound Gaussians, distills pose-dependent non-rigid deformation into a lightweight MLP, and adds Gaussian blend shapes for high-detail real-time talking avatars on AR devices.",
+    "figureUrl": "https://pixelai-team.github.io/TaoAvatar/static/images/teaser.png",
+    "codeUrl": "https://github.com/PixelAI-Team/TaoAvatar",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022"
+    ]
+  },
+  {
+    "id": "rgbavatar-2025",
+    "title": "RGBAvatar: Reduced Gaussian Blendshapes for Online Modeling of Head Avatars",
+    "short": "RGBAvatar",
+    "authors": [
+      "Li",
+      "Li",
+      "Weng",
+      "Zheng",
+      "Zhou"
+    ],
+    "year": 2025,
+    "month": 3,
+    "venue": "arXiv",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Online"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2503.12886",
+    "project": "https://github.com/gapszju/RGBAvatar",
+    "figure": "Reduced Gaussian blendshape bases for online head-avatar reconstruction.",
+    "abstract": "Maps tracked 3DMM parameters into compact Gaussian blendshape weights with an MLP, accelerating training with color initialization, batch-parallel rasterization, and local-global sampling for on-the-fly reconstruction.",
+    "codeUrl": "https://github.com/gapszju/RGBAvatar",
+    "builds_on": [
+      "hravatar-2025",
+      "gaf-2024",
+      "gagavatar-2024",
+      "gaussianheads-2024",
+      "npga-2024",
+      "gpavatar-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "diffportrait360-2025",
     "title": "DiffPortrait360: Consistent Portrait Diffusion for 360 View Synthesis",
     "short": "DiffPortrait360",
@@ -2062,6 +2235,51 @@
       "flexavatar-2025",
       "instant-expressive-gha-2025",
       "architecthead-2025"
+    ]
+  },
+  {
+    "id": "fate-2024",
+    "title": "FATE: Full-head Gaussian Avatar with Textural Editing from Monocular Video",
+    "short": "FATE",
+    "authors": [
+      "Zhang",
+      "Wu",
+      "Liang",
+      "Gong",
+      "Hu",
+      "Yao",
+      "Cao",
+      "Zhu"
+    ],
+    "year": 2024,
+    "month": 11,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Editable"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2411.15604",
+    "project": "https://zjwfufu.github.io/FATE-page/",
+    "figure": "Editable 360-degree full-head Gaussian avatar reconstructed from monocular portrait video.",
+    "abstract": "Uses UV-space sampling-based densification, neural baking into continuous attribute maps, and a universal completion framework to reconstruct editable full-head Gaussian avatars from monocular video.",
+    "figureUrl": "https://zjwfufu.github.io/FATE-page/static/images/teaser.png",
+    "codeUrl": "https://github.com/zjwfufu/FateAvatar",
+    "builds_on": [
+      "gaussianheads-2024",
+      "mono-gaussian-avatar-2024",
+      "gaussian-head-avatar-2024",
+      "gaussian-avatars-2024",
+      "flash-avatar-2024",
+      "pointavatar-2023",
+      "insta-2023",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
     ]
   },
   {
@@ -2866,6 +3084,74 @@
       "headgap-2024",
       "diffusionavatars-2024"
     ]
+  },
+  {
+    "id": "portrait4d-2024",
+    "title": "Portrait4D: Learning One-Shot 4D Head Avatar Synthesis using Synthetic Data",
+    "short": "Portrait4D",
+    "authors": [
+      "Deng",
+      "Wang",
+      "Ren",
+      "Chen",
+      "Wang"
+    ],
+    "year": 2023,
+    "month": 11,
+    "venue": "CVPR",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2311.18729",
+    "project": "https://yudeng.github.io/Portrait4D/",
+    "figure": "One-shot 4D head avatar synthesis trained from large-scale synthetic 4D data.",
+    "abstract": "Learns a part-wise 4D generative head model to synthesize multi-view identities and motions, then trains a transformer-based animatable triplane reconstructor for one-shot 4D head reconstruction and reenactment.",
+    "codeUrl": "https://github.com/YuDeng/Portrait-4D",
+    "builds_on": [
+      "invertavatar-2024",
+      "megaportraits-2022",
+      "rignerf-2022",
+      "imavatar-2022",
+      "nha-2022",
+      "nerface-2021"
+    ]
+  },
+  {
+    "id": "lrm-2024",
+    "title": "LRM: Large Reconstruction Model for Single Image to 3D",
+    "short": "LRM",
+    "authors": [
+      "Hong",
+      "Zhang",
+      "Gu",
+      "Bi",
+      "Zhou",
+      "Liu",
+      "Liu",
+      "Sunkavalli",
+      "Bui",
+      "Tan"
+    ],
+    "year": 2023,
+    "month": 11,
+    "venue": "ICLR",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2311.04400",
+    "project": "https://yiconghong.me/LRM/",
+    "figure": "500M-parameter transformer reconstructs a NeRF from one object image in seconds.",
+    "abstract": "Large reconstruction model trained end-to-end on about one million multi-view objects, using image features and a transformer decoder to predict a triplane NeRF from a single image."
   },
   {
     "id": "invertavatar-2024",
