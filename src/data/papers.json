@@ -900,6 +900,41 @@
     ]
   },
   {
+    "id": "logavatar-2026",
+    "title": "LoGAvatar: Local Gaussian Splatting for human avatar modeling from monocular video",
+    "short": "LoGAvatar",
+    "authors": [
+      "Zhang",
+      "Li",
+      "Jia",
+      "Li",
+      "Su",
+      "Wang",
+      "Li"
+    ],
+    "year": 2026,
+    "month": 1,
+    "venue": "Computer-Aided Design",
+    "venueYear": 2026,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://doi.org/10.1016/j.cad.2025.103973",
+    "project": "http://cic.tju.edu.cn/faculty/likun/projects/LoGAvatar",
+    "figure": "Local Gaussian avatar model with hierarchical geometry and convolutional texture prediction.",
+    "abstract": "Predicts local Gaussian primitives from sampled SMPL-template points and uses a convolutional texture atlas to preserve spatial continuity, producing editable high-fidelity human avatars from monocular video.",
+    "codeUrl": "http://cic.tju.edu.cn/faculty/likun/projects/LoGAvatar",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
     "id": "elite-2026",
     "title": "ELITE: Efficient Gaussian Head Avatar from a Monocular Video via Learned Initialization and Test-time Generative Adaptation",
     "short": "ELITE",
@@ -973,6 +1008,48 @@
     "figure": "Dual-audio diffusion motion + 3DGS rendering for bidirectional listen-and-speak dialogue avatars.",
     "abstract": "Two-stage multi-speaker talking-head generator: diffusion transformer for 3D motion from dual audio + 3DGS renderer with alternate 2D-level training on a 50-hour dataset.",
     "builds_on": [
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
+    "id": "idol-2025",
+    "title": "IDOL: Instant Photorealistic 3D Human Creation from a Single Image",
+    "short": "IDOL",
+    "authors": [
+      "Zhuang",
+      "Lv",
+      "Wen",
+      "Shuai",
+      "Zeng",
+      "Zhu",
+      "Chen",
+      "Yang",
+      "Cao",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 12,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2412.14963",
+    "project": "https://yiyuzhuang.github.io/IDOL/",
+    "figure": "Instant single-image photorealistic full-body human Gaussian reconstruction.",
+    "abstract": "Feed-forward transformer reconstructs structured 3D human Gaussians from one image, trained on the HuGe100K multi-view generated human dataset and directly supporting animation and editing.",
+    "figureUrl": "https://yiyuzhuang.github.io/IDOL/static/images/teaser.png",
+    "codeUrl": "https://github.com/yiyuzhuang/IDOL",
+    "builds_on": [
+      "humansplat-2024",
+      "pghm-2025",
+      "lrm-2024",
+      "d3ga-2023",
       "gaussian-avatars-2024"
     ]
   },
@@ -1731,6 +1808,45 @@
     ]
   },
   {
+    "id": "gaia-2025",
+    "title": "GAIA: Generative Animatable Interactive Avatars with Expression-conditioned Gaussians",
+    "short": "GAIA",
+    "authors": [
+      "Yu",
+      "Li",
+      "Sun",
+      "Shapira",
+      "Park",
+      "Stengel",
+      "Chan",
+      "Li",
+      "Wang",
+      "Nagano",
+      "De Mello"
+    ],
+    "year": 2025,
+    "month": 7,
+    "venue": "SIGGRAPH",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://doi.org/10.1145/3721238.3730737",
+    "project": "https://research.nvidia.com/labs/amri/projects/gaia/",
+    "figure": "Generative Gaussian head-avatar model with expression-conditioned geometry and appearance.",
+    "abstract": "Generates animation-ready Gaussian head avatars embedded in a morphable-model UV parameterization, using expression-conditioned detail modeling and a two-branch identity/expression architecture for interactive animation and editing.",
+    "builds_on": [
+      "gaussian-avatars-2024",
+      "gphm-2024",
+      "npga-2024",
+      "next3d-2023"
+    ]
+  },
+  {
     "id": "x-nemo-2025",
     "title": "X-NeMo: Expressive Neural Motion Reenactment via Disentangled Latent Attention",
     "short": "X-NeMo",
@@ -1765,6 +1881,40 @@
     "builds_on": [
       "megaportraits-2022",
       "nerface-2021"
+    ]
+  },
+  {
+    "id": "pghm-2025",
+    "title": "Parametric Gaussian Human Model: Generalizable Prior for Efficient and Realistic Human Avatar Modeling",
+    "short": "PGHM",
+    "authors": [
+      "Peng",
+      "Sun",
+      "Chen",
+      "Su",
+      "Su",
+      "Liu"
+    ],
+    "year": 2025,
+    "month": 6,
+    "venue": "3DV",
+    "venueYear": 2026,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Monocular",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2506.06645",
+    "project": "https://pengc02.github.io/pghm/",
+    "figure": "Generalizable parametric Gaussian human prior for fast monocular avatar adaptation.",
+    "abstract": "Learns a UV-aligned latent identity map and disentangled multi-head U-Net to predict static, pose-dependent, and view-dependent Gaussian attributes, enabling high-fidelity monocular human avatar reconstruction with short subject adaptation.",
+    "codeUrl": "https://github.com/pengc02/PGHM",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
     ]
   },
   {
@@ -1925,6 +2075,41 @@
     "builds_on": [
       "d3ga-2023",
       "rodin-2023"
+    ]
+  },
+  {
+    "id": "reperformer-2025",
+    "title": "RePerformer: Immersive Human-centric Volumetric Videos from Playback to Photoreal Reperformance",
+    "short": "RePerformer",
+    "authors": [
+      "Jiang",
+      "Shen",
+      "Guo",
+      "Hong",
+      "Su",
+      "Zhang",
+      "Habermann",
+      "Xu"
+    ],
+    "year": 2025,
+    "month": 3,
+    "venue": "CVPR",
+    "venueYear": 2025,
+    "tags": [
+      "3DGS",
+      "Animatable",
+      "Multiview",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2503.12242",
+    "project": "https://moqiyinlun.github.io/RePerformer/",
+    "figure": "Gaussian volumetric video representation that supports both playback and photoreal reperformance.",
+    "abstract": "Disentangles human-centric dynamic scenes into canonical motion and appearance Gaussians, packs appearance Gaussians into Morton-parameterized 2D maps, and transfers deformation to render novel performances photorealistically.",
+    "builds_on": [
+      "d3ga-2023",
+      "gaussian-avatars-2024"
     ]
   },
   {
@@ -2452,6 +2637,43 @@
     ]
   },
   {
+    "id": "humansplat-2024",
+    "title": "HumanSplat: Generalizable Single-Image Human Gaussian Splatting with Structure Priors",
+    "short": "HumanSplat",
+    "authors": [
+      "Pan",
+      "Su",
+      "Lin",
+      "Fan",
+      "Zhang",
+      "Li",
+      "Shen",
+      "Mu",
+      "Liu"
+    ],
+    "year": 2024,
+    "month": 6,
+    "venue": "NeurIPS",
+    "venueYear": 2024,
+    "tags": [
+      "3DGS",
+      "Single Image",
+      "Full Body"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2406.12459",
+    "project": "https://humansplat.github.io/",
+    "figure": "Single-image human Gaussian splatting with SMPL-guided structure priors.",
+    "abstract": "Combines a 2D multi-view diffusion model with a latent reconstruction transformer using human structure priors, predicting 3DGS properties from one human image for photorealistic novel-view synthesis.",
+    "codeUrl": "https://github.com/humansplat/humansplat",
+    "builds_on": [
+      "lrm-2024",
+      "d3ga-2023",
+      "gaussian-avatars-2024"
+    ]
+  },
+  {
     "id": "uravatar-2024",
     "title": "URAvatar: Universal Relightable Gaussian Codec Avatars",
     "short": "URAvatar",
@@ -2741,6 +2963,77 @@
     ]
   },
   {
+    "id": "voodoo-xp-2024",
+    "title": "VOODOO XP: Expressive One-Shot Head Reenactment for VR Telepresence",
+    "short": "VOODOO XP",
+    "authors": [
+      "Tran",
+      "Zakharov",
+      "Ho",
+      "Hu",
+      "Karmanov",
+      "Agarwal",
+      "Goldwhite",
+      "Venegas",
+      "Tran",
+      "Li"
+    ],
+    "year": 2024,
+    "month": 5,
+    "venue": "SIGGRAPH Asia",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2405.16204",
+    "project": "https://mbzuai-metaverse.github.io/voodooxp/",
+    "figure": "Expressive one-shot 3D-aware head reenactment for real-time VR telepresence.",
+    "abstract": "Transfers driver expressions into transformer blocks of a 3D lifting module, using multi-stage self-supervision with neutralization and frontalization to improve expressiveness while preserving identity for one-shot VR telepresence.",
+    "builds_on": [
+      "voodoo3d-2024",
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
+    "id": "portrait4d-v2-2024",
+    "title": "Portrait4D-v2: Pseudo Multi-View Data Creates Better 4D Head Synthesizer",
+    "short": "Portrait4D-v2",
+    "authors": [
+      "Deng",
+      "Wang",
+      "Wang"
+    ],
+    "year": 2024,
+    "month": 3,
+    "venue": "ECCV",
+    "venueYear": 2024,
+    "tags": [
+      "NERF",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2403.13570",
+    "project": "https://yudeng.github.io/Portrait4D-v2/",
+    "figure": "Pseudo multi-view video supervision for stronger feed-forward 4D head synthesis.",
+    "abstract": "Converts monocular real videos into pseudo multi-view videos with a learned 3D head synthesizer, then trains a motion-aware transformer 4D head synthesizer via cross-view self-reenactment.",
+    "codeUrl": "https://github.com/YuDeng/Portrait-4D",
+    "builds_on": [
+      "portrait4d-2024",
+      "lrm-2024",
+      "rome-2022",
+      "megaportraits-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "npga-2024",
     "title": "NPGA: Neural Parametric Gaussian Avatars",
     "short": "NPGA",
@@ -2917,6 +3210,36 @@
     "cited_by": [
       "agora-2025"
     ]
+  },
+  {
+    "id": "ohta-2024",
+    "title": "OHTA: One-shot Hand Avatar via Data-driven Implicit Priors",
+    "short": "OHTA",
+    "authors": [
+      "Zheng",
+      "Wen",
+      "Su",
+      "Xu",
+      "Li",
+      "Zhao",
+      "Xue"
+    ],
+    "year": 2024,
+    "month": 2,
+    "venue": "CVPR",
+    "venueYear": 2024,
+    "tags": [
+      "SDF",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2402.18969",
+    "project": "https://zxz267.github.io/OHTA/",
+    "figure": "One-shot implicit animatable hand avatar using learned data-driven priors.",
+    "abstract": "Learns a hand-prior network from available hand data, then uses that prior for inversion and fitting from a single target image, producing high-fidelity drivable hand avatars with editing and latent-space manipulation support.",
+    "codeUrl": "https://github.com/bytedance/OHTA"
   },
   {
     "id": "one2avatar-2024",
@@ -4403,6 +4726,40 @@
     ]
   },
   {
+    "id": "rome-2022",
+    "title": "Realistic One-shot Mesh-based Head Avatars",
+    "short": "ROME",
+    "authors": [
+      "Khakhulin",
+      "Sklyarova",
+      "Lempitsky",
+      "Zakharov"
+    ],
+    "year": 2022,
+    "month": 6,
+    "venue": "ECCV",
+    "venueYear": 2022,
+    "tags": [
+      "MESH",
+      "HYBRID",
+      "Animatable",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": true,
+    "arxiv": "https://arxiv.org/abs/2206.08343",
+    "project": "https://samsunglabs.github.io/rome/",
+    "figure": "One-shot mesh-based head avatar with neural texture and deep rendering.",
+    "abstract": "Estimates a person-specific rigged head mesh and neural texture from a single photograph, then renders controllable avatars with a neural renderer trained on in-the-wild videos.",
+    "codeUrl": "https://github.com/samsunglabs/rome",
+    "builds_on": [
+      "megaportraits-2022",
+      "nha-2022",
+      "imavatar-2022",
+      "nerface-2021"
+    ]
+  },
+  {
     "id": "megaportraits-2022",
     "title": "MegaPortraits: One-shot Megapixel Neural Head Avatars",
     "short": "MegaPortraits",
@@ -4984,6 +5341,38 @@
       "imavatar-2022",
       "nha-2022",
       "mvp-2021"
+    ]
+  },
+  {
+    "id": "stylerig-2020",
+    "title": "StyleRig: Rigging StyleGAN for 3D Control over Portrait Images",
+    "short": "StyleRig",
+    "authors": [
+      "Tewari",
+      "Elgharib",
+      "Bharaj",
+      "Bernard",
+      "Seidel",
+      "Perez",
+      "Zollhoefer",
+      "Theobalt"
+    ],
+    "year": 2020,
+    "month": 3,
+    "venue": "CVPR",
+    "venueYear": 2020,
+    "tags": [
+      "HYBRID",
+      "Single Image"
+    ],
+    "citations": 0,
+    "code": false,
+    "arxiv": "https://arxiv.org/abs/2004.00121",
+    "project": "https://vcai.mpi-inf.mpg.de/projects/StyleRig/",
+    "figure": "RigNet maps 3DMM controls into StyleGAN latent edits for portrait control.",
+    "abstract": "Learns a self-supervised rigging network from 3DMM semantic parameters to a fixed StyleGAN latent space, enabling pose, expression, and illumination control over photoreal portrait images.",
+    "builds_on": [
+      "flame-2017"
     ]
   },
   {
